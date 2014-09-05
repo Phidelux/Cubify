@@ -18,8 +18,8 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 
 ## ToDos
 
- 1. Check available height
- 2. Use selected object instead of whole document
- 3. Add controls for the font-size, -color and -weight
- 4. Embedd images directly instead of referencing them
- 5. Implement vectorization of common image types
+- [x] Select cube width and height based on parent object
+- [ ] Use selected object instead of whole document
+- [ ] Add controls for the font-size, -color and -weight
+- [ ] Embedd images directly instead of referencing them
+- [ ] Implement vectorization of common image types
