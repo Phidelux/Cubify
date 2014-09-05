@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<!-- Name and id of this extension -->
+	<name>Cubify</name>
+	<id>net.avedo.cubify</id>
+
+	<!-- Dependencies needed by this extension -->
+	<dependency type="executable" location="extensions">cubify.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<dependency type="executable" location="extensions">simplestyle.py</dependency>
+
+	<!-- Definition of dialog interface -->
+ 	<param name="colorsHead" type="description">Color scheme of your Cheat Cube</param>
+	<param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
+	<param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
+	<param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
+	<param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">ffffff</param>
+	<param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">3b5b86</param>
+	<param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
+	<param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Python"/>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">cubify.py</command>
+	</script>
+</inkscape-extension>

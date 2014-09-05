@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="961.85242"
+   height="778.83295"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-45.254878,-353.52258)"
+     id="layer1" />
+  <g
+     transform="translate(-45.254878,-45.254878)"
+     id="g2990">
+    <path
+       d="m 91.509757,320.28415 457.548783,0 -45.75488,-45.75488 0,-137.26464 91.50976,-91.509752 137.26463,0 91.50976,91.509752 0,137.26464 -45.75488,45.75488 0,0 228.77437,0 0,228.77439 -457.54876,0 45.75488,45.75488 0,137.26463 -91.50976,91.50976 -137.26463,0 -91.50976,-91.50976 0,-137.26463 45.75488,-45.75488 -228.774393,0 -45.754879,-45.75488 0,-137.26463 45.754879,-45.75488"
+       id="path2992"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none" />
+    <path
+       d="m 91.509757,320.28415 0,228.77439"
+       id="path2994"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:5, 3, 2" />
+    <path
+       d="m 320.28415,320.28415 0,228.77439"
+       id="path2996"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:5, 3, 2" />
+    <path
+       d="m 549.05854,320.28415 0,228.77439"
+       id="path2998"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:5, 3, 2" />
+    <path
+       d="m 777.83293,320.28415 0,228.77439"
+       id="path3000"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:5, 3, 2" />
+    <path
+       d="m 320.28415,549.05854 0,228.77439 228.77439,0 0,-228.77439 -228.77439,0"
+       id="path3002"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-linejoin:round;stroke-dasharray:5, 3, 2" />
+    <path
+       d="m 549.05854,320.28415 0,-228.774393 228.77439,0 0,228.774393 -228.77439,0"
+       id="path3004"
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-linejoin:round;stroke-dasharray:5, 3, 2" />
+    <g
+       id="g3006">
+      <rect
+         width="228.7744"
+         height="45.754879"
+         x="91.509758"
+         y="503.30365"
+         id="rect3008"
+         style="fill:#3b5b86;stroke:none" />
+      <text
+         x="102.94848"
+         y="531.90045"
+         id="text3010"
+         style="font-size:11.43871975px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3012">
+      <rect
+         width="228.7744"
+         height="9.1509752"
+         x="91.509758"
+         y="494.15268"
+         id="rect3014"
+         style="fill:#000000;stroke:none" />
+      <text
+         x="98.372986"
+         y="502.15979"
+         id="text3016"
+         style="font-size:6.86323166px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3018">
+      <rect
+         width="228.7744"
+         height="45.754879"
+         x="320.28415"
+         y="503.30365"
+         id="rect3020"
+         style="fill:#3b5b86;stroke:none" />
+      <text
+         x="331.72287"
+         y="531.90045"
+         id="text3022"
+         style="font-size:11.43871975px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3024">
+      <rect
+         width="228.7744"
+         height="9.1509752"
+         x="320.28415"
+         y="494.15268"
+         id="rect3026"
+         style="fill:#000000;stroke:none" />
+      <text
+         x="327.14737"
+         y="502.15979"
+         id="text3028"
+         style="font-size:6.86323166px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3030">
+      <rect
+         width="228.7744"
+         height="45.754879"
+         x="549.05853"
+         y="503.30365"
+         id="rect3032"
+         style="fill:#3b5b86;stroke:none" />
+      <text
+         x="560.49725"
+         y="531.90045"
+         id="text3034"
+         style="font-size:11.43871975px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3036">
+      <rect
+         width="228.7744"
+         height="9.1509752"
+         x="549.05853"
+         y="494.15268"
+         id="rect3038"
+         style="fill:#000000;stroke:none" />
+      <text
+         x="555.92175"
+         y="502.15979"
+         id="text3040"
+         style="font-size:6.86323166px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3042">
+      <rect
+         width="228.7744"
+         height="45.754879"
+         x="777.83295"
+         y="503.30365"
+         id="rect3044"
+         style="fill:#3b5b86;stroke:none" />
+      <text
+         x="789.27167"
+         y="531.90045"
+         id="text3046"
+         style="font-size:11.43871975px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3048">
+      <rect
+         width="228.7744"
+         height="9.1509752"
+         x="777.83295"
+         y="494.15268"
+         id="rect3050"
+         style="fill:#000000;stroke:none" />
+      <text
+         x="784.69617"
+         y="502.15979"
+         id="text3052"
+         style="font-size:6.86323166px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3054">
+      <rect
+         width="228.7744"
+         height="45.754879"
+         x="320.28415"
+         y="732.07806"
+         id="rect3056"
+         style="fill:#3b5b86;stroke:none" />
+      <text
+         x="331.72287"
+         y="760.67487"
+         id="text3058"
+         style="font-size:11.43871975px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+    <g
+       id="g3060">
+      <rect
+         width="228.7744"
+         height="9.1509752"
+         x="320.28415"
+         y="722.92706"
+         id="rect3062"
+         style="fill:#000000;stroke:none" />
+      <text
+         x="327.14737"
+         y="730.9342"
+         id="text3064"
+         style="font-size:6.86323166px;font-weight:bold;fill:#ffffff">Hello World!</text>
+    </g>
+  </g>
+</svg>
