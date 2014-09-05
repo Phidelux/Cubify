@@ -47,14 +47,15 @@ class Cubify(inkex.Effect):
 
         # ... calculate the dimensions of the basic cube shape ...
         wingHeight = width / 23
-        wingWidth =  wingHeight * 5
+
+        if wingHeight * 19 > height:
+            wingHeight = height / 19
+
+        wingWidth = wingHeight * 5
 
         padding = wingHeight
 
-        shapeWidth = width - 2 * padding - wingHeight
-        shapeHeight = width / 4 * 3 + 2 * wingHeight
-
-        blockWidth = blockHeight = shapeWidth / 4
+        blockWidth = blockHeight = wingWidth
         borderWidth = 1
 
         # ... and the headline boxes.
