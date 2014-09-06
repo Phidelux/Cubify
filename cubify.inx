@@ -1,31 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-	<!-- Name and id of this extension -->
-	<name>Cubify</name>
-	<id>net.avedo.cubify</id>
+  <!-- Name and id of this extension -->
+  <name>Cubify</name>
+  <id>net.avedo.cubify</id>
 
-	<!-- Dependencies needed by this extension -->
-	<dependency type="executable" location="extensions">cubify.py</dependency>
-	<dependency type="executable" location="extensions">inkex.py</dependency>
-	<dependency type="executable" location="extensions">simplestyle.py</dependency>
+  <!-- Dependencies needed by this extension -->
+  <dependency type="executable" location="extensions">cubify.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <dependency type="executable" location="extensions">simplestyle.py</dependency>
 
-	<!-- Definition of dialog interface -->
- 	<param name="colorsHead" type="description">Color scheme of your Cheat Cube</param>
-	<param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
-	<param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
-	<param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
-	<param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">ffffff</param>
-	<param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">3b5b86</param>
-	<param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-	<param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
+  <!-- Definition of dialog interface -->
+  <param name="cubify_config" type="notebook">
+    <page name="cubify_theme" gui-text="Theme">
+      <param name="colorsHead" type="description">General theme settings of your Cheat Cube</param>
 
-	<effect>
-		<object-type>all</object-type>
-		<effects-menu>
-			<submenu _name="Python"/>
-		</effects-menu>
-	</effect>
-	<script>
-		<command reldir="extensions" interpreter="python">cubify.py</command>
-	</script>
+      <param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
+      <param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
+      <param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
+      <param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">ffffff</param>
+      <param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">3b5b86</param>
+      <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
+      <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
+    </page>
+    <page name="cubify_logo_side" _gui-text="Logo Side">
+      <param name="logoPath" type="string" _gui-text="Logo path: "></param>
+      <param name="logoStyle" type="enum" _gui-text="Display">
+	<_item value="1">Fit Parent</_item>
+	<_item value="2">Crop Parent</_item>
+      </param>
+      <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
+    </page>
+    <page name="cubify_side_i" _gui-text="Cube Side I">
+      <param name="sideOneHint" type="string" _gui-text="Subhead text: ">Lorem</param>
+    </page>
+    <page name="cubify_side_ii" _gui-text="Cube Side II">
+      <param name="sideTwoHint" type="string" _gui-text="Subhead text: ">Ipsum</param>
+    </page>
+    <page name="cubify_side_iii" _gui-text="Cube Side III">
+      <param name="sideThreeHint" type="string" _gui-text="Subhead text: ">Dolor</param>
+    </page>
+    <page name="cubify_side_iv" _gui-text="Cube Side IV">
+      <param name="sideFourHint" type="string" _gui-text="Subhead text: ">Sit</param>
+    </page>
+    <page name="cubify_side_v" _gui-text="Cube Side V">
+      <param name="sideFiveHint" type="string" _gui-text="Subhead text: ">Amet</param>
+    </page>
+  </param>
+
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Python"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">cubify.py</command>
+  </script>
 </inkscape-extension>

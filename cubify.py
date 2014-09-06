@@ -13,13 +13,33 @@ class Cubify(inkex.Effect):
         inkex.Effect.__init__(self)
         
         # Definition of script parameters (Ensure that the second parameter matches the names in the inx file).
-        self.OptionParser.add_option('--textColor', action='store', type='string', dest='textColor', default='000000', help='Color of normal text')
-        self.OptionParser.add_option('--titleColor', action='store', type='string', dest='titleColor', default='ffffff', help='Color of the title')
-        self.OptionParser.add_option('--titleBgColor', action='store', type='string', dest='titleBgColor', default='3b5b86', help='The title background color')
-        self.OptionParser.add_option('--hintColor', action='store', type='string', dest='hintColor', default='ffffff', help='Color of the hint')
-        self.OptionParser.add_option('--hintBgColor', action='store', type='string', dest='hintBgColor', default='000000', help='The hint background color')
-        self.OptionParser.add_option('--mainBgColor', action='store', type='string', dest='mainBgColor', default='ffffff', help='The main background color')
-        self.OptionParser.add_option('--borderColor', action='store', type='string', dest='borderColor', default='333333', help='Color of the basic shape')
+        self.OptionParser.add_option('--textColor', action='store', type='string', dest='textColor', help='Color of normal text')
+        self.OptionParser.add_option('--titleColor', action='store', type='string', dest='titleColor', help='Color of the title')
+        self.OptionParser.add_option('--titleBgColor', action='store', type='string', dest='titleBgColor', help='The title background color')
+        self.OptionParser.add_option('--hintColor', action='store', type='string', dest='hintColor', help='Color of the hint')
+        self.OptionParser.add_option('--hintBgColor', action='store', type='string', dest='hintBgColor', help='The hint background color')
+        self.OptionParser.add_option('--mainBgColor', action='store', type='string', dest='mainBgColor', help='The main background color')
+        self.OptionParser.add_option('--borderColor', action='store', type='string', dest='borderColor', help='Color of the basic shape')
+
+        self.OptionParser.add_option('--logoPath', action='store', type='string', dest='logoPath', help='Path to the main logo')
+        self.OptionParser.add_option('--logoStyle', action='store', type='string', dest='logoStyle', help='The logo display options')
+        self.OptionParser.add_option('--logoBgColor', action='store', type='string', dest='logoBgColor', help='The logo side background color')
+
+        self.OptionParser.add_option('--sideOneHint', action='store', type='string', dest='sideOneHint', help='Subhead text')
+        self.OptionParser.add_option('--sideTwoHint', action='store', type='string', dest='sideTwoHint', help='Subhead text')
+        self.OptionParser.add_option('--sideThreeHint', action='store', type='string', dest='sideThreeHint', help='Subhead text')
+        self.OptionParser.add_option('--sideFourHint', action='store', type='string', dest='sideFourHint', help='Subhead text')
+        self.OptionParser.add_option('--sideFiveHint', action='store', type='string', dest='sideFiveHint', help='Subhead text')
+
+        # Inkscape param workaround.
+        self.OptionParser.add_option("--cubify_config")
+        self.OptionParser.add_option("--display_options")
+        self.OptionParser.add_option("--cubify_logo_side")
+        self.OptionParser.add_option("--cubify_side_i")
+        self.OptionParser.add_option("--cubify_side_ii")
+        self.OptionParser.add_option("--cubify_side_iii")
+        self.OptionParser.add_option("--cubify_side_iv")
+        self.OptionParser.add_option("--cubify_side_v")
 
     def effect(self):
         self.log('Applying effect ...')
@@ -39,6 +59,12 @@ class Cubify(inkex.Effect):
         hintBgColor = self.options.hintBgColor
         mainBgColor = self.options.mainBgColor
         borderColor = self.options.borderColor
+
+        sideOneHint = self.options.sideOneHint
+        sideTwoHint = self.options.sideTwoHint
+        sideThreeHint = self.options.sideThreeHint
+        sideFourHint = self.options.sideFourHint
+        sideFiveHint = self.options.sideFiveHint
 
         # Create a new layer, ...
         layer = inkex.etree.SubElement(svg, 'g')
@@ -115,11 +141,11 @@ class Cubify(inkex.Effect):
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
 
         # ... and the headline boxes.
-        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, 'Hello World!', hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, 'Hello World!', hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, 'Hello World!', hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, 'Hello World!', hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, 'Hello World!', hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, sideOneHint, hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, sideTwoHint, hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, sideThreeHint, hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, sideFourHint, hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, 'Hello World!', titleBgColor, titleColor, boxHeight / 4, sideFiveHint, hintBgColor, hintColor, boxHeight / 20 * 3)
 
     def drawSideFooter(self, x, y, w, h, border, borderColor, parent, title, titleBg, titleColor, titleSize, hint, hintBg, hintColor, hintSize):
         self.drawTextBox(x, y, w, h, border, borderColor, titleBg, parent, title, titleColor, titleSize)
