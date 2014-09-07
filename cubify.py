@@ -33,7 +33,7 @@ class Cubify(inkex.Effect):
         homeDir = os.path.expanduser('~')
         
         # ... and setup the path to the log file.
-        logFile = os.path.join(homeDir, 'cubify.log')
+        self.logFile = os.path.join(homeDir, 'cubify.log')
 
         # Definition of script parameters (Ensure that the second parameter matches the names in the inx file).
         self.OptionParser.add_option('--textColor', action='store', type='string', dest='textColor', help='Color of normal text')
@@ -345,7 +345,7 @@ class Cubify(inkex.Effect):
         return inkex.etree.SubElement(parent, inkex.addNS('image','svg'), attrs)
         
     def log(self, msg):
-        with open('/home/awilhelm/cubify.log', 'a+') as log:
+        with open(self.logFile, 'a+') as log:
             log.write(msg)
 
 def main(argv):
