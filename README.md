@@ -23,5 +23,5 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 - [ ] Add controls for the font-size, -color and -weight
 - [x] Embedd images directly instead of referencing them
 - [ ] Implement vectorization of common image types
-- [ ] Rotate buttom of the cube 90 degrees clockwise
+- [x] Rotate buttom of the cube 90 degrees clockwise
 - [ ] Wrap the different subparts in groups

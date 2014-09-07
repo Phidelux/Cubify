@@ -199,7 +199,16 @@ class Cubify(inkex.Effect):
         self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideTwoText, titleBgColor, titleColor, boxHeight / 4, sideTwoHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideTwoIcon)
         self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideThreeText, titleBgColor, titleColor, boxHeight / 4, sideThreeHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideThreeIcon)
         self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideFourText, titleBgColor, titleColor, boxHeight / 4, sideFourHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideFourIcon)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideFiveText, titleBgColor, titleColor, boxHeight / 4, sideFiveHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideFiveIcon)
+
+        attrs = {
+            'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')' 
+        }
+
+        bottomLayer = inkex.etree.SubElement(svg, 'g', attrs)
+        bottomLayer.set(inkex.addNS('label', 'inkscape'), 'Bottom Side')
+        bottomLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, sideFiveText, titleBgColor, titleColor, boxHeight / 4, sideFiveHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideFiveIcon)
 
         # Finally embedd the main logo ...
         if logoPath is not None:
