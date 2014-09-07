@@ -10,40 +10,49 @@
   <dependency type="executable" location="extensions">simplestyle.py</dependency>
 
   <!-- Definition of dialog interface -->
-  <param name="cubify_config" type="notebook">
-    <page name="cubify_theme" gui-text="Theme">
-      <param name="colorsHead" type="description">General theme settings of your Cheat Cube</param>
+  <param name="colorsHead" type="description">General theme settings of your Cheat Cube</param>
 
-      <param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
-      <param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
-      <param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
-      <param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">ffffff</param>
-      <param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">3b5b86</param>
-      <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-      <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
-    </page>
+  <param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
+  <param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
+  <param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
+  <param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">75a928</param>
+  <param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+  <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
+  <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
+
+  <param name="cubify_config" type="notebook">
     <page name="cubify_logo_side" _gui-text="Logo Side">
       <param name="logoPath" type="string" _gui-text="Logo path: "></param>
-      <param name="logoStyle" type="enum" _gui-text="Display">
+      <param name="logoStyle" type="enum" _gui-text="Display" appearance="minimal">
 	<_item value="1">Fit Parent</_item>
 	<_item value="2">Crop Parent</_item>
       </param>
       <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
     </page>
     <page name="cubify_side_i" _gui-text="Cube Side I">
-      <param name="sideOneHint" type="string" _gui-text="Subhead text: ">Lorem</param>
+      <param name="sideOneText" type="string" _gui-text="Subhead text: ">Package Management</param>
+      <param name="sideOneHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
+      <param name="sideOneIcon" type="string" _gui-text="Subhead logo: ">none</param>
     </page>
     <page name="cubify_side_ii" _gui-text="Cube Side II">
-      <param name="sideTwoHint" type="string" _gui-text="Subhead text: ">Ipsum</param>
+      <param name="sideTwoText" type="string" _gui-text="Subhead text: ">Network</param>
+      <param name="sideTwoHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
+      <param name="sideTwoIcon" type="string" _gui-text="Subhead logo: ">none</param>
     </page>
     <page name="cubify_side_iii" _gui-text="Cube Side III">
-      <param name="sideThreeHint" type="string" _gui-text="Subhead text: ">Dolor</param>
+      <param name="sideThreeText" type="string" _gui-text="Subhead text: ">Permissions</param>
+      <param name="sideThreeHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
+      <param name="sideThreeIcon" type="string" _gui-text="Subhead logo: ">none</param>
     </page>
     <page name="cubify_side_iv" _gui-text="Cube Side IV">
-      <param name="sideFourHint" type="string" _gui-text="Subhead text: ">Sit</param>
+      <param name="sideFourText" type="string" _gui-text="Subhead text: ">System and Screen</param>
+      <param name="sideFourHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
+      <param name="sideFourIcon" type="string" _gui-text="Subhead logo: ">none</param>
     </page>
     <page name="cubify_side_v" _gui-text="Cube Side V">
-      <param name="sideFiveHint" type="string" _gui-text="Subhead text: ">Amet</param>
+      <param name="sideFiveText" type="string" _gui-text="Subhead text: ">Directories and Files</param>
+      <param name="sideFiveHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
+      <param name="sideFiveIcon" type="string" _gui-text="Subhead logo: ">none</param>
     </page>
   </param>
 
