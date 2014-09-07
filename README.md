@@ -6,7 +6,7 @@ Cubify is a free Inkscape plugin to create Cheat Cubes
 
 Cubify is a plugin for the famous vector graphics software **Inkscape**. To install this plugin you should first download the sources from GitHub:
 
-    $ git clone https://github.com/Avedo/Cubify`
+    $ git clone https://github.com/Avedo/Cubify
 
 Then you can move the downloaded files to the extentions folder of your Inkscape installation:
 
@@ -21,5 +21,5 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 - [x] Select cube width and height based on parent object
 - [ ] Use selected object instead of whole document
 - [ ] Add controls for the font-size, -color and -weight
-- [ ] Embedd images directly instead of referencing them
+- [x] Embedd images directly instead of referencing them
 - [ ] Implement vectorization of common image types
