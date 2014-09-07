@@ -110,7 +110,7 @@ class Cubify(inkex.Effect):
 
         sideThreeText = self.options.sideThreeText
         sideThreeHint = self.options.sideThreeHint
-        sideThreeIcon = self.options.sideThreeIcon ifself.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
+        sideThreeIcon = self.options.sideThreeIcon if self.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
 
         sideFourText = self.options.sideFourText
         sideFourHint = self.options.sideFourHint
@@ -195,24 +195,31 @@ class Cubify(inkex.Effect):
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
 
         # ... and the headline boxes.
-        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, sideOneText, titleBgColor, titleColor, boxHeight / 4, sideOneHint, hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, sideTwoText, titleBgColor, titleColor, boxHeight / 4, sideTwoHint, hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, sideThreeText, titleBgColor, titleColor, boxHeight / 4, sideThreeHint, hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, sideFourText, titleBgColor, titleColor, boxHeight / 4, sideFourHint, hintBgColor, hintColor, boxHeight / 20 * 3)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, layer, sideFiveText, titleBgColor, titleColor, boxHeight / 4, sideFiveHint, hintBgColor, hintColor, boxHeight / 20 * 3)
+        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideOneText, titleBgColor, titleColor, boxHeight / 4, sideOneHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideOneIcon)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideTwoText, titleBgColor, titleColor, boxHeight / 4, sideTwoHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideTwoIcon)
+        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideThreeText, titleBgColor, titleColor, boxHeight / 4, sideThreeHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideThreeIcon)
+        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideFourText, titleBgColor, titleColor, boxHeight / 4, sideFourHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideFourIcon)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, sideFiveText, titleBgColor, titleColor, boxHeight / 4, sideFiveHint, hintBgColor, hintColor, boxHeight / 20 * 3, sideFiveIcon)
 
         # Finally embedd the main logo ...
         if logoPath is not None:
-            self.log('Using logo: ' + logoPath)
-            # self.embeddImage(padding + wingHeight + 2 * blockWidth, padding + wingHeight, blockWidth, blockHeight, logoPath, layer)
             self.innerImage(padding + wingHeight + 2 * blockWidth, padding + wingHeight, blockWidth, blockHeight, padding, logoPath, svg)
         else:
             self.log('No path to logo given!')
             
 
-    def drawSideFooter(self, x, y, w, h, border, borderColor, parent, title, titleBg, titleColor, titleSize, hint, hintBg, hintColor, hintSize):
-        self.drawTextBox(x, y, w, h, border, borderColor, titleBg, parent, title, titleColor, titleSize)
-        self.drawTextBox(x, y - h / 5 , w, h / 5, border, borderColor, hintBg, parent, hint, hintColor, hintSize)
+    def drawSideFooter(self, x, y, w, h, border, borderColor, parent, title, titleBg, titleColor, titleSize, hint, hintBg, hintColor, hintSize, logoPath):
+        layer = inkex.etree.SubElement(parent, 'g')
+        layer.set(inkex.addNS('label', 'inkscape'), 'Footer')
+        layer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        self.drawTextBox(x, y, w, h, border, borderColor, titleBg, layer, title, titleColor, titleSize)
+        self.drawTextBox(x, y - h / 5 , w, h / 5, border, borderColor, hintBg, layer, hint, hintColor, hintSize)
+
+        if logoPath is not None:
+            self.innerImage(x + w - h / 10 * 12, y, h, h, h / 10, logoPath, layer)
+        else:
+            self.log('No path to logo given!')
 
     def drawTextBox(self, x, y, w, h, border, borderColor, fillColor, parent, msg, fontColor, fontSize):
         # Create a new layer.
