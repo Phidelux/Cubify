@@ -96,29 +96,29 @@ class Cubify(inkex.Effect):
         mainBgColor = self.options.mainBgColor
         borderColor = self.options.borderColor
 
-        logoPath = self.options.logoPath if os.path.isfile(self.options.logoPath) else None
+        logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
         logoStyle = self.options.logoStyle
         logoBgColor = self.options.logoBgColor
 
         sideOneText = self.options.sideOneText
         sideOneHint = self.options.sideOneHint
-        sideOneIcon = self.options.sideOneIcon if os.path.isfile(self.options.sideOneIcon) else None
+        sideOneIcon = self.options.sideOneIcon if self.options.sideOneIcon is not None and os.path.isfile(self.options.sideOneIcon) else None
 
         sideTwoText = self.options.sideTwoText
         sideTwoHint = self.options.sideTwoHint
-        sideTwoIcon = self.options.sideTwoIcon if os.path.isfile(self.options.sideTwoIcon) else None
+        sideTwoIcon = self.options.sideTwoIcon if self.options.sideTwoIcon is not None and os.path.isfile(self.options.sideTwoIcon) else None
 
         sideThreeText = self.options.sideThreeText
         sideThreeHint = self.options.sideThreeHint
-        sideThreeIcon = self.options.sideThreeIcon if os.path.isfile(self.options.sideThreeIcon) else None
+        sideThreeIcon = self.options.sideThreeIcon ifself.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
 
         sideFourText = self.options.sideFourText
         sideFourHint = self.options.sideFourHint
-        sideFourIcon = self.options.sideFourIcon if os.path.isfile(self.options.sideFourIcon) else None
+        sideFourIcon = self.options.sideFourIcon if self.options.sideFourIcon is not None and os.path.isfile(self.options.sideFourIcon) else None
 
         sideFiveText = self.options.sideFiveText
         sideFiveHint = self.options.sideFiveHint
-        sideFiveIcon = self.options.sideFiveIcon if os.path.isfile(self.options.sideFiveIcon) else None
+        sideFiveIcon = self.options.sideFiveIcon if self.options.sideFiveIcon is not None and os.path.isfile(self.options.sideFiveIcon) else None
 
         # Create a new layer, ...
         layer = inkex.etree.SubElement(svg, 'g')
