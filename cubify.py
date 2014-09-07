@@ -28,7 +28,13 @@ class Cubify(inkex.Effect):
     def __init__(self):
         # Call the base class constructor.
         inkex.Effect.__init__(self)
+
+        # Fetch the users' home directory ...
+        homeDir = os.path.expanduser('~')
         
+        # ... and setup the path to the log file.
+        logFile = os.path.join(homeDir, 'cubify.log')
+
         # Definition of script parameters (Ensure that the second parameter matches the names in the inx file).
         self.OptionParser.add_option('--textColor', action='store', type='string', dest='textColor', help='Color of normal text')
         self.OptionParser.add_option('--titleColor', action='store', type='string', dest='titleColor', help='Color of the title')
