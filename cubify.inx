@@ -20,39 +20,114 @@
   <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
   <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
 
+  <param name="logoPath" type="string" _gui-text="Logo path: "></param>
+  <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
+
   <param name="cubify_config" type="notebook">
-    <page name="cubify_logo_side" _gui-text="Logo Side">
-      <param name="logoPath" type="string" _gui-text="Logo path: "></param>
-      <param name="logoStyle" type="enum" _gui-text="Display" appearance="minimal">
-	<_item value="1">Fit Parent</_item>
-	<_item value="2">Crop Parent</_item>
-      </param>
-      <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
-    </page>
     <page name="cubify_side_i" _gui-text="Cube Side I">
       <param name="sideOneText" type="string" _gui-text="Subhead text: ">Package Management</param>
       <param name="sideOneHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
       <param name="sideOneIcon" type="string" _gui-text="Subhead logo: ">none</param>
+
+      <param name="sideOneL1" type="string" _gui-text=" 1:" />
+      <param name="sideOneL2" type="string" _gui-text=" 2:" />
+      <param name="sideOneL3" type="string" _gui-text=" 3:" />
+      <param name="sideOneL4" type="string" _gui-text=" 4:" />
+      <param name="sideOneL5" type="string" _gui-text=" 5:" />
+      <param name="sideOneL6" type="string" _gui-text=" 6:" />
+      <param name="sideOneL7" type="string" _gui-text=" 7:" />
+      <param name="sideOneL8" type="string" _gui-text=" 8:" />
+      <param name="sideOneL9" type="string" _gui-text=" 9:" />
+      <param name="sideOneL10" type="string" _gui-text="10:" />
+      <param name="sideOneL11" type="string" _gui-text="11:" />
+      <param name="sideOneL12" type="string" _gui-text="12:" />
+      <param name="sideOneL13" type="string" _gui-text="13:" />
+      <param name="sideOneL14" type="string" _gui-text="14:" />
+      <param name="sideOneL15" type="string" _gui-text="15:" />
     </page>
     <page name="cubify_side_ii" _gui-text="Cube Side II">
       <param name="sideTwoText" type="string" _gui-text="Subhead text: ">Network</param>
       <param name="sideTwoHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
       <param name="sideTwoIcon" type="string" _gui-text="Subhead logo: ">none</param>
+
+      <param name="sideTwoL1" type="string" _gui-text=" 1:" />
+      <param name="sideTwoL2" type="string" _gui-text=" 2:" />
+      <param name="sideTwoL3" type="string" _gui-text=" 3:" />
+      <param name="sideTwoL4" type="string" _gui-text=" 4:" />
+      <param name="sideTwoL5" type="string" _gui-text=" 5:" />
+      <param name="sideTwoL6" type="string" _gui-text=" 6:" />
+      <param name="sideTwoL7" type="string" _gui-text=" 7:" />
+      <param name="sideTwoL8" type="string" _gui-text=" 8:" />
+      <param name="sideTwoL9" type="string" _gui-text=" 9:" />
+      <param name="sideTwoL10" type="string" _gui-text="10:" />
+      <param name="sideTwoL11" type="string" _gui-text="11:" />
+      <param name="sideTwoL12" type="string" _gui-text="12:" />
+      <param name="sideTwoL13" type="string" _gui-text="13:" />
+      <param name="sideTwoL14" type="string" _gui-text="14:" />
+      <param name="sideTwoL15" type="string" _gui-text="15:" />
     </page>
     <page name="cubify_side_iii" _gui-text="Cube Side III">
       <param name="sideThreeText" type="string" _gui-text="Subhead text: ">Permissions</param>
       <param name="sideThreeHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
       <param name="sideThreeIcon" type="string" _gui-text="Subhead logo: ">none</param>
+
+      <param name="sideThreeL1" type="string" _gui-text=" 1:" />
+      <param name="sideThreeL2" type="string" _gui-text=" 2:" />
+      <param name="sideThreeL3" type="string" _gui-text=" 3:" />
+      <param name="sideThreeL4" type="string" _gui-text=" 4:" />
+      <param name="sideThreeL5" type="string" _gui-text=" 5:" />
+      <param name="sideThreeL6" type="string" _gui-text=" 6:" />
+      <param name="sideThreeL7" type="string" _gui-text=" 7:" />
+      <param name="sideThreeL8" type="string" _gui-text=" 8:" />
+      <param name="sideThreeL9" type="string" _gui-text=" 9:" />
+      <param name="sideThreeL10" type="string" _gui-text="10:" />
+      <param name="sideThreeL11" type="string" _gui-text="11:" />
+      <param name="sideThreeL12" type="string" _gui-text="12:" />
+      <param name="sideThreeL13" type="string" _gui-text="13:" />
+      <param name="sideThreeL14" type="string" _gui-text="14:" />
+      <param name="sideThreeL15" type="string" _gui-text="15:" />
     </page>
     <page name="cubify_side_iv" _gui-text="Cube Side IV">
       <param name="sideFourText" type="string" _gui-text="Subhead text: ">System and Screen</param>
       <param name="sideFourHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
       <param name="sideFourIcon" type="string" _gui-text="Subhead logo: ">none</param>
+
+      <param name="sideFourL1" type="string" _gui-text=" 1:" />
+      <param name="sideFourL2" type="string" _gui-text=" 2:" />
+      <param name="sideFourL3" type="string" _gui-text=" 3:" />
+      <param name="sideFourL4" type="string" _gui-text=" 4:" />
+      <param name="sideFourL5" type="string" _gui-text=" 5:" />
+      <param name="sideFourL6" type="string" _gui-text=" 6:" />
+      <param name="sideFourL7" type="string" _gui-text=" 7:" />
+      <param name="sideFourL8" type="string" _gui-text=" 8:" />
+      <param name="sideFourL9" type="string" _gui-text=" 9:" />
+      <param name="sideFourL10" type="string" _gui-text="10:" />
+      <param name="sideFourL11" type="string" _gui-text="11:" />
+      <param name="sideFourL12" type="string" _gui-text="12:" />
+      <param name="sideFourL13" type="string" _gui-text="13:" />
+      <param name="sideFourL14" type="string" _gui-text="14:" />
+      <param name="sideFourL15" type="string" _gui-text="15:" />
     </page>
     <page name="cubify_side_v" _gui-text="Cube Side V">
       <param name="sideFiveText" type="string" _gui-text="Subhead text: ">Directories and Files</param>
       <param name="sideFiveHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
       <param name="sideFiveIcon" type="string" _gui-text="Subhead logo: ">none</param>
+
+      <param name="sideFiveL1" type="string" _gui-text=" 1:" />
+      <param name="sideFiveL2" type="string" _gui-text=" 2:" />
+      <param name="sideFiveL3" type="string" _gui-text=" 3:" />
+      <param name="sideFiveL4" type="string" _gui-text=" 4:" />
+      <param name="sideFiveL5" type="string" _gui-text=" 5:" />
+      <param name="sideFiveL6" type="string" _gui-text=" 6:" />
+      <param name="sideFiveL7" type="string" _gui-text=" 7:" />
+      <param name="sideFiveL8" type="string" _gui-text=" 8:" />
+      <param name="sideFiveL9" type="string" _gui-text=" 9:" />
+      <param name="sideFiveL10" type="string" _gui-text="10:" />
+      <param name="sideFiveL11" type="string" _gui-text="11:" />
+      <param name="sideFiveL12" type="string" _gui-text="12:" />
+      <param name="sideFiveL13" type="string" _gui-text="13:" />
+      <param name="sideFiveL14" type="string" _gui-text="14:" />
+      <param name="sideFiveL15" type="string" _gui-text="15:" />
     </page>
   </param>
 
