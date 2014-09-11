@@ -24,4 +24,6 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 - [x] Embedd images directly instead of referencing them
 - [ ] Implement vectorization of common image types
 - [x] Rotate buttom of the cube 90 degrees clockwise
-- [ ] Wrap the different subparts in groups
+- [x] Wrap the different subparts in groups
+- [ ] Add description of markdown capabilities
+- [ ] Add hint that plugin just accepts svg files
