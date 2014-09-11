@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1052.3622"
-   height="744.09448"
+   width="4212.9922"
+   height="2979.9211"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
@@ -23,17 +23,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="405.71429"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="2327.3478"
+     inkscape:cy="1489.7464"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg2"
      showgrid="false"
-     inkscape:window-width="505"
-     inkscape:window-height="420"
+     inkscape:window-width="1920"
+     inkscape:window-height="1030"
      inkscape:window-x="0"
      inkscape:window-y="26"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <defs
      id="defs4" />
   <metadata
@@ -49,92 +49,92 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0,-308.2677)"
+     transform="translate(0,1927.559)"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1" />
   <g
-     id="g2990"
+     id="g15006"
      inkscape:groupmode="layer"
      inkscape:label="Basic Shape">
     <path
-       id="path2992"
+       id="path15008"
        style="stroke-linejoin:round;stroke:#333333;stroke-width:1;stroke-dasharray:none;fill:#ffffff"
-       d="M 78.3257347368,274.140071579 L 469.954408421,274.140071579  L 430.791541053,234.977204211  L 430.791541053,117.488602105  L 509.117275789,39.1628673684  L 626.605877895,39.1628673684  L 704.931612632,117.488602105  L 704.931612632,234.977204211  L 665.768745263,274.140071579  L 665.768745263,274.140071579  L 861.583082105,274.140071579  L 861.583082105,469.954408421  L 469.954408421,469.954408421  L 509.117275789,509.117275789  L 509.117275789,626.605877895  L 430.791541053,704.931612632  L 313.302938947,704.931612632  L 234.977204211,626.605877895  L 234.977204211,509.117275789  L 274.140071579,469.954408421  L 78.3257347368,469.954408421  L 39.1628673684,430.791541053  L 39.1628673684,313.302938947  L 78.3257347368,274.140071579 " />
+       d="M 313.675905263,1097.86566842 L 1882.05543158,1097.86566842  L 1725.21747895,941.027715789  L 1725.21747895,470.513857895  L 2038.89338421,156.837952632  L 2509.40724211,156.837952632  L 2823.08314737,470.513857895  L 2823.08314737,941.027715789  L 2666.24519474,1097.86566842  L 2666.24519474,1097.86566842  L 3450.43495789,1097.86566842  L 3450.43495789,1882.05543158  L 1882.05543158,1882.05543158  L 2038.89338421,2038.89338421  L 2038.89338421,2509.40724211  L 1725.21747895,2823.08314737  L 1254.70362105,2823.08314737  L 941.027715789,2509.40724211  L 941.027715789,2038.89338421  L 1097.86566842,1882.05543158  L 313.675905263,1882.05543158  L 156.837952632,1725.21747895  L 156.837952632,1254.70362105  L 313.675905263,1097.86566842 " />
     <path
-       id="path2994"
+       id="path15010"
        inkscape:label="A Name"
        style="stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 78.3257347368,274.140071579 L 78.3257347368,469.954408421" />
+       d="M 313.675905263,1097.86566842 L 313.675905263,1882.05543158" />
     <path
-       id="path2996"
+       id="path15012"
        inkscape:label="A Name"
        style="stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 274.140071579,274.140071579 L 274.140071579,469.954408421" />
+       d="M 1097.86566842,1097.86566842 L 1097.86566842,1882.05543158" />
     <path
-       id="path2998"
+       id="path15014"
        inkscape:label="A Name"
        style="stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 469.954408421,274.140071579 L 469.954408421,469.954408421" />
+       d="M 1882.05543158,1097.86566842 L 1882.05543158,1882.05543158" />
     <path
-       id="path3000"
+       id="path15016"
        inkscape:label="A Name"
        style="stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 665.768745263,274.140071579 L 665.768745263,469.954408421" />
+       d="M 2666.24519474,1097.86566842 L 2666.24519474,1882.05543158" />
     <path
-       id="path3002"
+       id="path15018"
        style="stroke-linejoin:round;stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 274.140071579,469.954408421 L 274.140071579,665.768745263  L 469.954408421,665.768745263  L 469.954408421,469.954408421  L 274.140071579,469.954408421 " />
+       d="M 1097.86566842,1882.05543158 L 1097.86566842,2666.24519474  L 1882.05543158,2666.24519474  L 1882.05543158,1882.05543158  L 1097.86566842,1882.05543158 " />
     <path
-       id="path3004"
+       id="path15020"
        style="stroke-linejoin:round;stroke:#333333;stroke-width:1;stroke-dasharray:5,3,2;fill:none"
-       d="M 469.954408421,274.140071579 L 469.954408421,78.3257347368  L 665.768745263,78.3257347368  L 665.768745263,274.140071579  L 469.954408421,274.140071579 " />
+       d="M 1882.05543158,1097.86566842 L 1882.05543158,313.675905263  L 2666.24519474,313.675905263  L 2666.24519474,1097.86566842  L 1882.05543158,1097.86566842 " />
   </g>
   <g
-     id="g3006"
+     id="g15022"
      inkscape:groupmode="layer"
      inkscape:label="Footer">
     <g
-       id="g3008"
+       id="g15024"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3010"
-         y="430.791541053"
-         x="78.3257347368"
-         width="195.814336842"
+         id="rect15026"
+         y="1686.00799079"
+         x="313.675905263"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#bc1142"
-         height="39.1628673684" />
+         height="196.047440789" />
       <text
-         id="text3012"
-         style="font-size:9.79071684211;font-weight:bold"
+         id="text15028"
+         style="font-size:39.2094881579;font-weight:bold"
          fill="#ffffff"
-         y="455.268333158"
-         x="88.1164515789">Package Management</text>
+         y="1803.63645526"
+         x="352.885393421">Package Management</text>
     </g>
     <g
-       id="g3014"
+       id="g15030"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3016"
-         y="422.958967579"
-         x="78.3257347368"
-         width="195.814336842"
+         id="rect15032"
+         y="1646.79850263"
+         x="313.675905263"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#333333"
-         height="7.83257347368" />
+         height="39.2094881579" />
       <text
-         id="text3018"
-         style="font-size:5.87443010526;font-weight:bold"
+         id="text15034"
+         style="font-size:23.5256928947;font-weight:normal"
          fill="#ffffff"
-         y="429.812469368"
-         x="84.2001648421">See the manual for detailed options (man [command]).</text>
+         y="1678.16609316"
+         x="337.201598158">See the manual for detailed options (man [command]).</text>
     </g>
     <g
-       id="g3020"
+       id="g15036"
        inkscape:groupmode="layer"
        inkscape:label="Logo Layer"
-       transform="translate(229.102774105,432.749684421) scale(0.734303763158,0.734303763158)">
+       transform="translate(872.411111513,1695.81036283) scale(3.6758895148,3.6758895148)">
       <svg
          version="1.1"
          inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -313,7 +313,7 @@
              inkscape:collect="always" />
         </defs>
         <sodipodi:namedview
-           id="namedview3054"
+           id="namedview15070"
            pagecolor="#ffffff"
            bordercolor="#666666"
            borderopacity="0.16470588"
@@ -383,7 +383,7 @@
           </rdf:RDF>
         </metadata>
         <g
-           id="g3057"
+           id="g15073"
            inkscape:label="Layer 1"
            inkscape:groupmode="layer">
           <g
@@ -485,50 +485,50 @@
     </g>
   </g>
   <g
-     id="g3073"
+     id="g15089"
      inkscape:groupmode="layer"
      inkscape:label="Footer">
     <g
-       id="g3075"
+       id="g15091"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3077"
-         y="430.791541053"
-         x="274.140071579"
-         width="195.814336842"
+         id="rect15093"
+         y="1686.00799079"
+         x="1097.86566842"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#bc1142"
-         height="39.1628673684" />
+         height="196.047440789" />
       <text
-         id="text3079"
-         style="font-size:9.79071684211;font-weight:bold"
+         id="text15095"
+         style="font-size:39.2094881579;font-weight:bold"
          fill="#ffffff"
-         y="455.268333158"
-         x="283.930788421">Network</text>
+         y="1803.63645526"
+         x="1137.07515658">Network</text>
     </g>
     <g
-       id="g3081"
+       id="g15097"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3083"
-         y="422.958967579"
-         x="274.140071579"
-         width="195.814336842"
+         id="rect15099"
+         y="1646.79850263"
+         x="1097.86566842"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#333333"
-         height="7.83257347368" />
+         height="39.2094881579" />
       <text
-         id="text3085"
-         style="font-size:5.87443010526;font-weight:bold"
+         id="text15101"
+         style="font-size:23.5256928947;font-weight:normal"
          fill="#ffffff"
-         y="429.812469368"
-         x="280.014501684">See the manual for detailed options (man [command]).</text>
+         y="1678.16609316"
+         x="1121.39136132">See the manual for detailed options (man [command]).</text>
     </g>
     <g
-       id="g3087"
+       id="g15103"
        inkscape:groupmode="layer"
        inkscape:label="Logo Layer"
-       transform="translate(424.917110947,432.749684421) scale(0.734303763158,0.734303763158)">
+       transform="translate(1656.60087467,1695.81036283) scale(3.6758895148,3.6758895148)">
       <svg
          version="1.1"
          inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -1076,7 +1076,7 @@
            borderopacity="1"
            bordercolor="#d3d3d3"
            pagecolor="white"
-           id="namedview3173">
+           id="namedview15189">
           <inkscape:grid
              empspacing="2"
              empopacity="0.38"
@@ -1141,7 +1141,7 @@ Andreas Nilsson</dc:title>
         <g
            inkscape:groupmode="layer"
            inkscape:label="Layer 1"
-           id="g3176">
+           id="g15192">
           <path
              sodipodi:nodetypes="cccc"
              id="path6845"
@@ -1536,61 +1536,61 @@ Andreas Nilsson</dc:title>
     </g>
   </g>
   <g
-     id="g3244"
+     id="g15260"
      inkscape:groupmode="layer"
      inkscape:label="Footer">
     <g
-       id="g3246"
+       id="g15262"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3248"
-         y="430.791541053"
-         x="469.954408421"
-         width="195.814336842"
+         id="rect15264"
+         y="1686.00799079"
+         x="1882.05543158"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#bc1142"
-         height="39.1628673684" />
+         height="196.047440789" />
       <text
-         id="text3250"
-         style="font-size:9.79071684211;font-weight:bold"
+         id="text15266"
+         style="font-size:39.2094881579;font-weight:bold"
          fill="#ffffff"
-         y="455.268333158"
-         x="479.745125263">Permissions</text>
+         y="1803.63645526"
+         x="1921.26491974">Permissions</text>
     </g>
     <g
-       id="g3252"
+       id="g15268"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3254"
-         y="422.958967579"
-         x="469.954408421"
-         width="195.814336842"
+         id="rect15270"
+         y="1646.79850263"
+         x="1882.05543158"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#333333"
-         height="7.83257347368" />
+         height="39.2094881579" />
       <text
-         id="text3256"
-         style="font-size:5.87443010526;font-weight:bold"
+         id="text15272"
+         style="font-size:23.5256928947;font-weight:normal"
          fill="#ffffff"
-         y="429.812469368"
-         x="475.828838526">See the manual for detailed options (man [command]).</text>
+         y="1678.16609316"
+         x="1905.58112447">See the manual for detailed options (man [command]).</text>
     </g>
     <g
-       id="g3258"
+       id="g15274"
        inkscape:groupmode="layer"
        inkscape:label="Logo Layer"
-       transform="translate(620.731447789,432.749684421) scale(0.734303763158,0.734303763158)">
+       transform="translate(2440.79063783,1695.81036283) scale(3.6758895148,3.6758895148)">
       <svg
          inkscape:output_extension="org.inkscape.output.svg.inkscape"
          sodipodi:docname="dialog-password.svg"
          version="1.0"
          inkscape:version="0.45+devel"
          sodipodi:version="0.32"
-         id="svg3260"
+         id="svg15276"
          height="48"
          width="48">
         <defs
-           id="defs3262">
+           id="defs15278">
           <linearGradient
              id="linearGradient7614"
              inkscape:collect="always">
@@ -1928,7 +1928,7 @@ Andreas Nilsson</dc:title>
            borderopacity="0.37647059"
            bordercolor="#666666"
            pagecolor="#ffffff"
-           id="namedview3317">
+           id="namedview15333">
           <inkscape:grid
              empspacing="2"
              spacingy="0.5px"
@@ -1946,10 +1946,10 @@ Andreas Nilsson</dc:title>
              originy="0px"
              originx="0px"
              type="xygrid"
-             id="grid3973" />
+             id="grid17129" />
         </sodipodi:namedview>
         <metadata
-           id="metadata3320">
+           id="metadata15336">
           <rdf:RDF>
             <cc:Work
                rdf:about="">
@@ -1981,7 +1981,7 @@ Andreas Nilsson</dc:title>
           </rdf:RDF>
         </metadata>
         <g
-           id="g3322"
+           id="g15338"
            inkscape:groupmode="layer"
            inkscape:label="Livello 1">
           <path
@@ -2139,62 +2139,62 @@ Andreas Nilsson</dc:title>
     </g>
   </g>
   <g
-     id="g3347"
+     id="g15363"
      inkscape:groupmode="layer"
      inkscape:label="Footer">
     <g
-       id="g3349"
+       id="g15365"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3351"
-         y="430.791541053"
-         x="665.768745263"
-         width="195.814336842"
+         id="rect15367"
+         y="1686.00799079"
+         x="2666.24519474"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#bc1142"
-         height="39.1628673684" />
+         height="196.047440789" />
       <text
-         id="text3353"
-         style="font-size:9.79071684211;font-weight:bold"
+         id="text15369"
+         style="font-size:39.2094881579;font-weight:bold"
          fill="#ffffff"
-         y="455.268333158"
-         x="675.559462105">System and Screen</text>
+         y="1803.63645526"
+         x="2705.45468289">System and Screen</text>
     </g>
     <g
-       id="g3355"
+       id="g15371"
        inkscape:groupmode="layer"
        inkscape:label="Headline Layer">
       <rect
-         id="rect3357"
-         y="422.958967579"
-         x="665.768745263"
-         width="195.814336842"
+         id="rect15373"
+         y="1646.79850263"
+         x="2666.24519474"
+         width="784.189763158"
          style="stroke:none;stoke-width:0;fill:#333333"
-         height="7.83257347368" />
+         height="39.2094881579" />
       <text
-         id="text3359"
-         style="font-size:5.87443010526;font-weight:bold"
+         id="text15375"
+         style="font-size:23.5256928947;font-weight:normal"
          fill="#ffffff"
-         y="429.812469368"
-         x="671.643175368">See the manual for detailed options (man [command]).</text>
+         y="1678.16609316"
+         x="2689.77088763">See the manual for detailed options (man [command]).</text>
     </g>
     <g
-       id="g3361"
+       id="g15377"
        inkscape:groupmode="layer"
        inkscape:label="Logo Layer"
-       transform="translate(816.545784632,432.749684421) scale(0.734303763158,0.734303763158)">
+       transform="translate(3224.98040099,1695.81036283) scale(3.6758895148,3.6758895148)">
       <svg
          version="1.1"
          inkscape:output_extension="org.inkscape.output.svg.inkscape"
          width="48px"
          height="48px"
-         id="svg3363"
+         id="svg15379"
          sodipodi:version="0.32"
          inkscape:version="0.45"
          sodipodi:docbase="/home/dobey/Projects/gnome-icon-theme/scalable/categories"
          sodipodi:docname="preferences-other.svg">
         <defs
-           id="defs3365">
+           id="defs15381">
           <linearGradient
              id="linearGradient6756"
              inkscape:collect="always">
@@ -2303,30 +2303,30 @@ Andreas Nilsson</dc:title>
                style="stop-color:#000000;stop-opacity:0" />
           </linearGradient>
           <linearGradient
-             id="linearGradient3394">
+             id="linearGradient15410">
             <stop
-               id="stop3396"
+               id="stop15412"
                offset="0"
                style="stop-color:black;stop-opacity:0;" />
             <stop
                style="stop-color:black;stop-opacity:1;"
                offset="0.5"
-               id="stop3398" />
+               id="stop15414" />
             <stop
-               id="stop3400"
+               id="stop15416"
                offset="1"
                style="stop-color:black;stop-opacity:0;" />
           </linearGradient>
           <linearGradient
-             id="linearGradient3408">
+             id="linearGradient15424">
             <stop
                style="stop-color:#eaba6f;stop-opacity:1.0000000;"
                offset="0.0000000"
-               id="stop3410" />
+               id="stop15426" />
             <stop
                style="stop-color:#b97a1b;stop-opacity:1.0000000;"
                offset="1.0000000"
-               id="stop3412" />
+               id="stop15428" />
           </linearGradient>
           <linearGradient
              gradientTransform="translate(-40,1)"
@@ -2727,7 +2727,7 @@ Andreas Nilsson</dc:title>
                style="stop-color:#555753;stop-opacity:1" />
           </linearGradient>
           <linearGradient
-             id="linearGradient3483">
+             id="linearGradient15499">
             <stop
                id="stop6793"
                offset="0"
@@ -2968,7 +2968,7 @@ Andreas Nilsson</dc:title>
            showborder="false"
            inkscape:guide-bbox="true"
            showguides="false"
-           id="namedview3514"
+           id="namedview15530"
            pagecolor="#ffffff"
            bordercolor="#e0e0e0"
            borderopacity="1"
@@ -3003,10 +3003,10 @@ Andreas Nilsson</dc:title>
              originy="0px"
              originx="0px"
              type="xygrid"
-             id="grid4148" />
+             id="grid17304" />
         </sodipodi:namedview>
         <metadata
-           id="metadata3517">
+           id="metadata15533">
           <rdf:RDF>
             <cc:Work
                rdf:about="">
@@ -3057,7 +3057,7 @@ Andreas Nilsson</dc:title>
           </rdf:RDF>
         </metadata>
         <g
-           id="g3519"
+           id="g15535"
            inkscape:label="Layer 1"
            inkscape:groupmode="layer">
           <g
@@ -3253,7 +3253,7 @@ Andreas Nilsson</dc:title>
             <path
                style="fill:url(#linearGradient6381);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
                d="M 56.343745,65.709394 C 53.307745,65.709394 50.843745,68.173396 50.843745,71.209394 C 50.843745,74.245394 53.307745,76.709392 56.343745,76.709394 C 59.379745,76.709394 61.843745,74.245396 61.843745,71.209394 C 61.843745,68.173394 59.379745,65.709394 56.343745,65.709394 z M 56.343745,68.709394 C 57.723742,68.709394 58.843744,69.829395 58.843745,71.209394 C 58.843745,72.589392 57.723743,73.709395 56.343745,73.709394 C 54.963748,73.709394 53.843746,72.589392 53.843745,71.209394 C 53.843745,69.829396 54.963748,68.709395 56.343745,68.709394 z "
-               id="path3552" />
+               id="path3002" />
             <path
                sodipodi:type="arc"
                style="fill:none;fill-opacity:1;stroke:url(#linearGradient6383);stroke-width:1.05329549;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3379,55 +3379,55 @@ Andreas Nilsson</dc:title>
     </g>
   </g>
   <g
-     id="g3574"
+     id="g15589"
      inkscape:groupmode="layer"
      inkscape:label="Bottom Side"
-     transform="rotate(90, 372.04724,567.861576842)">
+     transform="rotate(90, 1489.96055,2274.15031316)">
     <g
-       id="g3576"
+       id="g15591"
        inkscape:groupmode="layer"
        inkscape:label="Footer">
       <g
-         id="g3578"
+         id="g15593"
          inkscape:groupmode="layer"
          inkscape:label="Headline Layer">
         <rect
-           id="rect3580"
-           y="626.605877895"
-           x="274.140071579"
-           width="195.814336842"
+           id="rect15595"
+           y="2470.19775395"
+           x="1097.86566842"
+           width="784.189763158"
            style="stroke:none;stoke-width:0;fill:#bc1142"
-           height="39.1628673684" />
+           height="196.047440789" />
         <text
-           id="text3582"
-           style="font-size:9.79071684211;font-weight:bold"
+           id="text15597"
+           style="font-size:39.2094881579;font-weight:bold"
            fill="#ffffff"
-           y="651.08267"
-           x="283.930788421">Directories and Files</text>
+           y="2587.82621842"
+           x="1137.07515658">Directories and Files</text>
       </g>
       <g
-         id="g3584"
+         id="g15599"
          inkscape:groupmode="layer"
          inkscape:label="Headline Layer">
         <rect
-           id="rect3586"
-           y="618.773304421"
-           x="274.140071579"
-           width="195.814336842"
+           id="rect15601"
+           y="2430.98826579"
+           x="1097.86566842"
+           width="784.189763158"
            style="stroke:none;stoke-width:0;fill:#333333"
-           height="7.83257347368" />
+           height="39.2094881579" />
         <text
-           id="text3588"
-           style="font-size:5.87443010526;font-weight:bold"
+           id="text15603"
+           style="font-size:23.5256928947;font-weight:normal"
            fill="#ffffff"
-           y="625.626806211"
-           x="280.014501684">See the manual for detailed options (man [command]).</text>
+           y="2462.35585632"
+           x="1121.39136132">See the manual for detailed options (man [command]).</text>
       </g>
       <g
-         id="g3590"
+         id="g15605"
          inkscape:groupmode="layer"
          inkscape:label="Logo Layer"
-         transform="translate(424.917110947,628.564021263) scale(0.734303763158,0.734303763158)">
+         transform="translate(1656.60087467,2480.00012599) scale(3.6758895148,3.6758895148)">
         <svg
            version="1.1"
            inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -3435,11 +3435,11 @@ Andreas Nilsson</dc:title>
            sodipodi:docbase="/home/dobey/Projects/gnome-icon-theme/scalable/apps"
            inkscape:version="0.45"
            sodipodi:version="0.32"
-           id="svg3592"
+           id="svg15607"
            height="48px"
            width="48px">
           <defs
-             id="defs3594">
+             id="defs15609">
             <linearGradient
                inkscape:collect="always"
                id="linearGradient11955">
@@ -3634,9 +3634,9 @@ Andreas Nilsson</dc:title>
              borderopacity="1.0"
              bordercolor="#666666"
              pagecolor="#ffffff"
-             id="namedview3627" />
+             id="namedview15642" />
           <metadata
-             id="metadata3629">
+             id="metadata15644">
             <rdf:RDF>
               <cc:Work
                  rdf:about="">
@@ -3674,7 +3674,7 @@ Andreas Nilsson</dc:title>
           <g
              inkscape:groupmode="layer"
              inkscape:label="Layer 1"
-             id="g3631">
+             id="g15646">
             <g
                transform="matrix(0.6875,0,0,1.42857,8,-16.99994)"
                style="opacity:0.3"
@@ -3762,74 +3762,1951 @@ Andreas Nilsson</dc:title>
         </svg>
       </g>
     </g>
+    <text
+       id="text15660"
+       style="font-size:29.4071161184"
+       fill="#000000"
+       y="1882.05543158"
+       x="1097.86566842">
+      <tspan
+         id="tspan15662"
+         y="1917.34397092"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15664"
+         style="font-weight:bold;font-style:normal;fill:#000000">cd</tspan>
+      <tspan
+         id="tspan15666"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15668"
+         style="font-weight:normal;font-style:normal;fill:#000000"> &lt;dir&gt; </tspan>
+      <tspan
+         id="tspan15670"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15672"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15674"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15676"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Switch to &lt;dir&gt;</tspan>
+      <tspan
+         id="tspan15678"
+         y="1952.63251026"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15680"
+         style="font-weight:bold;font-style:normal;fill:#000000">cd</tspan>
+      <tspan
+         id="tspan15682"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15684"
+         style="font-weight:normal;font-style:normal;fill:#000000"> .. </tspan>
+      <tspan
+         id="tspan15686"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15688"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15690"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15692"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Switch to parent directory</tspan>
+      <tspan
+         id="tspan15694"
+         y="1987.92104961"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15696"
+         style="font-weight:bold;font-style:normal;fill:#000000">cd</tspan>
+      <tspan
+         id="tspan15698"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15700"
+         style="font-weight:normal;font-style:normal;fill:#000000"> ~ </tspan>
+      <tspan
+         id="tspan15702"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15704"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15706"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15708"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Switch to home directory</tspan>
+      <tspan
+         id="tspan15710"
+         y="2023.20958895"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15712"
+         style="font-weight:bold;font-style:normal;fill:#000000">ls</tspan>
+      <tspan
+         id="tspan15714"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15716"
+         style="font-weight:normal;font-style:normal;fill:#000000" />
+      <tspan
+         id="tspan15718"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15720"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15722"
+         style="font-weight:normal;font-style:normal;fill:#000000"> List files of current directory</tspan>
+      <tspan
+         id="tspan15724"
+         y="2058.49812829"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15726"
+         style="font-weight:bold;font-style:normal;fill:#000000">ls</tspan>
+      <tspan
+         id="tspan15728"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15730"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -a </tspan>
+      <tspan
+         id="tspan15732"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15734"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15736"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15738"
+         style="font-weight:normal;font-style:normal;fill:#000000"> List all files of current directory</tspan>
+      <tspan
+         id="tspan15740"
+         y="2093.78666763"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15742"
+         style="font-weight:bold;font-style:normal;fill:#000000">cp</tspan>
+      <tspan
+         id="tspan15744"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15746"
+         style="font-weight:normal;font-style:normal;fill:#000000"> &lt;file&gt; &lt;dest&gt; </tspan>
+      <tspan
+         id="tspan15748"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15750"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15752"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15754"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Copy &lt;file&gt; to &lt;dest&gt;</tspan>
+      <tspan
+         id="tspan15756"
+         y="2129.07520697"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15758"
+         style="font-weight:bold;font-style:normal;fill:#000000">cp</tspan>
+      <tspan
+         id="tspan15760"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15762"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -r &lt;dir&gt; &lt;dest&gt; </tspan>
+      <tspan
+         id="tspan15764"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15766"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15768"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15770"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Copy a directory</tspan>
+      <tspan
+         id="tspan15772"
+         y="2164.36374632"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15774"
+         style="font-weight:bold;font-style:normal;fill:#000000">mv</tspan>
+      <tspan
+         id="tspan15776"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15778"
+         style="font-weight:normal;font-style:normal;fill:#000000"> &lt;src&gt; &lt;dest&gt; </tspan>
+      <tspan
+         id="tspan15780"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15782"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15784"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15786"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Move/rename file/directory</tspan>
+      <tspan
+         id="tspan15788"
+         y="2199.65228566"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15790"
+         style="font-weight:bold;font-style:normal;fill:#000000">mkdir</tspan>
+      <tspan
+         id="tspan15792"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15794"
+         style="font-weight:normal;font-style:normal;fill:#000000"> &lt;dir&gt; </tspan>
+      <tspan
+         id="tspan15796"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15798"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15800"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15802"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Create new directory &lt;dir&gt;</tspan>
+      <tspan
+         id="tspan15804"
+         y="2234.940825"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15806"
+         style="font-weight:bold;font-style:normal;fill:#000000">rm</tspan>
+      <tspan
+         id="tspan15808"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15810"
+         style="font-weight:normal;font-style:normal;fill:#000000"> &lt;file&gt; </tspan>
+      <tspan
+         id="tspan15812"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15814"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15816"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15818"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Remove &lt;file&gt;</tspan>
+      <tspan
+         id="tspan15820"
+         y="2270.22936434"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15822"
+         style="font-weight:bold;font-style:normal;fill:#000000">rm</tspan>
+      <tspan
+         id="tspan15824"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15826"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -r &lt;dir&gt; </tspan>
+      <tspan
+         id="tspan15828"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15830"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15832"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15834"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Recursively delete a directory</tspan>
+      <tspan
+         id="tspan15836"
+         y="2305.51790368"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15838"
+         style="font-weight:bold;font-style:normal;fill:#000000">ln</tspan>
+      <tspan
+         id="tspan15840"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15842"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -s &lt;file&gt; &lt;link&gt; </tspan>
+      <tspan
+         id="tspan15844"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15846"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15848"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15850"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Create a symbolic link</tspan>
+      <tspan
+         id="tspan15852"
+         y="2340.80644303"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15854"
+         style="font-weight:bold;font-style:normal;fill:#000000">mount</tspan>
+      <tspan
+         id="tspan15856"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15858"
+         style="font-weight:normal;font-style:normal;fill:#000000" />
+      <tspan
+         id="tspan15860"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15862"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15864"
+         style="font-weight:normal;font-style:normal;fill:#000000"> List of mounted devices</tspan>
+      <tspan
+         id="tspan15866"
+         y="2376.09498237"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15868"
+         style="font-weight:bold;font-style:normal;fill:#000000">mount</tspan>
+      <tspan
+         id="tspan15870"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15872"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -t &lt;type&gt; &lt;dev&gt; &lt;path&gt; </tspan>
+      <tspan
+         id="tspan15874"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15876"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15878"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15880"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Mount device</tspan>
+      <tspan
+         id="tspan15882"
+         y="2411.38352171"
+         x="1097.86566842"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15884"
+         style="font-weight:bold;font-style:normal;fill:#000000">mount</tspan>
+      <tspan
+         id="tspan15886"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15888"
+         style="font-weight:normal;font-style:normal;fill:#000000"> -o &lt;loop&gt; &lt;iso&gt; &lt;path&gt; </tspan>
+      <tspan
+         id="tspan15890"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15892"
+         style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+      <tspan
+         id="tspan15894"
+         style="fill:#ffffff">_</tspan>
+      <tspan
+         id="tspan15896"
+         style="font-weight:normal;font-style:normal;fill:#000000"> Mount an iso</tspan>
+    </text>
   </g>
+  <text
+     id="text15898"
+     style="font-size:29.4071161184"
+     fill="#000000"
+     y="1097.86566842"
+     x="313.675905263">
+    <tspan
+       id="tspan15900"
+       y="1133.15420776"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15902"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan15904"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15906"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -p &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15908"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15910"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15912"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15914"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Display details about &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan15916"
+       y="1168.44274711"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15918"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-get</tspan>
+    <tspan
+       id="tspan15920"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15922"
+       style="font-weight:normal;font-style:normal;fill:#000000"> install &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15924"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15926"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15928"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15930"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Install &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan15932"
+       y="1203.73128645"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15934"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan15936"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15938"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -i &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15940"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15942"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15944"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15946"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Install package &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan15948"
+       y="1239.01982579"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15950"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-get</tspan>
+    <tspan
+       id="tspan15952"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15954"
+       style="font-weight:normal;font-style:normal;fill:#000000"> remove &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15956"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15958"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15960"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15962"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Remove &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan15964"
+       y="1274.30836513"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15966"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan15968"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15970"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -r &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15972"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15974"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15976"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15978"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Remove package &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan15980"
+       y="1309.59690447"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15982"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-get</tspan>
+    <tspan
+       id="tspan15984"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15986"
+       style="font-weight:normal;font-style:normal;fill:#000000"> purge &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan15988"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15990"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan15992"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15994"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Remove all incl. config</tspan>
+    <tspan
+       id="tspan15996"
+       y="1344.88544382"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan15998"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16000"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16002"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -P &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan16004"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16006"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16008"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16010"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Remove all incl. config</tspan>
+    <tspan
+       id="tspan16012"
+       y="1380.17398316"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16014"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-get</tspan>
+    <tspan
+       id="tspan16016"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16018"
+       style="font-weight:normal;font-style:normal;fill:#000000"> update </tspan>
+    <tspan
+       id="tspan16020"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16022"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16024"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16026"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Update repository information</tspan>
+    <tspan
+       id="tspan16028"
+       y="1415.4625225"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16030"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-get</tspan>
+    <tspan
+       id="tspan16032"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16034"
+       style="font-weight:normal;font-style:normal;fill:#000000"> upgrade </tspan>
+    <tspan
+       id="tspan16036"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16038"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16040"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16042"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Upgrade the system</tspan>
+    <tspan
+       id="tspan16044"
+       y="1450.75106184"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16046"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16048"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16050"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -i &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan16052"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16054"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16056"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16058"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Upgrade package &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan16060"
+       y="1486.03960118"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16062"
+       style="font-weight:bold;font-style:normal;fill:#000000">apt-cache</tspan>
+    <tspan
+       id="tspan16064"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16066"
+       style="font-weight:normal;font-style:normal;fill:#000000"> search &lt;s&gt; </tspan>
+    <tspan
+       id="tspan16068"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16070"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16072"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16074"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Search in packages</tspan>
+    <tspan
+       id="tspan16076"
+       y="1521.32814053"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16078"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16080"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16082"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -s &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan16084"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16086"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16088"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16090"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Status of &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan16092"
+       y="1556.61667987"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16094"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16096"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16098"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -l </tspan>
+    <tspan
+       id="tspan16100"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16102"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16104"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16106"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List installed packages</tspan>
+    <tspan
+       id="tspan16108"
+       y="1591.90521921"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16110"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16112"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16114"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -L &lt;pkg&gt; </tspan>
+    <tspan
+       id="tspan16116"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16118"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16120"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16122"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List files provided by &lt;pkg&gt;</tspan>
+    <tspan
+       id="tspan16124"
+       y="1627.19375855"
+       x="313.675905263"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16126"
+       style="font-weight:bold;font-style:normal;fill:#000000">dpkg</tspan>
+    <tspan
+       id="tspan16128"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16130"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -S &lt;file&gt; </tspan>
+    <tspan
+       id="tspan16132"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16134"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16136"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16138"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Package owning the file</tspan>
+  </text>
+  <text
+     id="text16140"
+     style="font-size:29.4071161184"
+     fill="#000000"
+     y="1097.86566842"
+     x="1097.86566842">
+    <tspan
+       id="tspan16142"
+       y="1133.15420776"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16144"
+       style="font-weight:bold;font-style:normal;fill:#000000">ping</tspan>
+    <tspan
+       id="tspan16146"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16148"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;host&gt; </tspan>
+    <tspan
+       id="tspan16150"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16152"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16154"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16156"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Send ping to &lt;host&gt;</tspan>
+    <tspan
+       id="tspan16158"
+       y="1168.44274711"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16160"
+       style="font-weight:bold;font-style:normal;fill:#000000">ifconfig</tspan>
+    <tspan
+       id="tspan16162"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16164"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16166"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16168"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16170"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Show network information</tspan>
+    <tspan
+       id="tspan16172"
+       y="1203.73128645"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16174"
+       style="font-weight:bold;font-style:normal;fill:#000000">iwconfig</tspan>
+    <tspan
+       id="tspan16176"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16178"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16180"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16182"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16184"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Show wireless information</tspan>
+    <tspan
+       id="tspan16186"
+       y="1239.01982579"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16188"
+       style="font-weight:bold;font-style:normal;fill:#000000">iwlist</tspan>
+    <tspan
+       id="tspan16190"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16192"
+       style="font-weight:normal;font-style:normal;fill:#000000"> scan </tspan>
+    <tspan
+       id="tspan16194"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16196"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16198"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16200"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Find wireless networks</tspan>
+    <tspan
+       id="tspan16202"
+       y="1274.30836513"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16204"
+       style="font-weight:bold;font-style:normal;fill:#000000">ip</tspan>
+    <tspan
+       id="tspan16206"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16208"
+       style="font-weight:normal;font-style:normal;fill:#000000"> link show </tspan>
+    <tspan
+       id="tspan16210"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16212"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16214"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16216"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List network interfaces</tspan>
+    <tspan
+       id="tspan16218"
+       y="1309.59690447"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16220"
+       style="font-weight:bold;font-style:normal;fill:#000000">ip</tspan>
+    <tspan
+       id="tspan16222"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16224"
+       style="font-weight:normal;font-style:normal;fill:#000000"> link set dev &lt;d&gt; up </tspan>
+    <tspan
+       id="tspan16226"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16228"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16230"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16232"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Bring interface &lt;d&gt; up</tspan>
+    <tspan
+       id="tspan16234"
+       y="1344.88544382"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16236"
+       style="font-weight:bold;font-style:normal;fill:#000000">ip</tspan>
+    <tspan
+       id="tspan16238"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16240"
+       style="font-weight:normal;font-style:normal;fill:#000000"> list addr </tspan>
+    <tspan
+       id="tspan16242"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16244"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16246"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16248"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List addresses for interfaces</tspan>
+    <tspan
+       id="tspan16250"
+       y="1380.17398316"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16252"
+       style="font-weight:bold;font-style:normal;fill:#000000">ip</tspan>
+    <tspan
+       id="tspan16254"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16256"
+       style="font-weight:normal;font-style:normal;fill:#000000"> route show </tspan>
+    <tspan
+       id="tspan16258"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16260"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16262"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16264"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List routing table</tspan>
+    <tspan
+       id="tspan16266"
+       y="1415.4625225"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16268"
+       style="font-weight:bold;font-style:normal;fill:#000000">ss</tspan>
+    <tspan
+       id="tspan16270"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16272"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -tupl </tspan>
+    <tspan
+       id="tspan16274"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16276"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16278"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16280"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List internet services on a system</tspan>
+    <tspan
+       id="tspan16282"
+       y="1450.75106184"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16284"
+       style="font-weight:bold;font-style:normal;fill:#000000">ss</tspan>
+    <tspan
+       id="tspan16286"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16288"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -tup </tspan>
+    <tspan
+       id="tspan16290"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16292"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16294"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16296"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List active connections to/from system</tspan>
+    <tspan
+       id="tspan16298"
+       y="1486.03960118"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16300"
+       style="font-weight:bold;font-style:normal;fill:#000000">hostname</tspan>
+    <tspan
+       id="tspan16302"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16304"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16306"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16308"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16310"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Display the hostname</tspan>
+    <tspan
+       id="tspan16312"
+       y="1521.32814053"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16314"
+       style="font-weight:bold;font-style:normal;fill:#000000">hostname</tspan>
+    <tspan
+       id="tspan16316"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16318"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -i </tspan>
+    <tspan
+       id="tspan16320"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16322"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16324"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16326"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Lookup local ip address</tspan>
+    <tspan
+       id="tspan16328"
+       y="1556.61667987"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16330"
+       style="font-weight:bold;font-style:normal;fill:#000000">host</tspan>
+    <tspan
+       id="tspan16332"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16334"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;host&gt; </tspan>
+    <tspan
+       id="tspan16336"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16338"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16340"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16342"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Lookup DNS ip address for name</tspan>
+    <tspan
+       id="tspan16344"
+       y="1591.90521921"
+       x="1097.86566842"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16346"
+       style="font-weight:bold;font-style:normal;fill:#000000">whois</tspan>
+    <tspan
+       id="tspan16348"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16350"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;host&gt; </tspan>
+    <tspan
+       id="tspan16352"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16354"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16356"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16358"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Lookup whois info for hostname</tspan>
+  </text>
+  <text
+     id="text16360"
+     style="font-size:29.4071161184"
+     fill="#000000"
+     y="1097.86566842"
+     x="1882.05543158">
+    <tspan
+       id="tspan16362"
+       y="1133.15420776"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16364"
+       style="font-weight:bold;font-style:normal;fill:#000000">sudo</tspan>
+    <tspan
+       id="tspan16366"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16368"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;command&gt; </tspan>
+    <tspan
+       id="tspan16370"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16372"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16374"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16376"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Run &lt;command&gt; as root</tspan>
+    <tspan
+       id="tspan16378"
+       y="1168.44274711"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16380"
+       style="font-weight:bold;font-style:normal;fill:#000000">sudo</tspan>
+    <tspan
+       id="tspan16382"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16384"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -k </tspan>
+    <tspan
+       id="tspan16386"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16388"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16390"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16392"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Forget sudo password</tspan>
+    <tspan
+       id="tspan16394"
+       y="1203.73128645"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16396"
+       style="font-weight:bold;font-style:normal;fill:#000000">su</tspan>
+    <tspan
+       id="tspan16398"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16400"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16402"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16404"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16406"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Login as root</tspan>
+    <tspan
+       id="tspan16408"
+       y="1239.01982579"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16410"
+       style="font-weight:bold;font-style:normal;fill:#000000">su</tspan>
+    <tspan
+       id="tspan16412"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16414"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;user&gt; </tspan>
+    <tspan
+       id="tspan16416"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16418"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16420"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16422"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Login as &lt;user&gt;</tspan>
+    <tspan
+       id="tspan16424"
+       y="1274.30836513"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16426"
+       style="font-weight:bold;font-style:normal;fill:#000000">sudo</tspan>
+    <tspan
+       id="tspan16428"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16430"
+       style="font-weight:normal;font-style:normal;fill:#000000"> visudo </tspan>
+    <tspan
+       id="tspan16432"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16434"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16436"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16438"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Edit </tspan>
+    <tspan
+       id="tspan16440"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16442"
+       style="font-weight:normal;font-style:italic;fill:#000000">/etc/sudoers</tspan>
+    <tspan
+       id="tspan16444"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16446"
+       style="font-weight:normal;font-style:normal;fill:#000000"> file</tspan>
+    <tspan
+       id="tspan16448"
+       y="1309.59690447"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16450"
+       style="font-weight:bold;font-style:normal;fill:#000000">passwd</tspan>
+    <tspan
+       id="tspan16452"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16454"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16456"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16458"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16460"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Change password of current user</tspan>
+    <tspan
+       id="tspan16462"
+       y="1344.88544382"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16464"
+       style="font-weight:bold;font-style:normal;fill:#000000">passwd</tspan>
+    <tspan
+       id="tspan16466"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16468"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;user&gt; </tspan>
+    <tspan
+       id="tspan16470"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16472"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16476"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Change password of &lt;user&gt;</tspan>
+    <tspan
+       id="tspan16478"
+       y="1380.17398316"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16480"
+       style="font-weight:bold;font-style:normal;fill:#000000">chown</tspan>
+    <tspan
+       id="tspan16482"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16484"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;user&gt;:&lt;group&gt; </tspan>
+    <tspan
+       id="tspan16486"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16488"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16490"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16492"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Change ownership</tspan>
+    <tspan
+       id="tspan16494"
+       y="1415.4625225"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16496"
+       style="font-weight:bold;font-style:normal;fill:#000000">chmod</tspan>
+    <tspan
+       id="tspan16498"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16500"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;mode&gt; </tspan>
+    <tspan
+       id="tspan16502"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16504"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16506"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16508"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Change file permissions </tspan>
+    <tspan
+       id="tspan16510"
+       y="1450.75106184"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16512"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16514"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16516"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">-&gt;</tspan>
+    <tspan
+       id="tspan16518"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16520"
+       style="font-weight:normal;font-style:normal;fill:#000000">  4(read) 2(write) 1(execute)</tspan>
+    <tspan
+       id="tspan16522"
+       y="1486.03960118"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16524"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16526"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16528"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">-&gt;</tspan>
+    <tspan
+       id="tspan16530"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16532"
+       style="font-weight:normal;font-style:normal;fill:#000000"> i.e. </tspan>
+    <tspan
+       id="tspan16534"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16536"
+       style="font-weight:bold;font-style:normal;fill:#000000">755</tspan>
+    <tspan
+       id="tspan16538"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16540"
+       style="font-weight:normal;font-style:normal;fill:#000000"> rwe for owner, rx for group and users</tspan>
+    <tspan
+       id="tspan16542"
+       y="1521.32814053"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16544"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16546"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16548"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">-&gt;</tspan>
+    <tspan
+       id="tspan16550"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16552"
+       style="font-weight:normal;font-style:normal;fill:#000000"> i.e. </tspan>
+    <tspan
+       id="tspan16554"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16556"
+       style="font-weight:bold;font-style:normal;fill:#000000">644</tspan>
+    <tspan
+       id="tspan16558"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16560"
+       style="font-weight:normal;font-style:normal;fill:#000000"> rw for owner, r for group and users</tspan>
+    <tspan
+       id="tspan16562"
+       y="1556.61667987"
+       x="1882.05543158"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16564"
+       style="font-weight:bold;font-style:normal;fill:#000000">ls</tspan>
+    <tspan
+       id="tspan16566"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16568"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -lh &lt;dir&gt; </tspan>
+    <tspan
+       id="tspan16570"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16572"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16574"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16576"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Shows permissions of files in &lt;dir&gt;</tspan>
+  </text>
+  <text
+     id="text16578"
+     style="font-size:29.4071161184"
+     fill="#000000"
+     y="1097.86566842"
+     x="2666.24519474">
+    <tspan
+       id="tspan16580"
+       y="1133.15420776"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16582"
+       style="font-weight:bold;font-style:normal;fill:#000000">uname</tspan>
+    <tspan
+       id="tspan16584"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16586"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -r </tspan>
+    <tspan
+       id="tspan16588"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16590"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16592"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16594"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Kernel version</tspan>
+    <tspan
+       id="tspan16596"
+       y="1168.44274711"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16598"
+       style="font-weight:bold;font-style:normal;fill:#000000">uname</tspan>
+    <tspan
+       id="tspan16600"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16602"
+       style="font-weight:normal;font-style:normal;fill:#000000"> -a </tspan>
+    <tspan
+       id="tspan16604"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16606"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16608"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16610"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Information about kernel version</tspan>
+    <tspan
+       id="tspan16612"
+       y="1203.73128645"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16614"
+       style="font-weight:bold;font-style:normal;fill:#000000">df</tspan>
+    <tspan
+       id="tspan16616"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16618"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16620"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16622"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16624"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Show disk usage</tspan>
+    <tspan
+       id="tspan16626"
+       y="1239.01982579"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16628"
+       style="font-weight:bold;font-style:normal;fill:#000000">lsusb</tspan>
+    <tspan
+       id="tspan16630"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16632"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16634"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16636"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16638"
+       style="font-weight:normal;font-style:normal;fill:#000000"> List of connected usb devices</tspan>
+    <tspan
+       id="tspan16640"
+       y="1274.30836513"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16642"
+       style="font-weight:bold;font-style:normal;fill:#000000">dmesg</tspan>
+    <tspan
+       id="tspan16644"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16646"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16648"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16650"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16652"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Kernel ringbuffer output</tspan>
+    <tspan
+       id="tspan16654"
+       y="1309.59690447"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16656"
+       style="font-weight:bold;font-style:normal;fill:#000000">top</tspan>
+    <tspan
+       id="tspan16658"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16660"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16662"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16664"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16666"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Show running processes</tspan>
+    <tspan
+       id="tspan16668"
+       y="1344.88544382"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16670"
+       style="font-weight:bold;font-style:normal;fill:#000000">procinfo</tspan>
+    <tspan
+       id="tspan16672"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16674"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16676"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16678"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16680"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Show info about the system</tspan>
+    <tspan
+       id="tspan16682"
+       y="1380.17398316"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16684"
+       style="font-weight:bold;font-style:normal;fill:#000000">Ctrl+Alt+Fnd</tspan>
+    <tspan
+       id="tspan16686"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16688"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16690"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16692"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16694"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Switch to tty n</tspan>
+    <tspan
+       id="tspan16696"
+       y="1415.4625225"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16698"
+       style="font-weight:bold;font-style:normal;fill:#000000">Ctrl+Alt+F7</tspan>
+    <tspan
+       id="tspan16700"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16702"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16704"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16706"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16708"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Switch to the X Session</tspan>
+    <tspan
+       id="tspan16710"
+       y="1450.75106184"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16712"
+       style="font-weight:bold;font-style:normal;fill:#000000">service</tspan>
+    <tspan
+       id="tspan16714"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16716"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;daemon&gt; start </tspan>
+    <tspan
+       id="tspan16718"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16720"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16722"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16724"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Start the daemon</tspan>
+    <tspan
+       id="tspan16726"
+       y="1486.03960118"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16728"
+       style="font-weight:bold;font-style:normal;fill:#000000">service</tspan>
+    <tspan
+       id="tspan16730"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16732"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;daemon&gt; stop </tspan>
+    <tspan
+       id="tspan16734"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16736"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16738"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16740"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Stop the daemon</tspan>
+    <tspan
+       id="tspan16742"
+       y="1521.32814053"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16744"
+       style="font-weight:bold;font-style:normal;fill:#000000">service</tspan>
+    <tspan
+       id="tspan16746"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16748"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;daemon&gt; restart </tspan>
+    <tspan
+       id="tspan16750"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16752"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16754"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16756"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Restart the daemon</tspan>
+    <tspan
+       id="tspan16758"
+       y="1556.61667987"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16760"
+       style="font-weight:bold;font-style:normal;fill:#000000">service</tspan>
+    <tspan
+       id="tspan16762"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16764"
+       style="font-weight:normal;font-style:normal;fill:#000000"> &lt;daemon&gt; status </tspan>
+    <tspan
+       id="tspan16766"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16768"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16770"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16772"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Status of daemon</tspan>
+    <tspan
+       id="tspan16774"
+       y="1591.90521921"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16776"
+       style="font-weight:bold;font-style:normal;fill:#000000">halt</tspan>
+    <tspan
+       id="tspan16778"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16780"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16782"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16784"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16786"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Shutdown the system</tspan>
+    <tspan
+       id="tspan16788"
+       y="1627.19375855"
+       x="2666.24519474"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16790"
+       style="font-weight:bold;font-style:normal;fill:#000000">restart</tspan>
+    <tspan
+       id="tspan16792"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16794"
+       style="font-weight:normal;font-style:normal;fill:#000000" />
+    <tspan
+       id="tspan16796"
+       style="font-weight:bold;font-style:normal;fill:#bc1142">&gt;</tspan>
+    <tspan
+       id="tspan16798"
+       style="fill:#ffffff">_</tspan>
+    <tspan
+       id="tspan16800"
+       style="font-weight:normal;font-style:normal;fill:#000000"> Restart the system</tspan>
+  </text>
   <g
-     id="g3645"
+     id="g16802"
      inkscape:groupmode="layer"
      inkscape:label="Logo Layer"
-     transform="translate(505.853703509,97.9071684211) scale(0.21757148538,0.21757148538)">
+     transform="translate(2025.82355482,392.094881579) scale(0.871321959064,0.871321959064)">
     <svg
-       id="svg3647"
+       id="svg16804"
        height="720"
        width="570"
        version="1.1">
       <path
-         id="path3649"
+         id="path16806"
          style="fill:#000000"
          d="m 158.375,1.65625 c -3.6193,0.1123192 -7.51715,1.4493266 -11.9375,4.9375 C 135.61054,2.4174496 125.11041,0.9665612 115.71875,9.46875 101.22489,7.5879922 96.508461,11.469494 92.9375,16 89.754953,15.934135 69.118652,12.72793 59.65625,26.84375 35.874602,24.030329 28.359472,40.831625 36.875,56.5 c -4.856911,7.518955 -9.889503,14.947226 1.46875,29.28125 -4.018006,7.983514 -1.527431,16.64403 7.9375,27.125 -2.497857,11.2226 2.412077,19.14086 11.21875,25.3125 -1.64709,15.35756 14.083505,24.28743 18.78125,27.46875 1.803677,8.94868 5.56291,17.3927 23.53125,22.0625 2.96323,13.3361 13.76206,15.63906 24.21875,18.4375 -34.561929,20.08954 -64.20067,46.52266 -64,111.375 l -5.0625,9.03125 C 15.337882,350.69604 -20.316547,428.16001 35.4375,491.125 c 3.641871,19.70838 9.749589,33.86396 15.1875,49.53125 8.133834,63.13058 61.21763,92.69161 75.21875,96.1875 20.51653,15.62812 42.36818,30.45672 71.9375,40.84375 27.87515,28.74946 58.07388,39.7064 88.4375,39.6875 0.44515,-2.8e-4 0.89853,0.005 1.34375,0 30.36363,0.0189 60.56235,-10.93804 88.4375,-39.6875 29.56932,-10.38703 51.42097,-25.21563 71.9375,-40.84375 14.00112,-3.49589 67.08492,-33.05692 75.21875,-96.1875 5.43791,-15.66729 11.54562,-29.82287 15.1875,-49.53125 55.75404,-62.96499 20.09961,-140.42896 -19.53125,-164.53125 L 513.75,317.5625 c 0.20067,-64.85234 -29.43807,-91.28546 -64,-111.375 10.45669,-2.79844 21.25552,-5.1014 24.21875,-18.4375 17.96834,-4.6698 21.72758,-13.11382 23.53125,-22.0625 4.69775,-3.18132 20.42834,-12.11119 18.78125,-27.46875 8.80668,-6.17164 13.71661,-14.0899 11.21875,-25.3125 9.46494,-10.48097 11.9555,-19.141487 7.9375,-27.125 C 546.79575,71.447226 541.76316,64.018955 536.90625,56.5 545.42178,40.831625 537.90665,24.030329 514.125,26.84375 504.6626,12.72793 484.0263,15.934135 480.84375,16 477.27279,11.469494 472.55636,7.587992 458.0625,9.46875 448.67084,0.96656132 438.17071,2.41745 427.34375,6.59375 414.48455,-3.5536631 405.97149,4.580454 396.25,7.65625 380.67615,2.568472 377.11698,9.5371578 369.46875,12.375 352.4935,8.7869238 347.33315,16.598532 339.1875,24.84375 l -9.46875,-0.1875 c -25.61054,15.093115 -38.33378,45.825501 -42.84375,61.625 -4.51206,-15.801979 -17.20647,-46.534542 -42.8125,-61.625 l -9.46875,0.1875 C 226.4481,16.598532 221.28775,8.7869235 204.3125,12.375 196.66427,9.5371583 193.1051,2.5684729 177.53125,7.65625 c -6.37973,-2.0184911 -12.24667,-6.2144276 -19.15625,-6 z" />
       <path
-         id="path3652"
+         id="path16808"
          style="fill:#75a928"
          d="m 107.39184,68.055583 c 67.94767,35.031357 107.44689,63.368967 129.08717,87.504467 -11.08235,44.41759 -68.89638,46.44464 -90.03559,45.19858 4.32842,-2.01474 7.93988,-4.42778 9.22051,-8.13574 -5.30449,-3.76981 -24.11289,-0.39719 -37.24363,-7.77416 5.04407,-1.04499 7.40348,-2.06302 9.76289,-5.78542 -12.40571,-3.9567 -25.76862,-7.36642 -33.627746,-13.92116 4.241253,0.0524 8.201156,0.9488 13.740366,-2.89271 -11.111694,-5.98819 -22.969108,-10.73351 -32.18139,-19.88738 5.745213,-0.14063 11.939452,-0.0568 13.740371,-2.16953 -10.17044,-6.30068 -18.751242,-13.30787 -25.853592,-20.97215 8.039979,0.97052 11.435284,0.13478 13.378782,-1.26556 -7.687795,-7.87419 -17.417559,-14.52319 -22.056911,-24.22644 5.969606,2.057484 11.431249,2.84506 15.36752,-0.180795 -2.612365,-5.893453 -13.805413,-9.369618 -20.248967,-23.141676 6.284359,0.609377 12.949606,1.371108 14.282753,0 C 61.802068,58.517346 56.796919,51.835885 51.887978,44.913906 65.338021,44.714177 85.715734,44.966253 84.792549,43.82914 l -8.31654,-8.497335 c 13.137617,-3.537241 26.580651,0.568164 36.339661,3.615887 4.38186,-3.457681 -0.0776,-7.82998 -5.42383,-12.294015 11.16496,1.490646 21.25382,4.057389 30.37345,7.593362 4.87238,-4.399329 -3.16389,-8.798658 -7.05098,-13.197987 17.24936,3.272568 24.55716,7.87068 31.81981,12.47481 5.26935,-5.050799 0.30166,-9.343299 -3.2543,-13.740371 13.00566,4.817048 19.70478,11.035551 26.75756,17.175463 2.39119,-3.227053 6.07494,-5.592408 1.62715,-13.378781 9.23416,5.322725 16.18926,11.59506 21.33374,18.621817 5.71336,-3.637941 3.40387,-8.613023 3.43509,-13.197987 9.59665,7.806516 15.68687,16.11395 23.14168,24.226443 1.50169,-1.093437 2.81661,-4.80171 3.97747,-10.666867 22.89539,22.211815 55.24591,78.158241 8.31654,100.340861 C 207.95028,109.95728 160.25292,86.016909 107.39184,68.055583 z" />
       <path
-         id="path3654"
+         id="path16810"
          style="fill:#75a928"
          d="M 467.92487,68.055583 C 399.9772,103.08694 360.47798,131.42455 338.8377,155.56005 c 11.08235,44.41759 68.89638,46.44464 90.03559,45.19858 -4.32842,-2.01474 -7.93988,-4.42778 -9.22051,-8.13574 5.30449,-3.76981 24.11289,-0.39719 37.24363,-7.77416 -5.04407,-1.04499 -7.40348,-2.06302 -9.76289,-5.78542 12.40571,-3.9567 25.76862,-7.36642 33.62775,-13.92116 -4.24126,0.0524 -8.20116,0.9488 -13.74037,-2.89271 11.11169,-5.98819 22.96911,-10.73351 32.18139,-19.88738 -5.74521,-0.14063 -11.93945,-0.0568 -13.74037,-2.16953 10.17044,-6.30068 18.75124,-13.30787 25.85359,-20.97215 -8.03998,0.97052 -11.43528,0.13478 -13.37878,-1.26556 7.68779,-7.87419 17.41756,-14.52319 22.05691,-24.22644 -5.96961,2.057484 -11.43125,2.84506 -15.36752,-0.180795 2.61237,-5.893453 13.80541,-9.369618 20.24897,-23.141676 -6.28436,0.609377 -12.94961,1.371108 -14.28276,0 2.92231,-11.888563 7.92746,-18.570024 12.8364,-25.492003 -13.45004,-0.199729 -33.82775,0.05235 -32.90457,-1.084766 l 8.31654,-8.497335 c -13.13762,-3.537241 -26.58065,0.568164 -36.33966,3.615887 -4.38186,-3.457681 0.0776,-7.82998 5.42383,-12.294015 -11.16496,1.490646 -21.25382,4.057389 -30.37345,7.593362 -4.87238,-4.399329 3.16389,-8.798658 7.05098,-13.197987 -17.24936,3.272568 -24.55716,7.87068 -31.81981,12.47481 -5.26935,-5.050799 -0.30166,-9.343299 3.2543,-13.740371 -13.00566,4.817048 -19.70478,11.035551 -26.75756,17.175463 -2.39119,-3.227053 -6.07494,-5.592408 -1.62715,-13.378781 -9.23416,5.322725 -16.18926,11.59506 -21.33374,18.621817 -5.71336,-3.637941 -3.40387,-8.613023 -3.43509,-13.197987 -9.59665,7.806516 -15.68687,16.11395 -23.14168,24.226443 -1.50169,-1.093437 -2.81661,-4.80171 -3.97747,-10.666867 -22.89539,22.211815 -55.24591,78.158241 -8.31654,100.340861 39.91877,-32.94716 87.61613,-56.887531 140.47721,-74.848857 z" />
       <path
-         id="path3656"
+         id="path16812"
          style="fill:#bc1142"
          transform="matrix(1.131107,0,0,1.1280497,-43.139135,-68.310983)"
          d="m 365.2046,521.84937 a 71.956154,66.532318 0 1 1 -143.91231,0 71.956154,66.532318 0 1 1 143.91231,0 z" />
       <path
-         id="path3658"
+         id="path16814"
          style="fill:#bc1142"
          transform="matrix(0.76741684,-1.1613112,2.171115,1.4224368,-560.88858,217.68859)"
          d="m 262.84091,276.64774 a 61.875,28.125 0 1 1 -123.75,0 61.875,28.125 0 1 1 123.75,0 z" />
       <path
-         id="path3660"
+         id="path16816"
          style="fill:#bc1142"
          transform="matrix(-0.76741684,-1.1613112,-2.171115,1.4224368,1134.8288,213.68859)"
          d="m 262.84091,276.64774 a 61.875,28.125 0 1 1 -123.75,0 61.875,28.125 0 1 1 123.75,0 z" />
       <path
-         id="path3662"
+         id="path16818"
          style="fill:#bc1142"
          d="M 72.910253,342.0878 C 109.32447,332.33088 85.201845,492.72431 55.576871,479.56357 22.990103,453.35089 12.493801,376.58814 72.910253,342.0878 z" />
       <path
-         id="path3664"
+         id="path16820"
          style="fill:#bc1142"
          d="m 493.67828,340.0878 c -36.41422,-9.75692 -12.2916,150.63651 17.33338,137.47577 32.58677,-26.21268 43.08307,-102.97543 -17.33338,-137.47577 z" />
       <path
-         id="path3666"
+         id="path16822"
          style="fill:#bc1142"
          d="m 369.97158,220.6534 c 62.83486,-10.61013 115.11594,26.72229 113.01138,94.85796 -2.06693,26.12112 -136.15872,-90.96907 -113.01138,-94.85796 z" />
       <path
-         id="path3668"
+         id="path16824"
          style="fill:#bc1142"
          d="M 196.35975,218.6534 C 133.52489,208.04327 81.24381,245.37569 83.34837,313.51136 85.4153,339.63248 219.50709,222.54229 196.35975,218.6534 z" />
       <path
-         id="path3670"
+         id="path16826"
          style="fill:#bc1142"
          d="m 286.61932,202.75568 c -37.50259,-0.97548 -73.49548,27.83418 -73.58158,44.54443 -0.10462,20.30426 29.6512,41.09266 73.83726,41.62035 45.12305,0.32321 73.91561,-16.64049 74.0611,-37.59409 0.16484,-23.73996 -41.03879,-48.93744 -74.31678,-48.57069 z" />
       <path
-         id="path3672"
+         id="path16828"
          style="fill:#bc1142"
          d="m 288.90937,619.11675 c 32.69744,-1.42711 76.57083,10.53196 76.6568,26.39598 0.5427,15.4052 -39.78969,50.21055 -78.82634,49.53765 -40.42729,1.74391 -80.06908,-33.11559 -79.54951,-45.19859 -0.60506,-17.71593 49.226,-31.54796 81.71905,-30.73504 z" />
       <path
-         id="path3674"
+         id="path16830"
          style="fill:#bc1142"
          d="m 168.13874,525.10369 c 23.2791,28.04573 33.89066,77.31899 14.46355,91.84353 -18.37917,11.08784 -63.01228,6.52162 -94.736237,-39.05157 -21.395052,-38.24168 -18.637584,-77.15663 -3.615887,-88.58924 22.464424,-13.68429 57.173424,4.79902 83.888574,35.79728 z" />
       <path
-         id="path3676"
+         id="path16832"
          style="fill:#bc1142"
          d="m 405.0209,516.21177 c -25.18682,29.50165 -39.21227,83.30951 -20.83785,100.6428 17.56828,13.46361 64.7292,11.58162 99.56566,-36.75574 25.29599,-32.46471 16.82013,-86.68225 2.37077,-101.07511 -21.46408,-16.60213 -52.27691,4.64489 -81.09858,37.18805 z" />
     </svg>
