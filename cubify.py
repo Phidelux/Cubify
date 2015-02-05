@@ -176,8 +176,8 @@ class Cubify(inkex.Effect):
         svg = self.document.getroot()
 
         # ... as well as the image width and height.
-        width  = inkex.unittouu(svg.get('width'))
-        height = inkex.unittouu(svg.get('height'))
+        width  = inkex.Effect.unittouu(svg.get('width'))
+        height = inkex.Effect.unittouu(svg.get('height'))
 
         # Fetch the extention parameters.
         self.logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
@@ -412,8 +412,8 @@ class Cubify(inkex.Effect):
         with codecs.open(path, encoding="utf-8") as f:
             doc = etree.parse(f).getroot()
 
-            imgWidth = inkex.unittouu(doc.get('width'))
-            imgHeight = inkex.unittouu(doc.get('height'))
+            imgWidth = inkex.Effect.unittouu(doc.get('width'))
+            imgHeight = inkex.Effect.unittouu(doc.get('height'))
 
             sx = (width - padding) / imgWidth
             sy = (height - padding) / imgHeight
