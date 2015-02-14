@@ -10,20 +10,18 @@
   <dependency type="executable" location="extensions">simplestyle.py</dependency>
 
   <!-- Definition of dialog interface -->
-  <param name="colorsHead" type="description">General theme settings of your Cheat Cube</param>
-
-  <param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
-  <param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
-  <param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
-  <param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">75a928</param>
-  <param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">bc1142</param>
-  <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-  <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
-
-  <param name="logoPath" type="string" _gui-text="Logo path: "></param>
-  <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
-
   <param name="cubify_config" type="notebook">
+    <page name="cubify_general_settings" _gui-text="General Settings">
+      <param name="textColor" type="string" _gui-text="Text color (RRGGBB hex): ">000000</param>
+      <param name="mainBgColor" type="string" _gui-text="Main Background (RRGGBB hex): ">ffffff</param>
+      <param name="borderColor" type="string" _gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
+      <param name="titleColor" type="string" _gui-text="Title Color (RRGGBB hex): ">75a928</param>
+      <param name="titleBgColor" type="string" _gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+      <param name="hintColor" type="string" _gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
+      <param name="hintBgColor" type="string" _gui-text="Hint Background (RRGGBB hex): ">000000</param>
+      <param name="logoPath" type="string" _gui-text="Logo path: "></param>
+      <param name="logoBgColor" type="string" _gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
+    </page>
     <page name="cubify_side_i" _gui-text="Cube Side I">
       <param name="sideOneText" type="string" _gui-text="Subhead text: ">Package Management</param>
       <param name="sideOneHint" type="string" _gui-text="Subhead hint: ">See the manual for detailed options (man [command]).</param>
