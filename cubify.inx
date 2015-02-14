@@ -9,6 +9,9 @@
   <dependency type="executable" location="extensions">inkex.py</dependency>
   <dependency type="executable" location="extensions">simplestyle.py</dependency>
 
+  <!-- Some general hints regarding the image types and bbcode capabilities. -->
+  <param name="cubifyHints" type="description">Only accepted image type is SVG. Use [b][/b] for bold, [i][/i] for italic and [color=000000][/color] for colored text. The hex code must not be specified with a hashtag (#).</param>
+
   <!-- Definition of dialog interface -->
   <param name="cubify_config" type="notebook">
     <page name="cubify_general_settings" _gui-text="General Settings">
