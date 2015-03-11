@@ -19,7 +19,8 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 ## Examples and Screenshots
 
 ![](./cubify-dialog.png)
-![](./cheat-cube.png)
+![](./examples/cheat-cube.png)
+![](./examples/kano-cube.png)
 
 ## ToDos
 
