@@ -30,12 +30,5 @@ If you now start Inkscape, you should see a new entry in the `Extentions -> Pyth
 
 ## ToDos
 
-- [x] Select cube width and height based on parent object
 - [ ] Use selected object instead of whole document
 - [ ] Add controls for the font-size, -color and -weight
-- [x] Embedd images directly instead of referencing them
-- [ ] Implement vectorization of common image types
-- [x] Rotate buttom of the cube 90 degrees clockwise
-- [x] Wrap the different subparts in groups
-- [x] Add description of bbcode capabilities
-- [x] Add hint that plugin just accepts svg files
