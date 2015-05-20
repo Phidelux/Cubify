@@ -7,7 +7,7 @@ from lxml import etree
 reload(sys)
 sys.setdefaultencoding('utf_8')
 
-sys.path.append('/usr/share/inkscape/exetnsions')
+sys.path.append('/usr/share/inkscape/extensions')
 import inkex
 from simplestyle import *
 from copy import deepcopy
@@ -45,25 +45,25 @@ class Cubify(inkex.Effect):
 
         # Fetch the users' home directory ...
         homeDir = os.path.expanduser('~')
-        
+
         # ... and setup the path to the log file.
         self.logFile = os.path.join(homeDir, 'cubify.log')
 
         # Definition of script parameters (Ensure that the second parameter matches the names in the inx file).
         self.OptionParser.add_option('--textColor', action='store', type='string', dest='textColor', help='Color of normal text')
-        self.OptionParser.add_option('--titleColor', action='store', type='string', dest='titleColor', help='Color of the title')
-        self.OptionParser.add_option('--titleBgColor', action='store', type='string', dest='titleBgColor', help='The title background color')
-        self.OptionParser.add_option('--hintColor', action='store', type='string', dest='hintColor', help='Color of the hint')
-        self.OptionParser.add_option('--hintBgColor', action='store', type='string', dest='hintBgColor', help='The hint background color')
-        self.OptionParser.add_option('--mainBgColor', action='store', type='string', dest='mainBgColor', help='The main background color')
         self.OptionParser.add_option('--borderColor', action='store', type='string', dest='borderColor', help='Color of the basic shape')
 
         self.OptionParser.add_option('--logoPath', action='store', type='string', dest='logoPath', help='Path to the main logo')
         self.OptionParser.add_option('--logoBgColor', action='store', type='string', dest='logoBgColor', help='The logo side background color')
 
+        self.OptionParser.add_option('--sideOneTitleColor', action='store', type='string', dest='sideOneTitleColor', help='Color of the title')
+        self.OptionParser.add_option('--sideOneTitleBgColor', action='store', type='string', dest='sideOneTitleBgColor', help='The title background color')
         self.OptionParser.add_option('--sideOneText', action='store', type='string', dest='sideOneText', help='Subhead text')
-        self.OptionParser.add_option('--sideOneHint', action='store', type='string', dest='sideOneHint', help='Subhead hint')
         self.OptionParser.add_option('--sideOneIcon', action='store', type='string', dest='sideOneIcon', help='Subhead icon')
+        self.OptionParser.add_option('--sideOneBgColor', action='store', type='string', dest='sideOneBgColor', help='Subhead background color')
+        self.OptionParser.add_option('--sideOneHint', action='store', type='string', dest='sideOneHint', help='Subhead hint')
+        self.OptionParser.add_option('--sideOneHintColor', action='store', type='string', dest='sideOneHintColor', help='Subhead hint color')
+        self.OptionParser.add_option('--sideOneHintBgColor', action='store', type='string', dest='sideOneHintBgColor', help='Subhead hint background color')
         self.OptionParser.add_option('--sideOneL1', action='store', type='string', default='', dest='sideOneL1', help='Side 1 Line 1')
         self.OptionParser.add_option('--sideOneL2', action='store', type='string', default='', dest='sideOneL2', help='Side 1 Line 2')
         self.OptionParser.add_option('--sideOneL3', action='store', type='string', default='', dest='sideOneL3', help='Side 1 Line 3')
@@ -80,9 +80,14 @@ class Cubify(inkex.Effect):
         self.OptionParser.add_option('--sideOneL14', action='store', type='string', default='', dest='sideOneL14', help='Side 1 Line 14')
         self.OptionParser.add_option('--sideOneL15', action='store', type='string', default='', dest='sideOneL15', help='Side 1 Line 15')
 
+        self.OptionParser.add_option('--sideTwoTitleColor', action='store', type='string', dest='sideTwoTitleColor', help='Color of the title')
+        self.OptionParser.add_option('--sideTwoTitleBgColor', action='store', type='string', dest='sideTwoTitleBgColor', help='The title background color')
         self.OptionParser.add_option('--sideTwoText', action='store', type='string', dest='sideTwoText', help='Subhead text')
-        self.OptionParser.add_option('--sideTwoHint', action='store', type='string', dest='sideTwoHint', help='Subhead hint')
         self.OptionParser.add_option('--sideTwoIcon', action='store', type='string', dest='sideTwoIcon', help='Subhead icon')
+        self.OptionParser.add_option('--sideTwoBgColor', action='store', type='string', dest='sideTwoBgColor', help='Subhead background color')
+        self.OptionParser.add_option('--sideTwoHint', action='store', type='string', dest='sideTwoHint', help='Subhead hint')
+        self.OptionParser.add_option('--sideTwoHintColor', action='store', type='string', dest='sideTwoHintColor', help='Subhead hint color')
+        self.OptionParser.add_option('--sideTwoHintBgColor', action='store', type='string', dest='sideTwoHintBgColor', help='Subhead hint background color')
         self.OptionParser.add_option('--sideTwoL1', action='store', type='string', default='', dest='sideTwoL1', help='Side 1 Line 1')
         self.OptionParser.add_option('--sideTwoL2', action='store', type='string', default='', dest='sideTwoL2', help='Side 1 Line 2')
         self.OptionParser.add_option('--sideTwoL3', action='store', type='string', default='', dest='sideTwoL3', help='Side 1 Line 3')
@@ -99,9 +104,14 @@ class Cubify(inkex.Effect):
         self.OptionParser.add_option('--sideTwoL14', action='store', type='string', default='', dest='sideTwoL14', help='Side 1 Line 14')
         self.OptionParser.add_option('--sideTwoL15', action='store', type='string', default='', dest='sideTwoL15', help='Side 1 Line 15')
 
+        self.OptionParser.add_option('--sideThreeTitleColor', action='store', type='string', dest='sideThreeTitleColor', help='Color of the title')
+        self.OptionParser.add_option('--sideThreeTitleBgColor', action='store', type='string', dest='sideThreeTitleBgColor', help='The title background color')
         self.OptionParser.add_option('--sideThreeText', action='store', type='string', dest='sideThreeText', help='Subhead text')
-        self.OptionParser.add_option('--sideThreeHint', action='store', type='string', dest='sideThreeHint', help='Subhead hint')
         self.OptionParser.add_option('--sideThreeIcon', action='store', type='string', dest='sideThreeIcon', help='Subhead icon')
+        self.OptionParser.add_option('--sideThreeBgColor', action='store', type='string', dest='sideThreeBgColor', help='Subhead background color')
+        self.OptionParser.add_option('--sideThreeHint', action='store', type='string', dest='sideThreeHint', help='Subhead hint')
+        self.OptionParser.add_option('--sideThreeHintColor', action='store', type='string', dest='sideThreeHintColor', help='Subhead hint color')
+        self.OptionParser.add_option('--sideThreeHintBgColor', action='store', type='string', dest='sideThreeHintBgColor', help='Subhead hint background color')
         self.OptionParser.add_option('--sideThreeL1', action='store', type='string', default='', dest='sideThreeL1', help='Side 1 Line 1')
         self.OptionParser.add_option('--sideThreeL2', action='store', type='string', default='', dest='sideThreeL2', help='Side 1 Line 2')
         self.OptionParser.add_option('--sideThreeL3', action='store', type='string', default='', dest='sideThreeL3', help='Side 1 Line 3')
@@ -118,9 +128,14 @@ class Cubify(inkex.Effect):
         self.OptionParser.add_option('--sideThreeL14', action='store', type='string', default='', dest='sideThreeL14', help='Side 1 Line 14')
         self.OptionParser.add_option('--sideThreeL15', action='store', type='string', default='', dest='sideThreeL15', help='Side 1 Line 15')
 
+        self.OptionParser.add_option('--sideFourTitleColor', action='store', type='string', dest='sideFourTitleColor', help='Color of the title')
+        self.OptionParser.add_option('--sideFourTitleBgColor', action='store', type='string', dest='sideFourTitleBgColor', help='The title background color')
         self.OptionParser.add_option('--sideFourText', action='store', type='string', dest='sideFourText', help='Subhead text')
-        self.OptionParser.add_option('--sideFourHint', action='store', type='string', dest='sideFourHint', help='Subhead hint')
         self.OptionParser.add_option('--sideFourIcon', action='store', type='string', dest='sideFourIcon', help='Subhead icon')
+        self.OptionParser.add_option('--sideFourBgColor', action='store', type='string', dest='sideFourBgColor', help='Subhead background color')
+        self.OptionParser.add_option('--sideFourHint', action='store', type='string', dest='sideFourHint', help='Subhead hint')
+        self.OptionParser.add_option('--sideFourHintColor', action='store', type='string', dest='sideFourHintColor', help='Subhead hint color')
+        self.OptionParser.add_option('--sideFourHintBgColor', action='store', type='string', dest='sideFourHintBgColor', help='Subhead hint background color')
         self.OptionParser.add_option('--sideFourL1', action='store', type='string', default='', dest='sideFourL1', help='Side 1 Line 1')
         self.OptionParser.add_option('--sideFourL2', action='store', type='string', default='', dest='sideFourL2', help='Side 1 Line 2')
         self.OptionParser.add_option('--sideFourL3', action='store', type='string', default='', dest='sideFourL3', help='Side 1 Line 3')
@@ -137,9 +152,14 @@ class Cubify(inkex.Effect):
         self.OptionParser.add_option('--sideFourL14', action='store', type='string', default='', dest='sideFourL14', help='Side 1 Line 14')
         self.OptionParser.add_option('--sideFourL15', action='store', type='string', default='', dest='sideFourL15', help='Side 1 Line 15')
 
+        self.OptionParser.add_option('--sideFiveTitleColor', action='store', type='string', dest='sideFiveTitleColor', help='Color of the title')
+        self.OptionParser.add_option('--sideFiveTitleBgColor', action='store', type='string', dest='sideFiveTitleBgColor', help='The title background color')
         self.OptionParser.add_option('--sideFiveText', action='store', type='string', dest='sideFiveText', help='Subhead text')
-        self.OptionParser.add_option('--sideFiveHint', action='store', type='string', dest='sideFiveHint', help='Subhead hint')
         self.OptionParser.add_option('--sideFiveIcon', action='store', type='string', dest='sideFiveIcon', help='Subhead icon')
+        self.OptionParser.add_option('--sideFiveBgColor', action='store', type='string', dest='sideFiveBgColor', help='Subhead background color')
+        self.OptionParser.add_option('--sideFiveHint', action='store', type='string', dest='sideFiveHint', help='Subhead hint')
+        self.OptionParser.add_option('--sideFiveHintColor', action='store', type='string', dest='sideFiveHintColor', help='Subhead hint color')
+        self.OptionParser.add_option('--sideFiveHintBgColor', action='store', type='string', dest='sideFiveHintBgColor', help='Subhead hint background color')
         self.OptionParser.add_option('--sideFiveL1', action='store', type='string', default='', dest='sideFiveL1', help='Side 1 Line 1')
         self.OptionParser.add_option('--sideFiveL2', action='store', type='string', default='', dest='sideFiveL2', help='Side 1 Line 2')
         self.OptionParser.add_option('--sideFiveL3', action='store', type='string', default='', dest='sideFiveL3', help='Side 1 Line 3')
@@ -179,6 +199,9 @@ class Cubify(inkex.Effect):
         width  = self.unittouu(svg.get('width'))
         height = self.unittouu(svg.get('height'))
 
+        # Define some base values.
+        self.white = 'ffffff'
+
         # Fetch the extention parameters.
         self.logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
         self.sideOneIcon = self.options.sideOneIcon if self.options.sideOneIcon is not None and os.path.isfile(self.options.sideOneIcon) else None
@@ -210,10 +233,51 @@ class Cubify(inkex.Effect):
         boxHeight = blockHeight / 4
         boxBorderColor = 'ffffff'
         boxBorder = 0
-        
+
+        # Draw the side panes.
+        self.drawPolygon(
+            0, self.white, self.sideOneBgColor, False, layer,
+            (padding + wingHeight, padding + wingHeight + blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight, padding + wingHeight + blockHeight))
+
+        self.drawPolygon(
+            0, self.white, self.sideTwoBgColor, False, layer,
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight))
+
+        self.drawPolygon(
+            0, self.white, self.sideThreeBgColor, False, layer,
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
+
+        self.drawPolygon(
+            0, self.white, self.sideFourBgColor, False, layer,
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight))
+
+        self.drawPolygon(
+            0, self.white, self.sideFiveBgColor, False, layer,
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 3 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 3 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight))
+
         # Draw the basic shape (cutting edges), ...
         self.drawPolygon(
-            borderWidth, self.borderColor, self.mainBgColor, False, layer,
+            borderWidth, self.borderColor, None, False, layer,
             (padding + wingHeight, padding + wingHeight + blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
             (padding + 2 * blockWidth, padding + blockHeight),
@@ -256,48 +320,48 @@ class Cubify(inkex.Effect):
         self.drawPolygon(
             borderWidth, self.borderColor, None, True, layer,
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight), 
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight),
             (padding + wingHeight + 3 * blockWidth, padding + wingHeight),
             (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
 
         # ... and the headline boxes.
-        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideOneText, self.titleBgColor, self.titleColor, boxHeight / 5, self.sideOneHint, self.hintBgColor, self.hintColor, boxHeight / 25 * 3, self.sideOneIcon)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideTwoText, self.titleBgColor, self.titleColor, boxHeight / 5, self.sideTwoHint, self.hintBgColor, self.hintColor, boxHeight / 25 * 3, self.sideTwoIcon)
-        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideThreeText, self.titleBgColor, self.titleColor, boxHeight / 5, self.sideThreeHint, self.hintBgColor, self.hintColor, boxHeight / 25 * 3, self.sideThreeIcon)
-        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideFourText, self.titleBgColor, self.titleColor, boxHeight / 5, self.sideFourHint, self.hintBgColor, self.hintColor, boxHeight / 25 * 3, self.sideFourIcon)
+        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideOneText, self.sideOneTitleBgColor, self.sideOneTitleColor, boxHeight / 5, self.sideOneHint, self.sideOneHintBgColor, self.sideOneHintColor, boxHeight / 25 * 3, self.sideOneIcon)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideTwoText, self.sideTwoTitleBgColor, self.sideTwoTitleColor, boxHeight / 5, self.sideTwoHint, self.sideTwoHintBgColor, self.sideTwoHintColor, boxHeight / 25 * 3, self.sideTwoIcon)
+        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideThreeText, self.sideThreeTitleBgColor, self.sideThreeTitleColor, boxHeight / 5, self.sideThreeHint, self.sideThreeHintBgColor, self.sideThreeHintColor, boxHeight / 25 * 3, self.sideThreeIcon)
+        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideFourText, self.sideFourTitleBgColor, self.sideFourTitleColor, boxHeight / 5, self.sideFourHint, self.sideFourHintBgColor, self.sideFourHintColor, boxHeight / 25 * 3, self.sideFourIcon)
 
         attrs = {
-            'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')' 
+            'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')'
         }
 
         bottomLayer = inkex.etree.SubElement(svg, 'g', attrs)
         bottomLayer.set(inkex.addNS('label', 'inkscape'), 'Bottom Side')
         bottomLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, self.sideFiveText, self.titleBgColor, self.titleColor, boxHeight / 5, self.sideFiveHint, self.hintBgColor, self.hintColor, boxHeight / 25 * 3, self.sideFiveIcon)
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, self.sideFiveText, self.sideFiveTitleBgColor, self.sideFiveTitleColor, boxHeight / 5, self.sideFiveHint, self.sideFiveHintBgColor, self.sideFiveHintColor, boxHeight / 25 * 3, self.sideFiveIcon)
 
         # Display texts.
         self.formatTextBlock(
             padding + wingHeight, padding + wingHeight + blockHeight,
-            [self.sideOneL1, self.sideOneL2, self.sideOneL3, self.sideOneL4, self.sideOneL5, self.sideOneL6, self.sideOneL7, self.sideOneL8, self.sideOneL9, self.sideOneL10, self.sideOneL11, self.sideOneL12, self.sideOneL13, self.sideOneL14, self.sideOneL15], 
-            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.mainBgColor, svg)
+            [self.sideOneL1, self.sideOneL2, self.sideOneL3, self.sideOneL4, self.sideOneL5, self.sideOneL6, self.sideOneL7, self.sideOneL8, self.sideOneL9, self.sideOneL10, self.sideOneL11, self.sideOneL12, self.sideOneL13, self.sideOneL14, self.sideOneL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.sideOneBgColor, svg)
         self.formatTextBlock(
             padding + wingHeight + blockWidth, padding + wingHeight + blockHeight,
-            [self.sideTwoL1, self.sideTwoL2, self.sideTwoL3, self.sideTwoL4, self.sideTwoL5, self.sideTwoL6, self.sideTwoL7, self.sideTwoL8, self.sideTwoL9, self.sideTwoL10, self.sideTwoL11, self.sideTwoL12, self.sideTwoL13, self.sideTwoL14, self.sideTwoL15], 
-            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.mainBgColor, svg)
+            [self.sideTwoL1, self.sideTwoL2, self.sideTwoL3, self.sideTwoL4, self.sideTwoL5, self.sideTwoL6, self.sideTwoL7, self.sideTwoL8, self.sideTwoL9, self.sideTwoL10, self.sideTwoL11, self.sideTwoL12, self.sideTwoL13, self.sideTwoL14, self.sideTwoL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.sideTwoBgColor, svg)
         self.formatTextBlock(
             padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight,
-            [self.sideThreeL1, self.sideThreeL2, self.sideThreeL3, self.sideThreeL4, self.sideThreeL5, self.sideThreeL6, self.sideThreeL7, self.sideThreeL8, self.sideThreeL9, self.sideThreeL10, self.sideThreeL11, self.sideThreeL12, self.sideThreeL13, self.sideThreeL14, self.sideThreeL15], 
-            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.mainBgColor, svg)
+            [self.sideThreeL1, self.sideThreeL2, self.sideThreeL3, self.sideThreeL4, self.sideThreeL5, self.sideThreeL6, self.sideThreeL7, self.sideThreeL8, self.sideThreeL9, self.sideThreeL10, self.sideThreeL11, self.sideThreeL12, self.sideThreeL13, self.sideThreeL14, self.sideThreeL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.sideThreeBgColor, svg)
         self.formatTextBlock(
             padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight,
-            [self.sideFourL1, self.sideFourL2, self.sideFourL3, self.sideFourL4, self.sideFourL5, self.sideFourL6, self.sideFourL7, self.sideFourL8, self.sideFourL9, self.sideFourL10, self.sideFourL11, self.sideFourL12, self.sideFourL13, self.sideFourL14, self.sideFourL15], 
-            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.mainBgColor, svg)
+            [self.sideFourL1, self.sideFourL2, self.sideFourL3, self.sideFourL4, self.sideFourL5, self.sideFourL6, self.sideFourL7, self.sideFourL8, self.sideFourL9, self.sideFourL10, self.sideFourL11, self.sideFourL12, self.sideFourL13, self.sideFourL14, self.sideFourL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.sideFourBgColor, svg)
         self.formatTextBlock(
             padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight,
-            [self.sideFiveL1, self.sideFiveL2, self.sideFiveL3, self.sideFiveL4, self.sideFiveL5, self.sideFiveL6, self.sideFiveL7, self.sideFiveL8, self.sideFiveL9, self.sideFiveL10, self.sideFiveL11, self.sideFiveL12, self.sideFiveL13, self.sideFiveL14, self.sideFiveL15], 
-            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.mainBgColor, bottomLayer)
+            [self.sideFiveL1, self.sideFiveL2, self.sideFiveL3, self.sideFiveL4, self.sideFiveL5, self.sideFiveL6, self.sideFiveL7, self.sideFiveL8, self.sideFiveL9, self.sideFiveL10, self.sideFiveL11, self.sideFiveL12, self.sideFiveL13, self.sideFiveL14, self.sideFiveL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.textColor, self.sideFiveBgColor, bottomLayer)
 
         # Finally embedd the main logo.
         if self.logoPath is not None:
@@ -346,7 +410,7 @@ class Cubify(inkex.Effect):
     def drawLine(self, x1, y1, x2, y2, width, color, dashed, parent):
         dashStyle = '5,3,2' if dashed else 'none'
 
-        style = { 
+        style = {
             'stroke': '#' + str(color),
             'stroke-width' : width,
             'stroke-dasharray' : dashStyle,
@@ -365,18 +429,18 @@ class Cubify(inkex.Effect):
         # Define the rectangle style ...
         stroke = '#' + str(borderColor) if border > 0 else 'none'
 
-        style = { 
-            'stroke' : stroke, 
-            'stoke-width' : str(border), 
+        style = {
+            'stroke' : stroke,
+            'stoke-width' : str(border),
             'fill' : '#' + str(fillColor)
         }
-                
+
         attrs = {
             'style' : formatStyle(style),
             'x' : str(x),
             'y' : str(y),
             'width' : str(w),
-            'height' : str(h)        
+            'height' : str(h)
         }
 
         return inkex.etree.SubElement(parent, inkex.addNS('rect','svg'), attrs)
@@ -384,11 +448,11 @@ class Cubify(inkex.Effect):
     def drawPolygon(self, width, color, bgColor, dashed, parent, *points):
         dashStyle = '5,3,2' if dashed else 'none'
 
-        style = { 
+        style = {
             'stroke': '#' + str(color),
             'stroke-width' : width,
             'stroke-dasharray' : dashStyle,
-            'stroke-linejoin' : 'round', 
+            'stroke-linejoin' : 'round',
             'fill' : '#' + str(bgColor) if bgColor is not None else 'none'
         }
 
@@ -404,7 +468,7 @@ class Cubify(inkex.Effect):
         attrs = {
             'style' : formatStyle(style),
             'd' : pointList
-        }        
+        }
 
         return inkex.etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
 
@@ -420,13 +484,13 @@ class Cubify(inkex.Effect):
 
             scale = sx
             if sy < sx:
-                scale = sy 
+                scale = sy
 
             x += width / 2 - imgWidth * scale / 2
             y += height / 2 - imgHeight * scale / 2
 
             attrs = {
-                'transform' : 'translate(' + str(x) + ',' + str(y) + ') scale(' + str(scale) + ',' + str(scale) + ')' 
+                'transform' : 'translate(' + str(x) + ',' + str(y) + ') scale(' + str(scale) + ',' + str(scale) + ')'
             }
 
             logoLayer = inkex.etree.SubElement(parent, 'g', attrs)
@@ -521,7 +585,7 @@ class Cubify(inkex.Effect):
             elif isClosing is False:
                 stack.push((bbTagName, bbStyles[bbTagName]))
                 bbStyles[bbTagName] = False if bbStyles[bbTagName] else True
-                
+
             if len(textChunk) > 0:
                 # Prepend spaces.
                 if textChunk[0] == ' ':
@@ -538,7 +602,7 @@ class Cubify(inkex.Effect):
 
         if len(text) > 0:
             textChunk = text[lastMatch:]
-                
+
             if len(textChunk.strip()) > 0:
                 # Setup the basic tspan style.
                 style = {
@@ -556,19 +620,19 @@ class Cubify(inkex.Effect):
                 tspan.set('style', formatStyle(style))
                 tspan.text = textChunk
 
-    
+
     def positonTspan(self, x, y, text, fontColor, parent):
         # Create the new tspan element.
         tspan = self.createTspan(text, fontColor, parent)
         tspan.set('x', str(x))
         tspan.set('y', str(y))
-            
+
     def createTspan(self, text, fontColor, parent):
         # Setup the basic tspan style.
         style = {
             'fill' : '#' + str(fontColor)
         }
-                
+
         # Create the new tspan element.
         tspan = inkex.etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
         tspan.set('style', formatStyle(style))
