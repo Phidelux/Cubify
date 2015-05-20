@@ -12,9 +12,15 @@ Then you can move the downloaded files to the extentions folder of your Inkscape
 
     $ sudo cp ./Cubify/cubify.* /usr/share/inkscape/extensions/
 
+## Dependencies
+
+In order to use this plugin you have to install the following packages:
+
+ 1. python2-lxml
+
 ## Usage
 
-If you now start Inkscape, you should see a new entry in the `Extentions -> Python` submenu, named Cubify. Open a new document and start the Cubify extention wizzard located under `Extentions -> Python -> Cubify ...`. Here you can change different options modifying the look and feel as well as the content of your cheat cube. When you entered all important data, click `Apply` and close the wizzard. You will see the scheme of your custom Cheat Cube. If the skeleton does not fit the document layout, visit `Files -> Document Properties ...` and choose `Resize page to content ...` at the bottom of the dialog. Select `Resize page to drawing or selection` and close the dialog. Now the skeleton of your Cheat Cube should exactly fit the document. 
+If you now start Inkscape, you should see a new entry in the `Extentions -> Python` submenu, named Cubify. Open a new document and start the Cubify extention wizzard located under `Extentions -> Python -> Cubify ...`. Here you can change different options modifying the look and feel as well as the content of your cheat cube. When you entered all important data, click `Apply` and close the wizzard. You will see the scheme of your custom Cheat Cube. If the skeleton does not fit the document layout, visit `Files -> Document Properties ...` and choose `Resize page to content ...` at the bottom of the dialog. Select `Resize page to drawing or selection` and close the dialog. Now the skeleton of your Cheat Cube should exactly fit the document.
 
 ## Examples and Screenshots
 
