@@ -196,30 +196,14 @@ class Cubify(inkex.Effect):
         return None
 
     def effect(self):
-        # Fetch the svg root element ...
+        # Fetch the svg root element, ...
         svg = self.document.getroot()
 
-        # ... as well as the image width and height.
+        # ... as well as the image width and height ...
         width  = self.unittouu(svg.get('width'))
         height = self.unittouu(svg.get('height'))
 
-        # Define some base values.
-        self.white = 'ffffff'
-
-        # Fetch the extention parameters.
-        self.logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
-        self.sideOneIcon = self.options.sideOneIcon if self.options.sideOneIcon is not None and os.path.isfile(self.options.sideOneIcon) else None
-        self.sideTwoIcon = self.options.sideTwoIcon if self.options.sideTwoIcon is not None and os.path.isfile(self.options.sideTwoIcon) else None
-        self.sideThreeIcon = self.options.sideThreeIcon if self.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
-        self.sideFourIcon = self.options.sideFourIcon if self.options.sideFourIcon is not None and os.path.isfile(self.options.sideFourIcon) else None
-        self.sideFiveIcon = self.options.sideFiveIcon if self.options.sideFiveIcon is not None and os.path.isfile(self.options.sideFiveIcon) else None
-
-        # Create a new layer, ...
-        layer = inkex.etree.SubElement(svg, 'g')
-        layer.set(inkex.addNS('label', 'inkscape'), 'Basic Shape')
-        layer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
-
-        # ... calculate the dimensions of the basic cube shape ...
+        # ... and calculate the dimensions of the basic cube shape.
         wingHeight = width / 23
 
         if wingHeight * 19 > height:
@@ -238,50 +222,141 @@ class Cubify(inkex.Effect):
         boxBorderColor = 'ffffff'
         boxBorder = 0
 
-        # Draw the side panes.
-        self.drawPolygon(
-            0, self.white, self.sideOneBgColor, False, layer,
-            (padding + wingHeight, padding + wingHeight + blockHeight),
-            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight, padding + wingHeight + blockHeight))
+        # Define some base values.
+        self.white = 'ffffff'
+
+        # Fetch the extention parameters.
+        self.logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
+        self.sideOneIcon = self.options.sideOneIcon if self.options.sideOneIcon is not None and os.path.isfile(self.options.sideOneIcon) else None
+        self.sideTwoIcon = self.options.sideTwoIcon if self.options.sideTwoIcon is not None and os.path.isfile(self.options.sideTwoIcon) else None
+        self.sideThreeIcon = self.options.sideThreeIcon if self.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
+        self.sideFourIcon = self.options.sideFourIcon if self.options.sideFourIcon is not None and os.path.isfile(self.options.sideFourIcon) else None
+        self.sideFiveIcon = self.options.sideFiveIcon if self.options.sideFiveIcon is not None and os.path.isfile(self.options.sideFiveIcon) else None
+
+        # Create the root layer.
+        cubeLayer = inkex.etree.SubElement(svg, 'g')
+        cubeLayer.set(inkex.addNS('label', 'inkscape'), 'Cube')
+        cubeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        # Create a new layer for each side and add the headline boxes.
+        attrs = {
+            'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')'
+        }
+
+        bottomLayer = inkex.etree.SubElement(cubeLayer, 'g', attrs)
+        bottomLayer.set(inkex.addNS('label', 'inkscape'), 'Bottom Side')
+        bottomLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
         self.drawPolygon(
-            0, self.white, self.sideTwoBgColor, False, layer,
-            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight))
-
-        self.drawPolygon(
-            0, self.white, self.sideThreeBgColor, False, layer,
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
-
-        self.drawPolygon(
-            0, self.white, self.sideFourBgColor, False, layer,
-            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + blockHeight),
-            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
-            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight))
-
-        self.drawPolygon(
-            0, self.white, self.sideFiveBgColor, False, layer,
+            0, self.white, self.sideFiveBgColor, False, bottomLayer,
             (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 3 * blockHeight),
             (padding + wingHeight + blockWidth, padding + wingHeight + 3 * blockHeight),
             (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight))
 
-        # Draw the basic shape (cutting edges), ...
+        self.formatTextBlock(
+            padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight,
+            [self.sideFiveL1, self.sideFiveL2, self.sideFiveL3, self.sideFiveL4, self.sideFiveL5, self.sideFiveL6, self.sideFiveL7, self.sideFiveL8, self.sideFiveL9, self.sideFiveL10, self.sideFiveL11, self.sideFiveL12, self.sideFiveL13, self.sideFiveL14, self.sideFiveL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.sideFiveTextColor, self.sideFiveBgColor, bottomLayer)
+
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, self.sideFiveText, self.sideFiveTitleBgColor, self.sideFiveTitleColor, boxHeight / 5, self.sideFiveHint, self.sideFiveHintBgColor, self.sideFiveHintColor, boxHeight / 25 * 3, self.sideFiveIcon)
+
+        sideFourLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideFourLayer.set(inkex.addNS('label', 'inkscape'), 'Side Four')
+        sideFourLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
         self.drawPolygon(
-            borderWidth, self.borderColor, None, False, layer,
+            0, self.white, self.sideFourBgColor, False, sideFourLayer,
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 4 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight))
+
+        self.formatTextBlock(
+            padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight,
+            [self.sideFourL1, self.sideFourL2, self.sideFourL3, self.sideFourL4, self.sideFourL5, self.sideFourL6, self.sideFourL7, self.sideFourL8, self.sideFourL9, self.sideFourL10, self.sideFourL11, self.sideFourL12, self.sideFourL13, self.sideFourL14, self.sideFourL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.sideFourTextColor, self.sideFourBgColor, sideFourLayer)
+
+        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideFourLayer, self.sideFourText, self.sideFourTitleBgColor, self.sideFourTitleColor, boxHeight / 5, self.sideFourHint, self.sideFourHintBgColor, self.sideFourHintColor, boxHeight / 25 * 3, self.sideFourIcon)
+
+        sideThreeLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideThreeLayer.set(inkex.addNS('label', 'inkscape'), 'Side Three')
+        sideThreeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        self.drawPolygon(
+            0, self.white, self.sideThreeBgColor, False, sideThreeLayer,
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 3 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
+
+        self.formatTextBlock(
+            padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight,
+            [self.sideThreeL1, self.sideThreeL2, self.sideThreeL3, self.sideThreeL4, self.sideThreeL5, self.sideThreeL6, self.sideThreeL7, self.sideThreeL8, self.sideThreeL9, self.sideThreeL10, self.sideThreeL11, self.sideThreeL12, self.sideThreeL13, self.sideThreeL14, self.sideThreeL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.sideThreeTextColor, self.sideThreeBgColor, sideThreeLayer)
+
+        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideThreeLayer, self.sideThreeText, self.sideThreeTitleBgColor, self.sideThreeTitleColor, boxHeight / 5, self.sideThreeHint, self.sideThreeHintBgColor, self.sideThreeHintColor, boxHeight / 25 * 3, self.sideThreeIcon)
+
+        sideTwoLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideTwoLayer.set(inkex.addNS('label', 'inkscape'), 'Side Two')
+        sideTwoLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        self.drawPolygon(
+            0, self.white, self.sideTwoBgColor, False, sideTwoLayer,
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight))
+
+        self.formatTextBlock(
+            padding + wingHeight + blockWidth, padding + wingHeight + blockHeight,
+            [self.sideTwoL1, self.sideTwoL2, self.sideTwoL3, self.sideTwoL4, self.sideTwoL5, self.sideTwoL6, self.sideTwoL7, self.sideTwoL8, self.sideTwoL9, self.sideTwoL10, self.sideTwoL11, self.sideTwoL12, self.sideTwoL13, self.sideTwoL14, self.sideTwoL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.sideTwoTextColor, self.sideTwoBgColor, sideTwoLayer)
+
+        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideTwoLayer, self.sideTwoText, self.sideTwoTitleBgColor, self.sideTwoTitleColor, boxHeight / 5, self.sideTwoHint, self.sideTwoHintBgColor, self.sideTwoHintColor, boxHeight / 25 * 3, self.sideTwoIcon)
+
+        sideOneLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideOneLayer.set(inkex.addNS('label', 'inkscape'), 'Side One')
+        sideOneLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        self.drawPolygon(
+            0, self.white, self.sideOneBgColor, False, sideOneLayer,
+            (padding + wingHeight, padding + wingHeight + blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + blockHeight),
+            (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight, padding + wingHeight + 2 * blockHeight),
+            (padding + wingHeight, padding + wingHeight + blockHeight))
+
+        self.formatTextBlock(
+            padding + wingHeight, padding + wingHeight + blockHeight,
+            [self.sideOneL1, self.sideOneL2, self.sideOneL3, self.sideOneL4, self.sideOneL5, self.sideOneL6, self.sideOneL7, self.sideOneL8, self.sideOneL9, self.sideOneL10, self.sideOneL11, self.sideOneL12, self.sideOneL13, self.sideOneL14, self.sideOneL15],
+            (blockHeight - boxHeight) / 15 * 0.75, self.sideOneTextColor, self.sideOneBgColor, sideOneLayer)
+
+        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideOneLayer, self.sideOneText, self.sideOneTitleBgColor, self.sideOneTitleColor, boxHeight / 5, self.sideOneHint, self.sideOneHintBgColor, self.sideOneHintColor, boxHeight / 25 * 3, self.sideOneIcon)
+
+        # Create the head layer ...
+        headLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        headLayer.set(inkex.addNS('label', 'inkscape'), 'Head Side')
+        headLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        # ... and embedd the main logo.
+        if self.logoPath is not None:
+            self.innerImage(padding + wingHeight + 2 * blockWidth, padding + wingHeight, blockWidth, blockHeight, padding, self.logoPath, headLayer)
+        else:
+            self.log('No path to logo given!')
+
+        # Finally create a new layer for the basic shape ...
+        shapeLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        shapeLayer.set(inkex.addNS('label', 'inkscape'), 'Basic Shape')
+        shapeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
+
+        # ... and draw the cutting edges ...
+        self.drawPolygon(
+            borderWidth, self.borderColor, None, False, shapeLayer,
             (padding + wingHeight, padding + wingHeight + blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
             (padding + 2 * blockWidth, padding + blockHeight),
@@ -307,14 +382,14 @@ class Cubify(inkex.Effect):
             (padding, padding + 2 * wingHeight + blockHeight),
             (padding + wingHeight, padding + wingHeight + blockHeight))
 
-        # ... the inner edges ...
-        self.drawLine(padding + wingHeight, padding + wingHeight + blockHeight, padding + wingHeight,  padding + wingHeight + 2 * blockHeight, borderWidth, self.borderColor, True, layer)
-        self.drawLine(padding + wingHeight + blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, layer)
-        self.drawLine(padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, layer)
-        self.drawLine(padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + 3 * blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, layer)
+        # ... and the inner edges.
+        self.drawLine(padding + wingHeight, padding + wingHeight + blockHeight, padding + wingHeight,  padding + wingHeight + 2 * blockHeight, borderWidth, self.borderColor, True, shapeLayer)
+        self.drawLine(padding + wingHeight + blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, shapeLayer)
+        self.drawLine(padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, shapeLayer)
+        self.drawLine(padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockWidth, padding + wingHeight + 3 * blockWidth,  padding + wingHeight + 2 * blockWidth, borderWidth, self.borderColor, True, shapeLayer)
 
         self.drawPolygon(
-            borderWidth, self.borderColor, None, True, layer,
+            borderWidth, self.borderColor, None, True, shapeLayer,
             (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight),
             (padding + wingHeight + blockWidth, padding + wingHeight + 3 * blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + 3 * blockHeight),
@@ -322,56 +397,12 @@ class Cubify(inkex.Effect):
             (padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight))
 
         self.drawPolygon(
-            borderWidth, self.borderColor, None, True, layer,
+            borderWidth, self.borderColor, None, True, shapeLayer,
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight),
             (padding + wingHeight + 3 * blockWidth, padding + wingHeight),
             (padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight),
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
-
-        # ... and the headline boxes.
-        self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideOneText, self.sideOneTitleBgColor, self.sideOneTitleColor, boxHeight / 5, self.sideOneHint, self.sideOneHintBgColor, self.sideOneHintColor, boxHeight / 25 * 3, self.sideOneIcon)
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideTwoText, self.sideTwoTitleBgColor, self.sideTwoTitleColor, boxHeight / 5, self.sideTwoHint, self.sideTwoHintBgColor, self.sideTwoHintColor, boxHeight / 25 * 3, self.sideTwoIcon)
-        self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideThreeText, self.sideThreeTitleBgColor, self.sideThreeTitleColor, boxHeight / 5, self.sideThreeHint, self.sideThreeHintBgColor, self.sideThreeHintColor, boxHeight / 25 * 3, self.sideThreeIcon)
-        self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, svg, self.sideFourText, self.sideFourTitleBgColor, self.sideFourTitleColor, boxHeight / 5, self.sideFourHint, self.sideFourHintBgColor, self.sideFourHintColor, boxHeight / 25 * 3, self.sideFourIcon)
-
-        attrs = {
-            'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')'
-        }
-
-        bottomLayer = inkex.etree.SubElement(svg, 'g', attrs)
-        bottomLayer.set(inkex.addNS('label', 'inkscape'), 'Bottom Side')
-        bottomLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
-
-        self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, self.sideFiveText, self.sideFiveTitleBgColor, self.sideFiveTitleColor, boxHeight / 5, self.sideFiveHint, self.sideFiveHintBgColor, self.sideFiveHintColor, boxHeight / 25 * 3, self.sideFiveIcon)
-
-        # Display texts.
-        self.formatTextBlock(
-            padding + wingHeight, padding + wingHeight + blockHeight,
-            [self.sideOneL1, self.sideOneL2, self.sideOneL3, self.sideOneL4, self.sideOneL5, self.sideOneL6, self.sideOneL7, self.sideOneL8, self.sideOneL9, self.sideOneL10, self.sideOneL11, self.sideOneL12, self.sideOneL13, self.sideOneL14, self.sideOneL15],
-            (blockHeight - boxHeight) / 15 * 0.75, self.sideOneTextColor, self.sideOneBgColor, svg)
-        self.formatTextBlock(
-            padding + wingHeight + blockWidth, padding + wingHeight + blockHeight,
-            [self.sideTwoL1, self.sideTwoL2, self.sideTwoL3, self.sideTwoL4, self.sideTwoL5, self.sideTwoL6, self.sideTwoL7, self.sideTwoL8, self.sideTwoL9, self.sideTwoL10, self.sideTwoL11, self.sideTwoL12, self.sideTwoL13, self.sideTwoL14, self.sideTwoL15],
-            (blockHeight - boxHeight) / 15 * 0.75, self.sideTwoTextColor, self.sideTwoBgColor, svg)
-        self.formatTextBlock(
-            padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight,
-            [self.sideThreeL1, self.sideThreeL2, self.sideThreeL3, self.sideThreeL4, self.sideThreeL5, self.sideThreeL6, self.sideThreeL7, self.sideThreeL8, self.sideThreeL9, self.sideThreeL10, self.sideThreeL11, self.sideThreeL12, self.sideThreeL13, self.sideThreeL14, self.sideThreeL15],
-            (blockHeight - boxHeight) / 15 * 0.75, self.sideThreeTextColor, self.sideThreeBgColor, svg)
-        self.formatTextBlock(
-            padding + wingHeight + 3 * blockWidth, padding + wingHeight + blockHeight,
-            [self.sideFourL1, self.sideFourL2, self.sideFourL3, self.sideFourL4, self.sideFourL5, self.sideFourL6, self.sideFourL7, self.sideFourL8, self.sideFourL9, self.sideFourL10, self.sideFourL11, self.sideFourL12, self.sideFourL13, self.sideFourL14, self.sideFourL15],
-            (blockHeight - boxHeight) / 15 * 0.75, self.sideFourTextColor, self.sideFourBgColor, svg)
-        self.formatTextBlock(
-            padding + wingHeight + blockWidth, padding + wingHeight + 2 * blockHeight,
-            [self.sideFiveL1, self.sideFiveL2, self.sideFiveL3, self.sideFiveL4, self.sideFiveL5, self.sideFiveL6, self.sideFiveL7, self.sideFiveL8, self.sideFiveL9, self.sideFiveL10, self.sideFiveL11, self.sideFiveL12, self.sideFiveL13, self.sideFiveL14, self.sideFiveL15],
-            (blockHeight - boxHeight) / 15 * 0.75, self.sideFiveTextColor, self.sideFiveBgColor, bottomLayer)
-
-        # Finally embedd the main logo.
-        if self.logoPath is not None:
-            self.innerImage(padding + wingHeight + 2 * blockWidth, padding + wingHeight, blockWidth, blockHeight, padding, self.logoPath, svg)
-        else:
-            self.log('No path to logo given!')
 
     def drawSideFooter(self, x, y, w, h, border, borderColor, parent, title, titleBg, titleColor, titleSize, hint, hintBg, hintColor, hintSize, logoPath):
         layer = inkex.etree.SubElement(parent, 'g')
