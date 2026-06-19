@@ -227,7 +227,7 @@ class Cubify(inkex.EffectExtension):
         padding = wingHeight
 
         blockWidth = blockHeight = wingWidth
-        borderWidth = 1
+        borderWidth = self.unittouu("0.2 mm")
 
         # ... and the headline boxes.
         boxWidth = blockWidth
