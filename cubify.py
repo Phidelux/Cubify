@@ -444,7 +444,8 @@ class Cubify(inkex.EffectExtension):
         text.set('x', str(x + fontSize))
         text.set('y', str(y + h / 2 + fontSize / 2))
         text.set('fill', '#' + str(fontColor));
-        text.text = str(msg)
+        # Render an empty box for missing/empty values instead of the literal "None".
+        text.text = str(msg) if msg is not None else ''
 
         # ... define text style and position ...
         style = {
