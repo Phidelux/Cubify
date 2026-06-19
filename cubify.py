@@ -1,16 +1,12 @@
-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, os, codecs, re
 from lxml import etree
-
-# Coarse hack for coercing input to utf-8.
-reload(sys)
-sys.setdefaultencoding('utf_8')
-
-sys.path.append('/usr/share/inkscape/extensions')
 import inkex
-from simplestyle import *
 from copy import deepcopy
+
+# simplestyle.formatStyle was removed in Inkscape 1.0; inkex.Style replaces it.
+def formatStyle(style):
+    return str(inkex.Style(style))
 
 def enum(*sequential, **named):
     enums = dict(zip(sequential, range(len(sequential))), **named)
@@ -26,7 +22,7 @@ class Stack(list):
     def isEmpty(self):
         return not self
 
-class Cubify(inkex.Effect):
+class Cubify(inkex.EffectExtension):
     LogoStyle = enum('CROP', 'FIT_PARENT')
 
     SODIPODI = 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd'
@@ -40,160 +36,167 @@ class Cubify(inkex.Effect):
     XML = 'http://www.w3.org/XML/1998/namespace'
 
     def __init__(self):
-        # Call the base class constructor.
-        inkex.Effect.__init__(self)
+        # Call the base class constructor (this also invokes add_arguments).
+        inkex.EffectExtension.__init__(self)
 
-        # Fetch the users' home directory ...
+        # Fetch the users' home directory and setup the path to the log file.
         homeDir = os.path.expanduser('~')
-
-        # ... and setup the path to the log file.
         self.logFile = os.path.join(homeDir, 'cubify.log')
 
-        # Definition of script parameters (Ensure that the second parameter matches the names in the inx file).
-        self.OptionParser.add_option('--borderColor', action='store', type='string', dest='borderColor', help='Color of the basic shape')
+    def add_arguments(self, pars):
+        # Definition of script parameters (Ensure that the name matches the names in the inx file).
+        pars.add_argument('--borderColor', dest='borderColor', help='Color of the basic shape')
 
-        self.OptionParser.add_option('--logoPath', action='store', type='string', dest='logoPath', help='Path to the main logo')
-        self.OptionParser.add_option('--logoBgColor', action='store', type='string', dest='logoBgColor', help='The logo side background color')
+        pars.add_argument('--logoPath', dest='logoPath', help='Path to the main logo')
+        pars.add_argument('--logoBgColor', dest='logoBgColor', help='The logo side background color')
 
-        self.OptionParser.add_option('--sideOneTitleColor', action='store', type='string', dest='sideOneTitleColor', help='Color of the title')
-        self.OptionParser.add_option('--sideOneTitleBgColor', action='store', type='string', dest='sideOneTitleBgColor', help='The title background color')
-        self.OptionParser.add_option('--sideOneText', action='store', type='string', dest='sideOneText', help='Subhead text')
-        self.OptionParser.add_option('--sideOneIcon', action='store', type='string', dest='sideOneIcon', help='Subhead icon')
-        self.OptionParser.add_option('--sideOneTextColor', action='store', type='string', dest='sideOneTextColor', help='Text color')
-        self.OptionParser.add_option('--sideOneBgColor', action='store', type='string', dest='sideOneBgColor', help='Background color')
-        self.OptionParser.add_option('--sideOneHint', action='store', type='string', dest='sideOneHint', help='Subhead hint')
-        self.OptionParser.add_option('--sideOneHintColor', action='store', type='string', dest='sideOneHintColor', help='Subhead hint color')
-        self.OptionParser.add_option('--sideOneHintBgColor', action='store', type='string', dest='sideOneHintBgColor', help='Subhead hint background color')
-        self.OptionParser.add_option('--sideOneL1', action='store', type='string', default='', dest='sideOneL1', help='Side 1 Line 1')
-        self.OptionParser.add_option('--sideOneL2', action='store', type='string', default='', dest='sideOneL2', help='Side 1 Line 2')
-        self.OptionParser.add_option('--sideOneL3', action='store', type='string', default='', dest='sideOneL3', help='Side 1 Line 3')
-        self.OptionParser.add_option('--sideOneL4', action='store', type='string', default='', dest='sideOneL4', help='Side 1 Line 4')
-        self.OptionParser.add_option('--sideOneL5', action='store', type='string', default='', dest='sideOneL5', help='Side 1 Line 5')
-        self.OptionParser.add_option('--sideOneL6', action='store', type='string', default='', dest='sideOneL6', help='Side 1 Line 6')
-        self.OptionParser.add_option('--sideOneL7', action='store', type='string', default='', dest='sideOneL7', help='Side 1 Line 7')
-        self.OptionParser.add_option('--sideOneL8', action='store', type='string', default='', dest='sideOneL8', help='Side 1 Line 8')
-        self.OptionParser.add_option('--sideOneL9', action='store', type='string', default='', dest='sideOneL9', help='Side 1 Line 9')
-        self.OptionParser.add_option('--sideOneL10', action='store', type='string', default='', dest='sideOneL10', help='Side 1 Line 10')
-        self.OptionParser.add_option('--sideOneL11', action='store', type='string', default='', dest='sideOneL11', help='Side 1 Line 11')
-        self.OptionParser.add_option('--sideOneL12', action='store', type='string', default='', dest='sideOneL12', help='Side 1 Line 12')
-        self.OptionParser.add_option('--sideOneL13', action='store', type='string', default='', dest='sideOneL13', help='Side 1 Line 13')
-        self.OptionParser.add_option('--sideOneL14', action='store', type='string', default='', dest='sideOneL14', help='Side 1 Line 14')
-        self.OptionParser.add_option('--sideOneL15', action='store', type='string', default='', dest='sideOneL15', help='Side 1 Line 15')
+        pars.add_argument('--sideOneTitleColor', dest='sideOneTitleColor', help='Color of the title')
+        pars.add_argument('--sideOneTitleBgColor', dest='sideOneTitleBgColor', help='The title background color')
+        pars.add_argument('--sideOneText', dest='sideOneText', help='Subhead text')
+        pars.add_argument('--sideOneIcon', dest='sideOneIcon', help='Subhead icon')
+        pars.add_argument('--sideOneTextColor', dest='sideOneTextColor', help='Text color')
+        pars.add_argument('--sideOneBgColor', dest='sideOneBgColor', help='Background color')
+        pars.add_argument('--sideOneHint', dest='sideOneHint', help='Subhead hint')
+        pars.add_argument('--sideOneHintColor', dest='sideOneHintColor', help='Subhead hint color')
+        pars.add_argument('--sideOneHintBgColor', dest='sideOneHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideOneL1', default='', dest='sideOneL1', help='Side 1 Line 1')
+        pars.add_argument('--sideOneL2', default='', dest='sideOneL2', help='Side 1 Line 2')
+        pars.add_argument('--sideOneL3', default='', dest='sideOneL3', help='Side 1 Line 3')
+        pars.add_argument('--sideOneL4', default='', dest='sideOneL4', help='Side 1 Line 4')
+        pars.add_argument('--sideOneL5', default='', dest='sideOneL5', help='Side 1 Line 5')
+        pars.add_argument('--sideOneL6', default='', dest='sideOneL6', help='Side 1 Line 6')
+        pars.add_argument('--sideOneL7', default='', dest='sideOneL7', help='Side 1 Line 7')
+        pars.add_argument('--sideOneL8', default='', dest='sideOneL8', help='Side 1 Line 8')
+        pars.add_argument('--sideOneL9', default='', dest='sideOneL9', help='Side 1 Line 9')
+        pars.add_argument('--sideOneL10', default='', dest='sideOneL10', help='Side 1 Line 10')
+        pars.add_argument('--sideOneL11', default='', dest='sideOneL11', help='Side 1 Line 11')
+        pars.add_argument('--sideOneL12', default='', dest='sideOneL12', help='Side 1 Line 12')
+        pars.add_argument('--sideOneL13', default='', dest='sideOneL13', help='Side 1 Line 13')
+        pars.add_argument('--sideOneL14', default='', dest='sideOneL14', help='Side 1 Line 14')
+        pars.add_argument('--sideOneL15', default='', dest='sideOneL15', help='Side 1 Line 15')
 
-        self.OptionParser.add_option('--sideTwoTitleColor', action='store', type='string', dest='sideTwoTitleColor', help='Color of the title')
-        self.OptionParser.add_option('--sideTwoTitleBgColor', action='store', type='string', dest='sideTwoTitleBgColor', help='The title background color')
-        self.OptionParser.add_option('--sideTwoText', action='store', type='string', dest='sideTwoText', help='Subhead text')
-        self.OptionParser.add_option('--sideTwoIcon', action='store', type='string', dest='sideTwoIcon', help='Subhead icon')
-        self.OptionParser.add_option('--sideTwoTextColor', action='store', type='string', dest='sideTwoTextColor', help='Text color')
-        self.OptionParser.add_option('--sideTwoBgColor', action='store', type='string', dest='sideTwoBgColor', help='Background color')
-        self.OptionParser.add_option('--sideTwoHint', action='store', type='string', dest='sideTwoHint', help='Subhead hint')
-        self.OptionParser.add_option('--sideTwoHintColor', action='store', type='string', dest='sideTwoHintColor', help='Subhead hint color')
-        self.OptionParser.add_option('--sideTwoHintBgColor', action='store', type='string', dest='sideTwoHintBgColor', help='Subhead hint background color')
-        self.OptionParser.add_option('--sideTwoL1', action='store', type='string', default='', dest='sideTwoL1', help='Side 1 Line 1')
-        self.OptionParser.add_option('--sideTwoL2', action='store', type='string', default='', dest='sideTwoL2', help='Side 1 Line 2')
-        self.OptionParser.add_option('--sideTwoL3', action='store', type='string', default='', dest='sideTwoL3', help='Side 1 Line 3')
-        self.OptionParser.add_option('--sideTwoL4', action='store', type='string', default='', dest='sideTwoL4', help='Side 1 Line 4')
-        self.OptionParser.add_option('--sideTwoL5', action='store', type='string', default='', dest='sideTwoL5', help='Side 1 Line 5')
-        self.OptionParser.add_option('--sideTwoL6', action='store', type='string', default='', dest='sideTwoL6', help='Side 1 Line 6')
-        self.OptionParser.add_option('--sideTwoL7', action='store', type='string', default='', dest='sideTwoL7', help='Side 1 Line 7')
-        self.OptionParser.add_option('--sideTwoL8', action='store', type='string', default='', dest='sideTwoL8', help='Side 1 Line 8')
-        self.OptionParser.add_option('--sideTwoL9', action='store', type='string', default='', dest='sideTwoL9', help='Side 1 Line 9')
-        self.OptionParser.add_option('--sideTwoL10', action='store', type='string', default='', dest='sideTwoL10', help='Side 1 Line 10')
-        self.OptionParser.add_option('--sideTwoL11', action='store', type='string', default='', dest='sideTwoL11', help='Side 1 Line 11')
-        self.OptionParser.add_option('--sideTwoL12', action='store', type='string', default='', dest='sideTwoL12', help='Side 1 Line 12')
-        self.OptionParser.add_option('--sideTwoL13', action='store', type='string', default='', dest='sideTwoL13', help='Side 1 Line 13')
-        self.OptionParser.add_option('--sideTwoL14', action='store', type='string', default='', dest='sideTwoL14', help='Side 1 Line 14')
-        self.OptionParser.add_option('--sideTwoL15', action='store', type='string', default='', dest='sideTwoL15', help='Side 1 Line 15')
+        pars.add_argument('--sideTwoTitleColor', dest='sideTwoTitleColor', help='Color of the title')
+        pars.add_argument('--sideTwoTitleBgColor', dest='sideTwoTitleBgColor', help='The title background color')
+        pars.add_argument('--sideTwoText', dest='sideTwoText', help='Subhead text')
+        pars.add_argument('--sideTwoIcon', dest='sideTwoIcon', help='Subhead icon')
+        pars.add_argument('--sideTwoTextColor', dest='sideTwoTextColor', help='Text color')
+        pars.add_argument('--sideTwoBgColor', dest='sideTwoBgColor', help='Background color')
+        pars.add_argument('--sideTwoHint', dest='sideTwoHint', help='Subhead hint')
+        pars.add_argument('--sideTwoHintColor', dest='sideTwoHintColor', help='Subhead hint color')
+        pars.add_argument('--sideTwoHintBgColor', dest='sideTwoHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideTwoL1', default='', dest='sideTwoL1', help='Side 1 Line 1')
+        pars.add_argument('--sideTwoL2', default='', dest='sideTwoL2', help='Side 1 Line 2')
+        pars.add_argument('--sideTwoL3', default='', dest='sideTwoL3', help='Side 1 Line 3')
+        pars.add_argument('--sideTwoL4', default='', dest='sideTwoL4', help='Side 1 Line 4')
+        pars.add_argument('--sideTwoL5', default='', dest='sideTwoL5', help='Side 1 Line 5')
+        pars.add_argument('--sideTwoL6', default='', dest='sideTwoL6', help='Side 1 Line 6')
+        pars.add_argument('--sideTwoL7', default='', dest='sideTwoL7', help='Side 1 Line 7')
+        pars.add_argument('--sideTwoL8', default='', dest='sideTwoL8', help='Side 1 Line 8')
+        pars.add_argument('--sideTwoL9', default='', dest='sideTwoL9', help='Side 1 Line 9')
+        pars.add_argument('--sideTwoL10', default='', dest='sideTwoL10', help='Side 1 Line 10')
+        pars.add_argument('--sideTwoL11', default='', dest='sideTwoL11', help='Side 1 Line 11')
+        pars.add_argument('--sideTwoL12', default='', dest='sideTwoL12', help='Side 1 Line 12')
+        pars.add_argument('--sideTwoL13', default='', dest='sideTwoL13', help='Side 1 Line 13')
+        pars.add_argument('--sideTwoL14', default='', dest='sideTwoL14', help='Side 1 Line 14')
+        pars.add_argument('--sideTwoL15', default='', dest='sideTwoL15', help='Side 1 Line 15')
 
-        self.OptionParser.add_option('--sideThreeTitleColor', action='store', type='string', dest='sideThreeTitleColor', help='Color of the title')
-        self.OptionParser.add_option('--sideThreeTitleBgColor', action='store', type='string', dest='sideThreeTitleBgColor', help='The title background color')
-        self.OptionParser.add_option('--sideThreeText', action='store', type='string', dest='sideThreeText', help='Subhead text')
-        self.OptionParser.add_option('--sideThreeIcon', action='store', type='string', dest='sideThreeIcon', help='Subhead icon')
-        self.OptionParser.add_option('--sideThreeTextColor', action='store', type='string', dest='sideThreeTextColor', help='Text color')
-        self.OptionParser.add_option('--sideThreeBgColor', action='store', type='string', dest='sideThreeBgColor', help='Background color')
-        self.OptionParser.add_option('--sideThreeHint', action='store', type='string', dest='sideThreeHint', help='Subhead hint')
-        self.OptionParser.add_option('--sideThreeHintColor', action='store', type='string', dest='sideThreeHintColor', help='Subhead hint color')
-        self.OptionParser.add_option('--sideThreeHintBgColor', action='store', type='string', dest='sideThreeHintBgColor', help='Subhead hint background color')
-        self.OptionParser.add_option('--sideThreeL1', action='store', type='string', default='', dest='sideThreeL1', help='Side 1 Line 1')
-        self.OptionParser.add_option('--sideThreeL2', action='store', type='string', default='', dest='sideThreeL2', help='Side 1 Line 2')
-        self.OptionParser.add_option('--sideThreeL3', action='store', type='string', default='', dest='sideThreeL3', help='Side 1 Line 3')
-        self.OptionParser.add_option('--sideThreeL4', action='store', type='string', default='', dest='sideThreeL4', help='Side 1 Line 4')
-        self.OptionParser.add_option('--sideThreeL5', action='store', type='string', default='', dest='sideThreeL5', help='Side 1 Line 5')
-        self.OptionParser.add_option('--sideThreeL6', action='store', type='string', default='', dest='sideThreeL6', help='Side 1 Line 6')
-        self.OptionParser.add_option('--sideThreeL7', action='store', type='string', default='', dest='sideThreeL7', help='Side 1 Line 7')
-        self.OptionParser.add_option('--sideThreeL8', action='store', type='string', default='', dest='sideThreeL8', help='Side 1 Line 8')
-        self.OptionParser.add_option('--sideThreeL9', action='store', type='string', default='', dest='sideThreeL9', help='Side 1 Line 9')
-        self.OptionParser.add_option('--sideThreeL10', action='store', type='string', default='', dest='sideThreeL10', help='Side 1 Line 10')
-        self.OptionParser.add_option('--sideThreeL11', action='store', type='string', default='', dest='sideThreeL11', help='Side 1 Line 11')
-        self.OptionParser.add_option('--sideThreeL12', action='store', type='string', default='', dest='sideThreeL12', help='Side 1 Line 12')
-        self.OptionParser.add_option('--sideThreeL13', action='store', type='string', default='', dest='sideThreeL13', help='Side 1 Line 13')
-        self.OptionParser.add_option('--sideThreeL14', action='store', type='string', default='', dest='sideThreeL14', help='Side 1 Line 14')
-        self.OptionParser.add_option('--sideThreeL15', action='store', type='string', default='', dest='sideThreeL15', help='Side 1 Line 15')
+        pars.add_argument('--sideThreeTitleColor', dest='sideThreeTitleColor', help='Color of the title')
+        pars.add_argument('--sideThreeTitleBgColor', dest='sideThreeTitleBgColor', help='The title background color')
+        pars.add_argument('--sideThreeText', dest='sideThreeText', help='Subhead text')
+        pars.add_argument('--sideThreeIcon', dest='sideThreeIcon', help='Subhead icon')
+        pars.add_argument('--sideThreeTextColor', dest='sideThreeTextColor', help='Text color')
+        pars.add_argument('--sideThreeBgColor', dest='sideThreeBgColor', help='Background color')
+        pars.add_argument('--sideThreeHint', dest='sideThreeHint', help='Subhead hint')
+        pars.add_argument('--sideThreeHintColor', dest='sideThreeHintColor', help='Subhead hint color')
+        pars.add_argument('--sideThreeHintBgColor', dest='sideThreeHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideThreeL1', default='', dest='sideThreeL1', help='Side 1 Line 1')
+        pars.add_argument('--sideThreeL2', default='', dest='sideThreeL2', help='Side 1 Line 2')
+        pars.add_argument('--sideThreeL3', default='', dest='sideThreeL3', help='Side 1 Line 3')
+        pars.add_argument('--sideThreeL4', default='', dest='sideThreeL4', help='Side 1 Line 4')
+        pars.add_argument('--sideThreeL5', default='', dest='sideThreeL5', help='Side 1 Line 5')
+        pars.add_argument('--sideThreeL6', default='', dest='sideThreeL6', help='Side 1 Line 6')
+        pars.add_argument('--sideThreeL7', default='', dest='sideThreeL7', help='Side 1 Line 7')
+        pars.add_argument('--sideThreeL8', default='', dest='sideThreeL8', help='Side 1 Line 8')
+        pars.add_argument('--sideThreeL9', default='', dest='sideThreeL9', help='Side 1 Line 9')
+        pars.add_argument('--sideThreeL10', default='', dest='sideThreeL10', help='Side 1 Line 10')
+        pars.add_argument('--sideThreeL11', default='', dest='sideThreeL11', help='Side 1 Line 11')
+        pars.add_argument('--sideThreeL12', default='', dest='sideThreeL12', help='Side 1 Line 12')
+        pars.add_argument('--sideThreeL13', default='', dest='sideThreeL13', help='Side 1 Line 13')
+        pars.add_argument('--sideThreeL14', default='', dest='sideThreeL14', help='Side 1 Line 14')
+        pars.add_argument('--sideThreeL15', default='', dest='sideThreeL15', help='Side 1 Line 15')
 
-        self.OptionParser.add_option('--sideFourTitleColor', action='store', type='string', dest='sideFourTitleColor', help='Color of the title')
-        self.OptionParser.add_option('--sideFourTitleBgColor', action='store', type='string', dest='sideFourTitleBgColor', help='The title background color')
-        self.OptionParser.add_option('--sideFourText', action='store', type='string', dest='sideFourText', help='Subhead text')
-        self.OptionParser.add_option('--sideFourIcon', action='store', type='string', dest='sideFourIcon', help='Subhead icon')
-        self.OptionParser.add_option('--sideFourTextColor', action='store', type='string', dest='sideFourTextColor', help='Text color')
-        self.OptionParser.add_option('--sideFourBgColor', action='store', type='string', dest='sideFourBgColor', help='Background color')
-        self.OptionParser.add_option('--sideFourHint', action='store', type='string', dest='sideFourHint', help='Subhead hint')
-        self.OptionParser.add_option('--sideFourHintColor', action='store', type='string', dest='sideFourHintColor', help='Subhead hint color')
-        self.OptionParser.add_option('--sideFourHintBgColor', action='store', type='string', dest='sideFourHintBgColor', help='Subhead hint background color')
-        self.OptionParser.add_option('--sideFourL1', action='store', type='string', default='', dest='sideFourL1', help='Side 1 Line 1')
-        self.OptionParser.add_option('--sideFourL2', action='store', type='string', default='', dest='sideFourL2', help='Side 1 Line 2')
-        self.OptionParser.add_option('--sideFourL3', action='store', type='string', default='', dest='sideFourL3', help='Side 1 Line 3')
-        self.OptionParser.add_option('--sideFourL4', action='store', type='string', default='', dest='sideFourL4', help='Side 1 Line 4')
-        self.OptionParser.add_option('--sideFourL5', action='store', type='string', default='', dest='sideFourL5', help='Side 1 Line 5')
-        self.OptionParser.add_option('--sideFourL6', action='store', type='string', default='', dest='sideFourL6', help='Side 1 Line 6')
-        self.OptionParser.add_option('--sideFourL7', action='store', type='string', default='', dest='sideFourL7', help='Side 1 Line 7')
-        self.OptionParser.add_option('--sideFourL8', action='store', type='string', default='', dest='sideFourL8', help='Side 1 Line 8')
-        self.OptionParser.add_option('--sideFourL9', action='store', type='string', default='', dest='sideFourL9', help='Side 1 Line 9')
-        self.OptionParser.add_option('--sideFourL10', action='store', type='string', default='', dest='sideFourL10', help='Side 1 Line 10')
-        self.OptionParser.add_option('--sideFourL11', action='store', type='string', default='', dest='sideFourL11', help='Side 1 Line 11')
-        self.OptionParser.add_option('--sideFourL12', action='store', type='string', default='', dest='sideFourL12', help='Side 1 Line 12')
-        self.OptionParser.add_option('--sideFourL13', action='store', type='string', default='', dest='sideFourL13', help='Side 1 Line 13')
-        self.OptionParser.add_option('--sideFourL14', action='store', type='string', default='', dest='sideFourL14', help='Side 1 Line 14')
-        self.OptionParser.add_option('--sideFourL15', action='store', type='string', default='', dest='sideFourL15', help='Side 1 Line 15')
+        pars.add_argument('--sideFourTitleColor', dest='sideFourTitleColor', help='Color of the title')
+        pars.add_argument('--sideFourTitleBgColor', dest='sideFourTitleBgColor', help='The title background color')
+        pars.add_argument('--sideFourText', dest='sideFourText', help='Subhead text')
+        pars.add_argument('--sideFourIcon', dest='sideFourIcon', help='Subhead icon')
+        pars.add_argument('--sideFourTextColor', dest='sideFourTextColor', help='Text color')
+        pars.add_argument('--sideFourBgColor', dest='sideFourBgColor', help='Background color')
+        pars.add_argument('--sideFourHint', dest='sideFourHint', help='Subhead hint')
+        pars.add_argument('--sideFourHintColor', dest='sideFourHintColor', help='Subhead hint color')
+        pars.add_argument('--sideFourHintBgColor', dest='sideFourHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideFourL1', default='', dest='sideFourL1', help='Side 1 Line 1')
+        pars.add_argument('--sideFourL2', default='', dest='sideFourL2', help='Side 1 Line 2')
+        pars.add_argument('--sideFourL3', default='', dest='sideFourL3', help='Side 1 Line 3')
+        pars.add_argument('--sideFourL4', default='', dest='sideFourL4', help='Side 1 Line 4')
+        pars.add_argument('--sideFourL5', default='', dest='sideFourL5', help='Side 1 Line 5')
+        pars.add_argument('--sideFourL6', default='', dest='sideFourL6', help='Side 1 Line 6')
+        pars.add_argument('--sideFourL7', default='', dest='sideFourL7', help='Side 1 Line 7')
+        pars.add_argument('--sideFourL8', default='', dest='sideFourL8', help='Side 1 Line 8')
+        pars.add_argument('--sideFourL9', default='', dest='sideFourL9', help='Side 1 Line 9')
+        pars.add_argument('--sideFourL10', default='', dest='sideFourL10', help='Side 1 Line 10')
+        pars.add_argument('--sideFourL11', default='', dest='sideFourL11', help='Side 1 Line 11')
+        pars.add_argument('--sideFourL12', default='', dest='sideFourL12', help='Side 1 Line 12')
+        pars.add_argument('--sideFourL13', default='', dest='sideFourL13', help='Side 1 Line 13')
+        pars.add_argument('--sideFourL14', default='', dest='sideFourL14', help='Side 1 Line 14')
+        pars.add_argument('--sideFourL15', default='', dest='sideFourL15', help='Side 1 Line 15')
 
-        self.OptionParser.add_option('--sideFiveTitleColor', action='store', type='string', dest='sideFiveTitleColor', help='Color of the title')
-        self.OptionParser.add_option('--sideFiveTitleBgColor', action='store', type='string', dest='sideFiveTitleBgColor', help='The title background color')
-        self.OptionParser.add_option('--sideFiveText', action='store', type='string', dest='sideFiveText', help='Subhead text')
-        self.OptionParser.add_option('--sideFiveIcon', action='store', type='string', dest='sideFiveIcon', help='Subhead icon')
-        self.OptionParser.add_option('--sideFiveTextColor', action='store', type='string', dest='sideFiveTextColor', help='Text color')
-        self.OptionParser.add_option('--sideFiveBgColor', action='store', type='string', dest='sideFiveBgColor', help='Background color')
-        self.OptionParser.add_option('--sideFiveHint', action='store', type='string', dest='sideFiveHint', help='Subhead hint')
-        self.OptionParser.add_option('--sideFiveHintColor', action='store', type='string', dest='sideFiveHintColor', help='Subhead hint color')
-        self.OptionParser.add_option('--sideFiveHintBgColor', action='store', type='string', dest='sideFiveHintBgColor', help='Subhead hint background color')
-        self.OptionParser.add_option('--sideFiveL1', action='store', type='string', default='', dest='sideFiveL1', help='Side 1 Line 1')
-        self.OptionParser.add_option('--sideFiveL2', action='store', type='string', default='', dest='sideFiveL2', help='Side 1 Line 2')
-        self.OptionParser.add_option('--sideFiveL3', action='store', type='string', default='', dest='sideFiveL3', help='Side 1 Line 3')
-        self.OptionParser.add_option('--sideFiveL4', action='store', type='string', default='', dest='sideFiveL4', help='Side 1 Line 4')
-        self.OptionParser.add_option('--sideFiveL5', action='store', type='string', default='', dest='sideFiveL5', help='Side 1 Line 5')
-        self.OptionParser.add_option('--sideFiveL6', action='store', type='string', default='', dest='sideFiveL6', help='Side 1 Line 6')
-        self.OptionParser.add_option('--sideFiveL7', action='store', type='string', default='', dest='sideFiveL7', help='Side 1 Line 7')
-        self.OptionParser.add_option('--sideFiveL8', action='store', type='string', default='', dest='sideFiveL8', help='Side 1 Line 8')
-        self.OptionParser.add_option('--sideFiveL9', action='store', type='string', default='', dest='sideFiveL9', help='Side 1 Line 9')
-        self.OptionParser.add_option('--sideFiveL10', action='store', type='string', default='', dest='sideFiveL10', help='Side 1 Line 10')
-        self.OptionParser.add_option('--sideFiveL11', action='store', type='string', default='', dest='sideFiveL11', help='Side 1 Line 11')
-        self.OptionParser.add_option('--sideFiveL12', action='store', type='string', default='', dest='sideFiveL12', help='Side 1 Line 12')
-        self.OptionParser.add_option('--sideFiveL13', action='store', type='string', default='', dest='sideFiveL13', help='Side 1 Line 13')
-        self.OptionParser.add_option('--sideFiveL14', action='store', type='string', default='', dest='sideFiveL14', help='Side 1 Line 14')
-        self.OptionParser.add_option('--sideFiveL15', action='store', type='string', default='', dest='sideFiveL15', help='Side 1 Line 15')
+        pars.add_argument('--sideFiveTitleColor', dest='sideFiveTitleColor', help='Color of the title')
+        pars.add_argument('--sideFiveTitleBgColor', dest='sideFiveTitleBgColor', help='The title background color')
+        pars.add_argument('--sideFiveText', dest='sideFiveText', help='Subhead text')
+        pars.add_argument('--sideFiveIcon', dest='sideFiveIcon', help='Subhead icon')
+        pars.add_argument('--sideFiveTextColor', dest='sideFiveTextColor', help='Text color')
+        pars.add_argument('--sideFiveBgColor', dest='sideFiveBgColor', help='Background color')
+        pars.add_argument('--sideFiveHint', dest='sideFiveHint', help='Subhead hint')
+        pars.add_argument('--sideFiveHintColor', dest='sideFiveHintColor', help='Subhead hint color')
+        pars.add_argument('--sideFiveHintBgColor', dest='sideFiveHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideFiveL1', default='', dest='sideFiveL1', help='Side 1 Line 1')
+        pars.add_argument('--sideFiveL2', default='', dest='sideFiveL2', help='Side 1 Line 2')
+        pars.add_argument('--sideFiveL3', default='', dest='sideFiveL3', help='Side 1 Line 3')
+        pars.add_argument('--sideFiveL4', default='', dest='sideFiveL4', help='Side 1 Line 4')
+        pars.add_argument('--sideFiveL5', default='', dest='sideFiveL5', help='Side 1 Line 5')
+        pars.add_argument('--sideFiveL6', default='', dest='sideFiveL6', help='Side 1 Line 6')
+        pars.add_argument('--sideFiveL7', default='', dest='sideFiveL7', help='Side 1 Line 7')
+        pars.add_argument('--sideFiveL8', default='', dest='sideFiveL8', help='Side 1 Line 8')
+        pars.add_argument('--sideFiveL9', default='', dest='sideFiveL9', help='Side 1 Line 9')
+        pars.add_argument('--sideFiveL10', default='', dest='sideFiveL10', help='Side 1 Line 10')
+        pars.add_argument('--sideFiveL11', default='', dest='sideFiveL11', help='Side 1 Line 11')
+        pars.add_argument('--sideFiveL12', default='', dest='sideFiveL12', help='Side 1 Line 12')
+        pars.add_argument('--sideFiveL13', default='', dest='sideFiveL13', help='Side 1 Line 13')
+        pars.add_argument('--sideFiveL14', default='', dest='sideFiveL14', help='Side 1 Line 14')
+        pars.add_argument('--sideFiveL15', default='', dest='sideFiveL15', help='Side 1 Line 15')
 
         # Inkscape param workaround.
-        self.OptionParser.add_option("--cubify_config")
-        self.OptionParser.add_option("--cubify_side_i")
-        self.OptionParser.add_option("--cubify_side_ii")
-        self.OptionParser.add_option("--cubify_side_iii")
-        self.OptionParser.add_option("--cubify_side_iv")
-        self.OptionParser.add_option("--cubify_side_v")
+        pars.add_argument("--cubify_config")
+        pars.add_argument("--cubify_side_i")
+        pars.add_argument("--cubify_side_ii")
+        pars.add_argument("--cubify_side_iii")
+        pars.add_argument("--cubify_side_iv")
+        pars.add_argument("--cubify_side_v")
+
+    def unittouu(self, value):
+        # In Inkscape 1.x unit conversion lives on the SVG document element.
+        return self.svg.unittouu(value)
 
     def __getattr__(self, name):
         # Try to redirect access to option values.
-        if hasattr(self.options, name):
-            return getattr(self.options, name)
+        if name == 'options':
+            raise AttributeError(name)
 
-        return None
+        options = self.__dict__.get('options')
+        if options is not None and hasattr(options, name):
+            return getattr(options, name)
+
+        raise AttributeError(name)
 
     def effect(self):
         # Fetch the svg root element, ...
@@ -234,7 +237,7 @@ class Cubify(inkex.Effect):
         self.sideFiveIcon = self.options.sideFiveIcon if self.options.sideFiveIcon is not None and os.path.isfile(self.options.sideFiveIcon) else None
 
         # Create the root layer.
-        cubeLayer = inkex.etree.SubElement(svg, 'g')
+        cubeLayer = etree.SubElement(svg, 'g')
         cubeLayer.set(inkex.addNS('label', 'inkscape'), 'Cube')
         cubeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -243,7 +246,7 @@ class Cubify(inkex.Effect):
             'transform' : 'rotate(90, ' + str(padding + wingHeight + blockWidth + blockWidth / 2) + ',' + str(padding + wingHeight + 2 * blockHeight + blockHeight / 2) + ')'
         }
 
-        bottomLayer = inkex.etree.SubElement(cubeLayer, 'g', attrs)
+        bottomLayer = etree.SubElement(cubeLayer, 'g', attrs)
         bottomLayer.set(inkex.addNS('label', 'inkscape'), 'Bottom Side')
         bottomLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -262,7 +265,7 @@ class Cubify(inkex.Effect):
 
         self.drawSideFooter(padding + wingHeight + blockWidth, padding + 3 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, bottomLayer, self.sideFiveText, self.sideFiveTitleBgColor, self.sideFiveTitleColor, boxHeight / 5, self.sideFiveHint, self.sideFiveHintBgColor, self.sideFiveHintColor, boxHeight / 25 * 3, self.sideFiveIcon)
 
-        sideFourLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideFourLayer = etree.SubElement(cubeLayer, 'g')
         sideFourLayer.set(inkex.addNS('label', 'inkscape'), 'Side Four')
         sideFourLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -281,7 +284,7 @@ class Cubify(inkex.Effect):
 
         self.drawSideFooter(padding + wingHeight + 3 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideFourLayer, self.sideFourText, self.sideFourTitleBgColor, self.sideFourTitleColor, boxHeight / 5, self.sideFourHint, self.sideFourHintBgColor, self.sideFourHintColor, boxHeight / 25 * 3, self.sideFourIcon)
 
-        sideThreeLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideThreeLayer = etree.SubElement(cubeLayer, 'g')
         sideThreeLayer.set(inkex.addNS('label', 'inkscape'), 'Side Three')
         sideThreeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -300,7 +303,7 @@ class Cubify(inkex.Effect):
 
         self.drawSideFooter(padding + wingHeight + 2 * blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideThreeLayer, self.sideThreeText, self.sideThreeTitleBgColor, self.sideThreeTitleColor, boxHeight / 5, self.sideThreeHint, self.sideThreeHintBgColor, self.sideThreeHintColor, boxHeight / 25 * 3, self.sideThreeIcon)
 
-        sideTwoLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideTwoLayer = etree.SubElement(cubeLayer, 'g')
         sideTwoLayer.set(inkex.addNS('label', 'inkscape'), 'Side Two')
         sideTwoLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -319,7 +322,7 @@ class Cubify(inkex.Effect):
 
         self.drawSideFooter(padding + wingHeight + blockWidth, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideTwoLayer, self.sideTwoText, self.sideTwoTitleBgColor, self.sideTwoTitleColor, boxHeight / 5, self.sideTwoHint, self.sideTwoHintBgColor, self.sideTwoHintColor, boxHeight / 25 * 3, self.sideTwoIcon)
 
-        sideOneLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        sideOneLayer = etree.SubElement(cubeLayer, 'g')
         sideOneLayer.set(inkex.addNS('label', 'inkscape'), 'Side One')
         sideOneLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -339,7 +342,7 @@ class Cubify(inkex.Effect):
         self.drawSideFooter(padding + wingHeight, padding + 2 * blockHeight + wingHeight - boxHeight, boxWidth, boxHeight, boxBorder, boxBorderColor, sideOneLayer, self.sideOneText, self.sideOneTitleBgColor, self.sideOneTitleColor, boxHeight / 5, self.sideOneHint, self.sideOneHintBgColor, self.sideOneHintColor, boxHeight / 25 * 3, self.sideOneIcon)
 
         # Create the head layer ...
-        headLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        headLayer = etree.SubElement(cubeLayer, 'g')
         headLayer.set(inkex.addNS('label', 'inkscape'), 'Head Side')
         headLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -350,7 +353,7 @@ class Cubify(inkex.Effect):
             self.log('No path to logo given!')
 
         # Finally create a new layer for the basic shape ...
-        shapeLayer = inkex.etree.SubElement(cubeLayer, 'g')
+        shapeLayer = etree.SubElement(cubeLayer, 'g')
         shapeLayer.set(inkex.addNS('label', 'inkscape'), 'Basic Shape')
         shapeLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -405,7 +408,7 @@ class Cubify(inkex.Effect):
             (padding + wingHeight + 2 * blockWidth, padding + wingHeight + blockHeight))
 
     def drawSideFooter(self, x, y, w, h, border, borderColor, parent, title, titleBg, titleColor, titleSize, hint, hintBg, hintColor, hintSize, logoPath):
-        layer = inkex.etree.SubElement(parent, 'g')
+        layer = etree.SubElement(parent, 'g')
         layer.set(inkex.addNS('label', 'inkscape'), 'Footer')
         layer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -419,7 +422,7 @@ class Cubify(inkex.Effect):
 
     def drawTextBox(self, x, y, w, h, border, borderColor, fillColor, parent, msg, fontColor, fontSize, boldFace):
         # Create a new layer.
-        layer = inkex.etree.SubElement(parent, 'g')
+        layer = etree.SubElement(parent, 'g')
         layer.set(inkex.addNS('label', 'inkscape'), 'Headline Layer')
         layer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
 
@@ -427,7 +430,7 @@ class Cubify(inkex.Effect):
         box = self.drawRectangle(x, y, w, h, border, borderColor, fillColor, layer)
 
         # ... create the text element, ...
-        text = inkex.etree.SubElement(layer, inkex.addNS('text','svg'))
+        text = etree.SubElement(layer, inkex.addNS('text','svg'))
         text.set('x', str(x + fontSize))
         text.set('y', str(y + h / 2 + fontSize / 2))
         text.set('fill', '#' + str(fontColor));
@@ -458,7 +461,7 @@ class Cubify(inkex.Effect):
             'd' : 'M ' + str(x1) + ',' + str(y1) + ' L ' + str(x2) + ',' + str(y2)
         }
 
-        return inkex.etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
+        return etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
 
     def drawRectangle(self, x, y, w, h, border, borderColor, fillColor, parent):
         # Define the rectangle style ...
@@ -466,7 +469,7 @@ class Cubify(inkex.Effect):
 
         style = {
             'stroke' : stroke,
-            'stoke-width' : str(border),
+            'stroke-width' : str(border),
             'fill' : '#' + str(fillColor)
         }
 
@@ -478,7 +481,7 @@ class Cubify(inkex.Effect):
             'height' : str(h)
         }
 
-        return inkex.etree.SubElement(parent, inkex.addNS('rect','svg'), attrs)
+        return etree.SubElement(parent, inkex.addNS('rect','svg'), attrs)
 
     def drawPolygon(self, width, color, bgColor, dashed, parent, *points):
         dashStyle = '5,3,2' if dashed else 'none'
@@ -505,7 +508,7 @@ class Cubify(inkex.Effect):
             'd' : pointList
         }
 
-        return inkex.etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
+        return etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
 
     def innerImage(self, x, y, width, height, padding, path, parent):
         with codecs.open(path, encoding="utf-8") as f:
@@ -528,7 +531,7 @@ class Cubify(inkex.Effect):
                 'transform' : 'translate(' + str(x) + ',' + str(y) + ') scale(' + str(scale) + ',' + str(scale) + ')'
             }
 
-            logoLayer = inkex.etree.SubElement(parent, 'g', attrs)
+            logoLayer = etree.SubElement(parent, 'g', attrs)
             logoLayer.set(inkex.addNS('label', 'inkscape'), 'Logo Layer')
             logoLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
             logoLayer.append(deepcopy(doc))
@@ -541,11 +544,11 @@ class Cubify(inkex.Effect):
             'height' : str(height)
         }
 
-        return inkex.etree.SubElement(parent, inkex.addNS('image','xml'), attrs)
+        return etree.SubElement(parent, inkex.addNS('image','xml'), attrs)
 
     def formatTextBlock(self, x, y, textList, fontSize, fontColor, bgColor, parent):
         # Create the text element, ...
-        textItem = inkex.etree.SubElement(parent, inkex.addNS('text','svg'))
+        textItem = etree.SubElement(parent, inkex.addNS('text','svg'))
         textItem.set('x', str(x))
         textItem.set('y', str(y))
         textItem.set('fill', '#' + str(fontColor));
@@ -627,7 +630,7 @@ class Cubify(inkex.Effect):
                     self.createTspan('_', bgColor, parent)
 
                 # Create the new tspan element.
-                tspan = inkex.etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
+                tspan = etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
                 tspan.set('style', formatStyle(style))
                 tspan.text = textChunk
 
@@ -651,7 +654,7 @@ class Cubify(inkex.Effect):
                     self.createTspan('_', bgColor, parent)
 
                 # Create the new tspan element.
-                tspan = inkex.etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
+                tspan = etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
                 tspan.set('style', formatStyle(style))
                 tspan.text = textChunk
 
@@ -669,7 +672,7 @@ class Cubify(inkex.Effect):
         }
 
         # Create the new tspan element.
-        tspan = inkex.etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
+        tspan = etree.SubElement(parent, inkex.addNS('tspan', 'svg'))
         tspan.set('style', formatStyle(style))
         tspan.text = text
 
@@ -679,9 +682,5 @@ class Cubify(inkex.Effect):
         with open(self.logFile, 'a+') as log:
             log.write(str(msg) + '\n')
 
-def main(argv):
-    cubify = Cubify()
-    cubify.affect()
-
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    Cubify().run()
