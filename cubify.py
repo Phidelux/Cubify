@@ -545,7 +545,14 @@ class Cubify(inkex.EffectExtension):
             logoLayer = etree.SubElement(parent, 'g', attrs)
             logoLayer.set(inkex.addNS('label', 'inkscape'), 'Logo Layer')
             logoLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
-            logoLayer.append(deepcopy(doc))
+
+            # Give the imported SVG an explicit size matching its intrinsic
+            # dimensions, otherwise a viewBox-only <svg> defaults to a 100%
+            # viewport and the scale transform above no longer fits it to the face.
+            logo = deepcopy(doc)
+            logo.set('width', str(imgWidth))
+            logo.set('height', str(imgHeight))
+            logoLayer.append(logo)
 
     def formatTextBlock(self, x, y, textList, fontSize, fontColor, bgColor, parent):
         # Create the text element, ...
