@@ -498,12 +498,35 @@ class Cubify(inkex.EffectExtension):
 
         return etree.SubElement(parent, inkex.addNS('path','svg'), attrs)
 
+    def svgDimensions(self, doc):
+        # Intrinsic size of an imported SVG. The width/height attributes are
+        # preferred, but many files (e.g. exports that only set a viewBox) omit
+        # them, so fall back to the viewBox extents in that case.
+        vbWidth = vbHeight = None
+        viewBox = doc.get('viewBox')
+        if viewBox is not None:
+            parts = re.split(r'[\s,]+', viewBox.strip())
+            if len(parts) == 4:
+                vbWidth = float(parts[2])
+                vbHeight = float(parts[3])
+
+        width = doc.get('width')
+        height = doc.get('height')
+
+        imgWidth = self.unittouu(width) if width else None
+        imgHeight = self.unittouu(height) if height else None
+
+        return imgWidth or vbWidth, imgHeight or vbHeight
+
     def innerImage(self, x, y, width, height, padding, path, parent):
         with codecs.open(path, encoding="utf-8") as f:
             doc = etree.parse(f).getroot()
 
-            imgWidth = self.unittouu(doc.get('width'))
-            imgHeight = self.unittouu(doc.get('height'))
+            imgWidth, imgHeight = self.svgDimensions(doc)
+
+            # Without intrinsic dimensions the logo cannot be scaled to fit.
+            if not imgWidth or not imgHeight:
+                return
 
             sx = (width - padding) / imgWidth
             sy = (height - padding) / imgHeight
