@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, os, codecs, re
+import os, codecs, re
 from lxml import etree
 import inkex
 from copy import deepcopy
@@ -18,10 +18,6 @@ def hexColor(value):
     except ValueError:
         return text.lstrip('#')
 
-def enum(*sequential, **named):
-    enums = dict(zip(sequential, range(len(sequential))), **named)
-    return type('Enum', (), enums)
-
 class Stack(list):
     def push(self, item):
         self.append(item)
@@ -33,26 +29,6 @@ class Stack(list):
         return not self
 
 class Cubify(inkex.EffectExtension):
-    LogoStyle = enum('CROP', 'FIT_PARENT')
-
-    SODIPODI = 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd'
-    CC = 'http://creativecommons.org/ns#'
-    CCOLD = 'http://web.resource.org/cc/'
-    SVG = 'http://www.w3.org/2000/svg'
-    DC = 'http://purl.org/dc/elements/1.1/'
-    RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
-    INKSCAPE = 'http://www.inkscape.org/namespaces/inkscape'
-    XLINK = 'http://www.w3.org/1999/xlink'
-    XML = 'http://www.w3.org/XML/1998/namespace'
-
-    def __init__(self):
-        # Call the base class constructor (this also invokes add_arguments).
-        inkex.EffectExtension.__init__(self)
-
-        # Fetch the users' home directory and setup the path to the log file.
-        homeDir = os.path.expanduser('~')
-        self.logFile = os.path.join(homeDir, 'cubify.log')
-
     def add_arguments(self, pars):
         # Definition of script parameters (Ensure that the name matches the names in the inx file).
         pars.add_argument('--borderColor', type=hexColor, dest='borderColor', help='Color of the basic shape')
@@ -197,6 +173,11 @@ class Cubify(inkex.EffectExtension):
         # In Inkscape 1.x unit conversion lives on the SVG document element.
         return self.svg.unittouu(value)
 
+    def iconPath(self, path):
+        # Only use a logo if it points at an existing file; the drawing routines
+        # treat None as "no logo".
+        return path if path and os.path.isfile(path) else None
+
     def __getattr__(self, name):
         # Try to redirect access to option values.
         if name == 'options':
@@ -238,13 +219,13 @@ class Cubify(inkex.EffectExtension):
         # Define some base values.
         self.white = 'ffffff'
 
-        # Fetch the extention parameters.
-        self.logoPath = self.options.logoPath if self.options.logoPath is not None and os.path.isfile(self.options.logoPath) else None
-        self.sideOneIcon = self.options.sideOneIcon if self.options.sideOneIcon is not None and os.path.isfile(self.options.sideOneIcon) else None
-        self.sideTwoIcon = self.options.sideTwoIcon if self.options.sideTwoIcon is not None and os.path.isfile(self.options.sideTwoIcon) else None
-        self.sideThreeIcon = self.options.sideThreeIcon if self.options.sideThreeIcon is not None and  os.path.isfile(self.options.sideThreeIcon) else None
-        self.sideFourIcon = self.options.sideFourIcon if self.options.sideFourIcon is not None and os.path.isfile(self.options.sideFourIcon) else None
-        self.sideFiveIcon = self.options.sideFiveIcon if self.options.sideFiveIcon is not None and os.path.isfile(self.options.sideFiveIcon) else None
+        # Resolve the logo paths (None means "no logo").
+        self.logoPath = self.iconPath(self.options.logoPath)
+        self.sideOneIcon = self.iconPath(self.options.sideOneIcon)
+        self.sideTwoIcon = self.iconPath(self.options.sideTwoIcon)
+        self.sideThreeIcon = self.iconPath(self.options.sideThreeIcon)
+        self.sideFourIcon = self.iconPath(self.options.sideFourIcon)
+        self.sideFiveIcon = self.iconPath(self.options.sideFiveIcon)
 
         # Create the root layer.
         cubeLayer = etree.SubElement(svg, 'g')
@@ -359,8 +340,6 @@ class Cubify(inkex.EffectExtension):
         # ... and embedd the main logo.
         if self.logoPath is not None:
             self.innerImage(padding + wingHeight + 2 * blockWidth, padding + wingHeight, blockWidth, blockHeight, padding, self.logoPath, headLayer)
-        else:
-            self.log('No path to logo given!')
 
         # Finally create a new layer for the basic shape ...
         shapeLayer = etree.SubElement(cubeLayer, 'g')
@@ -427,8 +406,6 @@ class Cubify(inkex.EffectExtension):
 
         if logoPath is not None:
             self.innerImage(x + w - h / 10 * 12, y, h, h, h / 10, logoPath, layer)
-        else:
-            self.log('No path to logo given!')
 
     def drawTextBox(self, x, y, w, h, border, borderColor, fillColor, parent, msg, fontColor, fontSize, boldFace):
         # Create a new layer.
@@ -546,16 +523,6 @@ class Cubify(inkex.EffectExtension):
             logoLayer.set(inkex.addNS('label', 'inkscape'), 'Logo Layer')
             logoLayer.set(inkex.addNS('groupmode', 'inkscape'), 'layer')
             logoLayer.append(deepcopy(doc))
-
-    def embeddImage(self, x, y, width, height, path, parent):
-        attrs = {
-            'x' : str(x),
-            'y' : str(y),
-            'width' : str(width),
-            'height' : str(height)
-        }
-
-        return etree.SubElement(parent, inkex.addNS('image','xml'), attrs)
 
     def formatTextBlock(self, x, y, textList, fontSize, fontColor, bgColor, parent):
         # Create the text element, ...
@@ -688,10 +655,6 @@ class Cubify(inkex.EffectExtension):
         tspan.text = text
 
         return tspan
-
-    def log(self, msg):
-        with open(self.logFile, 'a+') as log:
-            log.write(str(msg) + '\n')
 
 if __name__ == "__main__":
     Cubify().run()
