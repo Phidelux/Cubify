@@ -13,20 +13,20 @@
   <!-- Definition of dialog interface -->
   <param name="cubify_config" type="notebook">
     <page name="cubify_general_settings" gui-text="General Settings">
-      <param name="borderColor" type="string" gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
+      <param name="borderColor" type="color" appearance="colorbutton" gui-text="Basic Shape Color: ">0x333333ff</param>
       <param name="logoPath" type="path" mode="file" filetypes="svg" gui-text="Logo path: "></param>
-      <param name="logoBgColor" type="string" gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
+      <param name="logoBgColor" type="color" appearance="colorbutton" gui-text="Logo Background: ">0xffffffff</param>
     </page>
     <page name="cubify_side_i" gui-text="Cube Side I">
       <param name="sideOneIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideOneText" type="string" gui-text="Title Text: ">Package Management</param>
-      <param name="sideOneTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
-      <param name="sideOneTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+      <param name="sideOneTitleColor" type="color" appearance="colorbutton" gui-text="Title Color: ">0x75a928ff</param>
+      <param name="sideOneTitleBgColor" type="color" appearance="colorbutton" gui-text="Title Background: ">0xbc1142ff</param>
       <param name="sideOneHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
-      <param name="sideOneHintColor" type="string" gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-      <param name="sideOneHintBgColor" type="string" gui-text="Hint Background (RRGGBB hex): ">000000</param>
-      <param name="sideOneTextColor" type="string" gui-text="Text Color (RRGGBB hex): ">000000</param>
-      <param name="sideOneBgColor" type="string" gui-text="Background (RRGGBB hex): ">ffffff</param>
+      <param name="sideOneHintColor" type="color" appearance="colorbutton" gui-text="Hint Color: ">0xffffffff</param>
+      <param name="sideOneHintBgColor" type="color" appearance="colorbutton" gui-text="Hint Background: ">0x000000ff</param>
+      <param name="sideOneTextColor" type="color" appearance="colorbutton" gui-text="Text Color: ">0x000000ff</param>
+      <param name="sideOneBgColor" type="color" appearance="colorbutton" gui-text="Background: ">0xffffffff</param>
 
       <param name="sideOneL1" type="string" gui-text=" 1:" />
       <param name="sideOneL2" type="string" gui-text=" 2:" />
@@ -47,13 +47,13 @@
     <page name="cubify_side_ii" gui-text="Cube Side II">
       <param name="sideTwoIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideTwoText" type="string" gui-text="Title Text: ">Network</param>
-      <param name="sideTwoTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
-      <param name="sideTwoTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
-      <param name="sideTwoHintColor" type="string" gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
+      <param name="sideTwoTitleColor" type="color" appearance="colorbutton" gui-text="Title Color: ">0x75a928ff</param>
+      <param name="sideTwoTitleBgColor" type="color" appearance="colorbutton" gui-text="Title Background: ">0xbc1142ff</param>
+      <param name="sideTwoHintColor" type="color" appearance="colorbutton" gui-text="Hint Color: ">0xffffffff</param>
       <param name="sideTwoHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
-      <param name="sideTwoHintBgColor" type="string" gui-text="Hint Background (RRGGBB hex): ">000000</param>
-      <param name="sideTwoTextColor" type="string" gui-text="Text Color (RRGGBB hex): ">000000</param>
-      <param name="sideTwoBgColor" type="string" gui-text="Background (RRGGBB hex): ">ffffff</param>
+      <param name="sideTwoHintBgColor" type="color" appearance="colorbutton" gui-text="Hint Background: ">0x000000ff</param>
+      <param name="sideTwoTextColor" type="color" appearance="colorbutton" gui-text="Text Color: ">0x000000ff</param>
+      <param name="sideTwoBgColor" type="color" appearance="colorbutton" gui-text="Background: ">0xffffffff</param>
 
       <param name="sideTwoL1" type="string" gui-text=" 1:" />
       <param name="sideTwoL2" type="string" gui-text=" 2:" />
@@ -74,13 +74,13 @@
     <page name="cubify_side_iii" gui-text="Cube Side III">
       <param name="sideThreeText" type="string" gui-text="Title Text: ">Permissions</param>
       <param name="sideThreeIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
-      <param name="sideThreeTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
-      <param name="sideThreeTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+      <param name="sideThreeTitleColor" type="color" appearance="colorbutton" gui-text="Title Color: ">0x75a928ff</param>
+      <param name="sideThreeTitleBgColor" type="color" appearance="colorbutton" gui-text="Title Background: ">0xbc1142ff</param>
       <param name="sideThreeHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
-      <param name="sideThreeHintColor" type="string" gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-      <param name="sideThreeHintBgColor" type="string" gui-text="Hint Background (RRGGBB hex): ">000000</param>
-      <param name="sideThreeTextColor" type="string" gui-text="Text Color (RRGGBB hex): ">000000</param>
-      <param name="sideThreeBgColor" type="string" gui-text="Background (RRGGBB hex): ">ffffff</param>
+      <param name="sideThreeHintColor" type="color" appearance="colorbutton" gui-text="Hint Color: ">0xffffffff</param>
+      <param name="sideThreeHintBgColor" type="color" appearance="colorbutton" gui-text="Hint Background: ">0x000000ff</param>
+      <param name="sideThreeTextColor" type="color" appearance="colorbutton" gui-text="Text Color: ">0x000000ff</param>
+      <param name="sideThreeBgColor" type="color" appearance="colorbutton" gui-text="Background: ">0xffffffff</param>
 
       <param name="sideThreeL1" type="string" gui-text=" 1:" />
       <param name="sideThreeL2" type="string" gui-text=" 2:" />
@@ -101,13 +101,13 @@
     <page name="cubify_side_iv" gui-text="Cube Side IV">
       <param name="sideFourIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideFourText" type="string" gui-text="Title Text: ">System and Screen</param>
-      <param name="sideFourTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
-      <param name="sideFourTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+      <param name="sideFourTitleColor" type="color" appearance="colorbutton" gui-text="Title Color: ">0x75a928ff</param>
+      <param name="sideFourTitleBgColor" type="color" appearance="colorbutton" gui-text="Title Background: ">0xbc1142ff</param>
       <param name="sideFourHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
-      <param name="sideFourHintColor" type="string" gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-      <param name="sideFourHintBgColor" type="string" gui-text="Hint Background (RRGGBB hex): ">000000</param>
-      <param name="sideFourTextColor" type="string" gui-text="Text Color (RRGGBB hex): ">000000</param>
-      <param name="sideFourBgColor" type="string" gui-text="Background (RRGGBB hex): ">ffffff</param>
+      <param name="sideFourHintColor" type="color" appearance="colorbutton" gui-text="Hint Color: ">0xffffffff</param>
+      <param name="sideFourHintBgColor" type="color" appearance="colorbutton" gui-text="Hint Background: ">0x000000ff</param>
+      <param name="sideFourTextColor" type="color" appearance="colorbutton" gui-text="Text Color: ">0x000000ff</param>
+      <param name="sideFourBgColor" type="color" appearance="colorbutton" gui-text="Background: ">0xffffffff</param>
 
       <param name="sideFourL1" type="string" gui-text=" 1:" />
       <param name="sideFourL2" type="string" gui-text=" 2:" />
@@ -128,13 +128,13 @@
     <page name="cubify_side_v" gui-text="Cube Side V">
       <param name="sideFiveIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideFiveText" type="string" gui-text="Title Text: ">Directories and Files</param>
-      <param name="sideFiveTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
-      <param name="sideFiveTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
+      <param name="sideFiveTitleColor" type="color" appearance="colorbutton" gui-text="Title Color: ">0x75a928ff</param>
+      <param name="sideFiveTitleBgColor" type="color" appearance="colorbutton" gui-text="Title Background: ">0xbc1142ff</param>
       <param name="sideFiveHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
-      <param name="sideFiveHintColor" type="string" gui-text="Hint Color (RRGGBB hex): ">ffffff</param>
-      <param name="sideFiveHintBgColor" type="string" gui-text="Hint Background (RRGGBB hex): ">000000</param>
-      <param name="sideFiveTextColor" type="string" gui-text="Text Color (RRGGBB hex): ">000000</param>
-      <param name="sideFiveBgColor" type="string" gui-text="Background (RRGGBB hex): ">ffffff</param>
+      <param name="sideFiveHintColor" type="color" appearance="colorbutton" gui-text="Hint Color: ">0xffffffff</param>
+      <param name="sideFiveHintBgColor" type="color" appearance="colorbutton" gui-text="Hint Background: ">0x000000ff</param>
+      <param name="sideFiveTextColor" type="color" appearance="colorbutton" gui-text="Text Color: ">0x000000ff</param>
+      <param name="sideFiveBgColor" type="color" appearance="colorbutton" gui-text="Background: ">0xffffffff</param>
 
       <param name="sideFiveL1" type="string" gui-text=" 1:" />
       <param name="sideFiveL2" type="string" gui-text=" 2:" />

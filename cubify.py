@@ -8,6 +8,16 @@ from copy import deepcopy
 def formatStyle(style):
     return str(inkex.Style(style))
 
+def hexColor(value):
+    # Inkscape's colour picker passes the colour as an RGBA integer (decimal,
+    # possibly signed; older formats may arrive as a hex string). Reduce it to
+    # the plain RRGGBB hex string the drawing routines expect.
+    text = str(value).strip()
+    try:
+        return str(inkex.Color(int(text, 0)))[1:]
+    except ValueError:
+        return text.lstrip('#')
+
 def enum(*sequential, **named):
     enums = dict(zip(sequential, range(len(sequential))), **named)
     return type('Enum', (), enums)
@@ -45,20 +55,20 @@ class Cubify(inkex.EffectExtension):
 
     def add_arguments(self, pars):
         # Definition of script parameters (Ensure that the name matches the names in the inx file).
-        pars.add_argument('--borderColor', dest='borderColor', help='Color of the basic shape')
+        pars.add_argument('--borderColor', type=hexColor, dest='borderColor', help='Color of the basic shape')
 
         pars.add_argument('--logoPath', dest='logoPath', help='Path to the main logo')
-        pars.add_argument('--logoBgColor', dest='logoBgColor', help='The logo side background color')
+        pars.add_argument('--logoBgColor', type=hexColor, dest='logoBgColor', help='The logo side background color')
 
-        pars.add_argument('--sideOneTitleColor', dest='sideOneTitleColor', help='Color of the title')
-        pars.add_argument('--sideOneTitleBgColor', dest='sideOneTitleBgColor', help='The title background color')
+        pars.add_argument('--sideOneTitleColor', type=hexColor, dest='sideOneTitleColor', help='Color of the title')
+        pars.add_argument('--sideOneTitleBgColor', type=hexColor, dest='sideOneTitleBgColor', help='The title background color')
         pars.add_argument('--sideOneText', dest='sideOneText', help='Subhead text')
         pars.add_argument('--sideOneIcon', dest='sideOneIcon', help='Subhead icon')
-        pars.add_argument('--sideOneTextColor', dest='sideOneTextColor', help='Text color')
-        pars.add_argument('--sideOneBgColor', dest='sideOneBgColor', help='Background color')
+        pars.add_argument('--sideOneTextColor', type=hexColor, dest='sideOneTextColor', help='Text color')
+        pars.add_argument('--sideOneBgColor', type=hexColor, dest='sideOneBgColor', help='Background color')
         pars.add_argument('--sideOneHint', dest='sideOneHint', help='Subhead hint')
-        pars.add_argument('--sideOneHintColor', dest='sideOneHintColor', help='Subhead hint color')
-        pars.add_argument('--sideOneHintBgColor', dest='sideOneHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideOneHintColor', type=hexColor, dest='sideOneHintColor', help='Subhead hint color')
+        pars.add_argument('--sideOneHintBgColor', type=hexColor, dest='sideOneHintBgColor', help='Subhead hint background color')
         pars.add_argument('--sideOneL1', default='', dest='sideOneL1', help='Side 1 Line 1')
         pars.add_argument('--sideOneL2', default='', dest='sideOneL2', help='Side 1 Line 2')
         pars.add_argument('--sideOneL3', default='', dest='sideOneL3', help='Side 1 Line 3')
@@ -75,15 +85,15 @@ class Cubify(inkex.EffectExtension):
         pars.add_argument('--sideOneL14', default='', dest='sideOneL14', help='Side 1 Line 14')
         pars.add_argument('--sideOneL15', default='', dest='sideOneL15', help='Side 1 Line 15')
 
-        pars.add_argument('--sideTwoTitleColor', dest='sideTwoTitleColor', help='Color of the title')
-        pars.add_argument('--sideTwoTitleBgColor', dest='sideTwoTitleBgColor', help='The title background color')
+        pars.add_argument('--sideTwoTitleColor', type=hexColor, dest='sideTwoTitleColor', help='Color of the title')
+        pars.add_argument('--sideTwoTitleBgColor', type=hexColor, dest='sideTwoTitleBgColor', help='The title background color')
         pars.add_argument('--sideTwoText', dest='sideTwoText', help='Subhead text')
         pars.add_argument('--sideTwoIcon', dest='sideTwoIcon', help='Subhead icon')
-        pars.add_argument('--sideTwoTextColor', dest='sideTwoTextColor', help='Text color')
-        pars.add_argument('--sideTwoBgColor', dest='sideTwoBgColor', help='Background color')
+        pars.add_argument('--sideTwoTextColor', type=hexColor, dest='sideTwoTextColor', help='Text color')
+        pars.add_argument('--sideTwoBgColor', type=hexColor, dest='sideTwoBgColor', help='Background color')
         pars.add_argument('--sideTwoHint', dest='sideTwoHint', help='Subhead hint')
-        pars.add_argument('--sideTwoHintColor', dest='sideTwoHintColor', help='Subhead hint color')
-        pars.add_argument('--sideTwoHintBgColor', dest='sideTwoHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideTwoHintColor', type=hexColor, dest='sideTwoHintColor', help='Subhead hint color')
+        pars.add_argument('--sideTwoHintBgColor', type=hexColor, dest='sideTwoHintBgColor', help='Subhead hint background color')
         pars.add_argument('--sideTwoL1', default='', dest='sideTwoL1', help='Side 1 Line 1')
         pars.add_argument('--sideTwoL2', default='', dest='sideTwoL2', help='Side 1 Line 2')
         pars.add_argument('--sideTwoL3', default='', dest='sideTwoL3', help='Side 1 Line 3')
@@ -100,15 +110,15 @@ class Cubify(inkex.EffectExtension):
         pars.add_argument('--sideTwoL14', default='', dest='sideTwoL14', help='Side 1 Line 14')
         pars.add_argument('--sideTwoL15', default='', dest='sideTwoL15', help='Side 1 Line 15')
 
-        pars.add_argument('--sideThreeTitleColor', dest='sideThreeTitleColor', help='Color of the title')
-        pars.add_argument('--sideThreeTitleBgColor', dest='sideThreeTitleBgColor', help='The title background color')
+        pars.add_argument('--sideThreeTitleColor', type=hexColor, dest='sideThreeTitleColor', help='Color of the title')
+        pars.add_argument('--sideThreeTitleBgColor', type=hexColor, dest='sideThreeTitleBgColor', help='The title background color')
         pars.add_argument('--sideThreeText', dest='sideThreeText', help='Subhead text')
         pars.add_argument('--sideThreeIcon', dest='sideThreeIcon', help='Subhead icon')
-        pars.add_argument('--sideThreeTextColor', dest='sideThreeTextColor', help='Text color')
-        pars.add_argument('--sideThreeBgColor', dest='sideThreeBgColor', help='Background color')
+        pars.add_argument('--sideThreeTextColor', type=hexColor, dest='sideThreeTextColor', help='Text color')
+        pars.add_argument('--sideThreeBgColor', type=hexColor, dest='sideThreeBgColor', help='Background color')
         pars.add_argument('--sideThreeHint', dest='sideThreeHint', help='Subhead hint')
-        pars.add_argument('--sideThreeHintColor', dest='sideThreeHintColor', help='Subhead hint color')
-        pars.add_argument('--sideThreeHintBgColor', dest='sideThreeHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideThreeHintColor', type=hexColor, dest='sideThreeHintColor', help='Subhead hint color')
+        pars.add_argument('--sideThreeHintBgColor', type=hexColor, dest='sideThreeHintBgColor', help='Subhead hint background color')
         pars.add_argument('--sideThreeL1', default='', dest='sideThreeL1', help='Side 1 Line 1')
         pars.add_argument('--sideThreeL2', default='', dest='sideThreeL2', help='Side 1 Line 2')
         pars.add_argument('--sideThreeL3', default='', dest='sideThreeL3', help='Side 1 Line 3')
@@ -125,15 +135,15 @@ class Cubify(inkex.EffectExtension):
         pars.add_argument('--sideThreeL14', default='', dest='sideThreeL14', help='Side 1 Line 14')
         pars.add_argument('--sideThreeL15', default='', dest='sideThreeL15', help='Side 1 Line 15')
 
-        pars.add_argument('--sideFourTitleColor', dest='sideFourTitleColor', help='Color of the title')
-        pars.add_argument('--sideFourTitleBgColor', dest='sideFourTitleBgColor', help='The title background color')
+        pars.add_argument('--sideFourTitleColor', type=hexColor, dest='sideFourTitleColor', help='Color of the title')
+        pars.add_argument('--sideFourTitleBgColor', type=hexColor, dest='sideFourTitleBgColor', help='The title background color')
         pars.add_argument('--sideFourText', dest='sideFourText', help='Subhead text')
         pars.add_argument('--sideFourIcon', dest='sideFourIcon', help='Subhead icon')
-        pars.add_argument('--sideFourTextColor', dest='sideFourTextColor', help='Text color')
-        pars.add_argument('--sideFourBgColor', dest='sideFourBgColor', help='Background color')
+        pars.add_argument('--sideFourTextColor', type=hexColor, dest='sideFourTextColor', help='Text color')
+        pars.add_argument('--sideFourBgColor', type=hexColor, dest='sideFourBgColor', help='Background color')
         pars.add_argument('--sideFourHint', dest='sideFourHint', help='Subhead hint')
-        pars.add_argument('--sideFourHintColor', dest='sideFourHintColor', help='Subhead hint color')
-        pars.add_argument('--sideFourHintBgColor', dest='sideFourHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideFourHintColor', type=hexColor, dest='sideFourHintColor', help='Subhead hint color')
+        pars.add_argument('--sideFourHintBgColor', type=hexColor, dest='sideFourHintBgColor', help='Subhead hint background color')
         pars.add_argument('--sideFourL1', default='', dest='sideFourL1', help='Side 1 Line 1')
         pars.add_argument('--sideFourL2', default='', dest='sideFourL2', help='Side 1 Line 2')
         pars.add_argument('--sideFourL3', default='', dest='sideFourL3', help='Side 1 Line 3')
@@ -150,15 +160,15 @@ class Cubify(inkex.EffectExtension):
         pars.add_argument('--sideFourL14', default='', dest='sideFourL14', help='Side 1 Line 14')
         pars.add_argument('--sideFourL15', default='', dest='sideFourL15', help='Side 1 Line 15')
 
-        pars.add_argument('--sideFiveTitleColor', dest='sideFiveTitleColor', help='Color of the title')
-        pars.add_argument('--sideFiveTitleBgColor', dest='sideFiveTitleBgColor', help='The title background color')
+        pars.add_argument('--sideFiveTitleColor', type=hexColor, dest='sideFiveTitleColor', help='Color of the title')
+        pars.add_argument('--sideFiveTitleBgColor', type=hexColor, dest='sideFiveTitleBgColor', help='The title background color')
         pars.add_argument('--sideFiveText', dest='sideFiveText', help='Subhead text')
         pars.add_argument('--sideFiveIcon', dest='sideFiveIcon', help='Subhead icon')
-        pars.add_argument('--sideFiveTextColor', dest='sideFiveTextColor', help='Text color')
-        pars.add_argument('--sideFiveBgColor', dest='sideFiveBgColor', help='Background color')
+        pars.add_argument('--sideFiveTextColor', type=hexColor, dest='sideFiveTextColor', help='Text color')
+        pars.add_argument('--sideFiveBgColor', type=hexColor, dest='sideFiveBgColor', help='Background color')
         pars.add_argument('--sideFiveHint', dest='sideFiveHint', help='Subhead hint')
-        pars.add_argument('--sideFiveHintColor', dest='sideFiveHintColor', help='Subhead hint color')
-        pars.add_argument('--sideFiveHintBgColor', dest='sideFiveHintBgColor', help='Subhead hint background color')
+        pars.add_argument('--sideFiveHintColor', type=hexColor, dest='sideFiveHintColor', help='Subhead hint color')
+        pars.add_argument('--sideFiveHintBgColor', type=hexColor, dest='sideFiveHintBgColor', help='Subhead hint background color')
         pars.add_argument('--sideFiveL1', default='', dest='sideFiveL1', help='Side 1 Line 1')
         pars.add_argument('--sideFiveL2', default='', dest='sideFiveL2', help='Side 1 Line 2')
         pars.add_argument('--sideFiveL3', default='', dest='sideFiveL3', help='Side 1 Line 3')
