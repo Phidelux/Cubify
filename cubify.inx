@@ -14,11 +14,11 @@
   <param name="cubify_config" type="notebook">
     <page name="cubify_general_settings" gui-text="General Settings">
       <param name="borderColor" type="string" gui-text="Basic Shape Color (RRGGBB hex): ">333333</param>
-      <param name="logoPath" type="string" gui-text="Logo path: "></param>
+      <param name="logoPath" type="path" mode="file" filetypes="svg" gui-text="Logo path: "></param>
       <param name="logoBgColor" type="string" gui-text="Logo Background (RRGGBB hex): ">ffffff</param>
     </page>
     <page name="cubify_side_i" gui-text="Cube Side I">
-      <param name="sideOneIcon" type="string" gui-text="Title Logo: ">none</param>
+      <param name="sideOneIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideOneText" type="string" gui-text="Title Text: ">Package Management</param>
       <param name="sideOneTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
       <param name="sideOneTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
@@ -45,7 +45,7 @@
       <param name="sideOneL15" type="string" gui-text="15:" />
     </page>
     <page name="cubify_side_ii" gui-text="Cube Side II">
-      <param name="sideTwoIcon" type="string" gui-text="Title Logo: ">none</param>
+      <param name="sideTwoIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideTwoText" type="string" gui-text="Title Text: ">Network</param>
       <param name="sideTwoTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
       <param name="sideTwoTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
@@ -73,7 +73,7 @@
     </page>
     <page name="cubify_side_iii" gui-text="Cube Side III">
       <param name="sideThreeText" type="string" gui-text="Title Text: ">Permissions</param>
-      <param name="sideThreeIcon" type="string" gui-text="Title Logo: ">none</param>
+      <param name="sideThreeIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideThreeTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
       <param name="sideThreeTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
       <param name="sideThreeHint" type="string" gui-text="Hint: ">See the manual for detailed options (man [command]).</param>
@@ -99,7 +99,7 @@
       <param name="sideThreeL15" type="string" gui-text="15:" />
     </page>
     <page name="cubify_side_iv" gui-text="Cube Side IV">
-      <param name="sideFourIcon" type="string" gui-text="Title Logo: ">none</param>
+      <param name="sideFourIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideFourText" type="string" gui-text="Title Text: ">System and Screen</param>
       <param name="sideFourTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
       <param name="sideFourTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
@@ -126,7 +126,7 @@
       <param name="sideFourL15" type="string" gui-text="15:" />
     </page>
     <page name="cubify_side_v" gui-text="Cube Side V">
-      <param name="sideFiveIcon" type="string" gui-text="Title Logo: ">none</param>
+      <param name="sideFiveIcon" type="path" mode="file" filetypes="svg" gui-text="Title Logo: "></param>
       <param name="sideFiveText" type="string" gui-text="Title Text: ">Directories and Files</param>
       <param name="sideFiveTitleColor" type="string" gui-text="Title Color (RRGGBB hex): ">75a928</param>
       <param name="sideFiveTitleBgColor" type="string" gui-text="Title Background (RRGGBB hex): ">bc1142</param>
